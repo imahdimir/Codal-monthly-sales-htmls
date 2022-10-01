@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src="../imgs/header_icon.png" alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000000">گزارش فعالیت ماهانه
+
+</option></select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=wM5jQQQaQQQ6R0FWKcw4JDrmO3Og%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">سازه پويش</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">100,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">خپويش</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">343008</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px;">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1397/12/29</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1397/12/29</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src="../imgs/inforation.png">
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div style="width: 90%; margin: 0 auto;">
+        <div>
+            <div id="ctl00_cphBody_ucNavigateToNextPrevLetter_trPrevVersion" style="text-align:center">
+    <a id="ctl00_cphBody_ucNavigateToNextPrevLetter_hlPrevVersion" href="Decision.aspx?LetterSerial=WrZMXqJ%2bCsFCnRQQQaQQQ60YdFGA%3d%3d&amp;rt=0&amp;let=58&amp;ct=0" style="color:#558080;font-weight:bold;">این اطلاعیه اصلاحیه اطلاعیه شماره ( 542111 ) می باشد. نسخه قبلی اطلاعیه را می توانید در <span style="text-decoration:underline;">اینجا</span> مشاهده نمایید</a>
+</div>
+
+<br>
+<div id="ctl00_cphBody_ucNavigateToNextPrevLetter_trCorrection" style="color: #558080; font-weight: bold" align="center">
+
+    <span id="ctl00_cphBody_ucNavigateToNextPrevLetter_lblCorrectionDesc" style="color: #486C6C"> دلایل اصلاح: علت مغايرت نرخ هاي فروش 11 ماهه اول سال و نرخ فروش اسفند ماه بابت اخذ مجوز  در تاريخ 1398/02/25 مي باشد که در حسابها اعمال شده است </span>
+</div>
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                <div id="ctl00_cphBody_ucProduct2_pnlProduction">
+	
+
+        <script type="text/javascript" src="../../js/PKI.js"></script>
+        <script type="text/javascript" src="../../js/Common.js"></script>
+
+        <script type="text/javascript">
+            var isFirstPeriod = '#ctl00_cphBody_ucProduct2_hdfIsFirstPeriod';
+
+    $(document).ready(function(){
+        if ($(isFirstPeriod).val() == 'true')
+            $('.non-first-period').hide();
+        else
+            $('.non-first-period').show();
+    });
+
+    function pageLoad() {
+        if ($(isFirstPeriod).val() == 'true')
+            $('.non-first-period').hide();
+        else
+            $('.non-first-period').show();
+    }
+        </script>
+
+        <div id="ctl00_cphBody_ucProduct2_divProduction" align="right" includeinexcel="true" style="overflow-x:auto;">
+            <table id="ctl00_cphBody_ucProduct2_Table1" cellpadding="0" cellspacing="0" width="200%" align="right" dir="rtl">
+		<tbody><tr>
+			<td>
+                        <span id="ctl00_cphBody_ucProduct2_lblProductionMsg" class="notify error" style="display:none;"></span>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <table class="gv" style="text-align: center; width: 100%;">
+                            <tbody><tr>
+                                <th colspan="2" style="width: 14%; height: 30px; text-align: center;">شرح</th>
+                                <th colspan="4" style="width: 18%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevMonthEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1397/11/30</bdo></span>
+                                </th>
+                                <th colspan="3" style="width: 14%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblReformCaption">اصلاحات</span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1397/11/30</bdo> - اصلاح شده</span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;">
+                                    <span id="ctl00_cphBody_ucProduct2_lblMonthEndToDateCaption">دوره یک ماهه منتهی به <bdo dir="ltr">1397/12/29</bdo></span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;">
+                                    <span id="ctl00_cphBody_ucProduct2_lblYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1397/12/29</bdo></span>
+                                </th>
+
+                            </tr>
+                            <tr>
+                                <th align="center" style="width: 10%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblProductNameCaption">نام محصول</span>
+                                </th>
+                                <th align="center" style="width: 3%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblProductUnitCaption">واحد</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 6.75%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProductionModifiedCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesModifiedCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountModifiedCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 6.75%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProdctionMonthCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesMonthCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 6.75%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesRateMonthCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountMonthCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 6.75%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+
+                            </tr>
+                        </tbody></table>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <div>
+                            <div>
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct2_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
+					<tbody><tr>
+						<td align="center" style="width:10%;">سيستمهاي هشداردهنده خودرو</td><td align="center" style="width:3%;">دستگاه</td><td align="center" style="width:3.5%;">۵,۶۴۳</td><td align="center" style="width:3.5%;">۵,۶۴۳</td><td align="center" style="width:6.75%;">۱,۳۹۲,۶۹۹</td><td align="center" style="width:5%;">۷,۸۵۹</td><td align="center" style="width:3.5%;">(۵,۵۴۶)</td><td align="center" style="width:3.5%;">(۵,۵۴۶)</td><td align="center" style="width:5%;">(۷,۶۲۵)</td><td align="center" style="width:3.5%;">۹۷</td><td align="center" style="width:3.5%;">۹۷</td><td align="center" style="width:6.75%;">۲,۴۱۲,۳۷۱</td><td align="center" style="width:5%;">۲۳۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۹۷</td><td align="center" style="width:3.5%;">۹۷</td><td align="center" style="width:6.75%;">۲,۴۱۲,۳۷۱</td><td align="center" style="width:5%;">۲۳۴</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">آژيرسيستمهاي هشداردهنده</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۲۴,۱۹۲</td><td align="center" style="width:3.5%;">۲۴,۱۹۲</td><td align="center" style="width:6.75%;">۳۸۵,۴۹۹</td><td align="center" style="width:5%;">۹,۳۲۶</td><td align="center" style="width:3.5%;">۵,۵۵۴</td><td align="center" style="width:3.5%;">۵,۵۵۴</td><td align="center" style="width:5%;">۱۳,۶۲۸</td><td align="center" style="width:3.5%;">۲۹,۷۴۶</td><td align="center" style="width:3.5%;">۲۹,۷۴۶</td><td align="center" style="width:6.75%;">۷۷۱,۶۶۷</td><td align="center" style="width:5%;">۲۲,۹۵۴</td><td align="center" style="width:3.5%;">۱۵۵</td><td align="center" style="width:3.5%;">۱۵۵</td><td align="center" style="width:6.75%;">۳۸۰,۶۴۵</td><td align="center" style="width:5%;">۵۹</td><td align="center" style="width:3.5%;">۲۹,۹۰۱</td><td align="center" style="width:3.5%;">۲۹,۹۰۱</td><td align="center" style="width:6.75%;">۷۶۹,۶۴۰</td><td align="center" style="width:5%;">۲۳,۰۱۳</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">گيرنده فرستنده قفل درب خودرو</td><td align="center" style="width:3%;">دستگاه</td><td align="center" style="width:3.5%;">۹۱,۰۶۳</td><td align="center" style="width:3.5%;">۹۱,۰۶۳</td><td align="center" style="width:6.75%;">۴۰۹,۵۹۶</td><td align="center" style="width:5%;">۳۷,۲۹۹</td><td align="center" style="width:3.5%;">(۶۵۷)</td><td align="center" style="width:3.5%;">(۶۵۷)</td><td align="center" style="width:5%;">۶,۵۹۴</td><td align="center" style="width:3.5%;">۹۰,۴۰۶</td><td align="center" style="width:3.5%;">۹۰,۴۰۶</td><td align="center" style="width:6.75%;">۴۸۵,۵۱۰</td><td align="center" style="width:5%;">۴۳,۸۹۳</td><td align="center" style="width:3.5%;">۱۲,۳۶۱</td><td align="center" style="width:3.5%;">۱۲,۳۶۱</td><td align="center" style="width:6.75%;">۳۹۴,۸۷۱</td><td align="center" style="width:5%;">۴,۸۸۱</td><td align="center" style="width:3.5%;">۱۰۲,۷۶۷</td><td align="center" style="width:3.5%;">۱۰۲,۷۶۷</td><td align="center" style="width:6.75%;">۴۷۴,۶۰۸</td><td align="center" style="width:5%;">۴۸,۷۷۴</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">سنسورهاي موانع عقب خودرو</td><td align="center" style="width:3%;">ست</td><td align="center" style="width:3.5%;">۶,۹۳۱</td><td align="center" style="width:3.5%;">۶,۹۳۱</td><td align="center" style="width:6.75%;">۴۹۳,۱۴۷</td><td align="center" style="width:5%;">۳,۴۱۸</td><td align="center" style="width:3.5%;">۶,۴۳۶</td><td align="center" style="width:3.5%;">۶,۴۳۶</td><td align="center" style="width:5%;">(۲,۴۶۱)</td><td align="center" style="width:3.5%;">۱۳,۳۶۷</td><td align="center" style="width:3.5%;">۱۳,۳۶۷</td><td align="center" style="width:6.75%;">۷۱,۵۹۴</td><td align="center" style="width:5%;">۹۵۷</td><td align="center" style="width:3.5%;">۹۱۱</td><td align="center" style="width:3.5%;">۹۱۱</td><td align="center" style="width:6.75%;">۳۵۳,۴۵۸</td><td align="center" style="width:5%;">۳۲۲</td><td align="center" style="width:3.5%;">۱۴,۲۷۸</td><td align="center" style="width:3.5%;">۱۴,۲۷۸</td><td align="center" style="width:6.75%;">۸۹,۵۷۸</td><td align="center" style="width:5%;">۱,۲۷۹</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">ساير</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۱,۱۳۴,۱۲۳</td><td align="center" style="width:3.5%;">۱,۱۳۴,۱۴۳</td><td align="center" style="width:6.75%;">۱۸۰,۹۲۲</td><td align="center" style="width:5%;">۲۰۵,۱۹۱</td><td align="center" style="width:3.5%;">(۱۹۷,۵۲۹)</td><td align="center" style="width:3.5%;">(۱۹۷,۵۴۹)</td><td align="center" style="width:5%;">(۵۶,۷۳۰)</td><td align="center" style="width:3.5%;">۹۳۶,۵۹۴</td><td align="center" style="width:3.5%;">۹۳۶,۵۹۴</td><td align="center" style="width:6.75%;">۱۵۸,۵۱۲</td><td align="center" style="width:5%;">۱۴۸,۴۶۱</td><td align="center" style="width:3.5%;">۴۰,۳۳۳</td><td align="center" style="width:3.5%;">۴۰,۳۳۳</td><td align="center" style="width:6.75%;">۸۱۱,۸۹۱</td><td align="center" style="width:5%;">۳۲,۷۴۶</td><td align="center" style="width:3.5%;">۹۷۶,۹۲۷</td><td align="center" style="width:3.5%;">۹۷۶,۹۲۷</td><td align="center" style="width:6.75%;">۱۸۵,۴۸۷</td><td align="center" style="width:5%;">۱۸۱,۲۰۷</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">جلو آمپر پژو پرايد</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۱۲۵,۷۴۰</td><td align="center" style="width:3.5%;">۱۲۵,۷۴۰</td><td align="center" style="width:6.75%;">۱,۱۷۳,۲۳۸</td><td align="center" style="width:5%;">۱۴۷,۵۲۳</td><td align="center" style="width:3.5%;">(۱۲۵,۷۴۰)</td><td align="center" style="width:3.5%;">(۱۲۵,۷۴۰)</td><td align="center" style="width:5%;">(۱۴۷,۵۲۳)</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">راديو پخش اتومبيل</td><td align="center" style="width:3%;">دستگاه</td><td align="center" style="width:3.5%;">۵,۵۷۴</td><td align="center" style="width:3.5%;">۵,۵۷۴</td><td align="center" style="width:6.75%;">۲,۴۱۴,۷۸۳</td><td align="center" style="width:5%;">۱۳,۴۶۰</td><td align="center" style="width:3.5%;">(۲,۲۷۱)</td><td align="center" style="width:3.5%;">(۲,۲۷۱)</td><td align="center" style="width:5%;">(۵,۴۱۴)</td><td align="center" style="width:3.5%;">۳,۳۰۳</td><td align="center" style="width:3.5%;">۳,۳۰۳</td><td align="center" style="width:6.75%;">۲,۴۳۵,۹۶۷</td><td align="center" style="width:5%;">۸,۰۴۶</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۳,۳۰۳</td><td align="center" style="width:3.5%;">۳,۳۰۳</td><td align="center" style="width:6.75%;">۲,۴۳۵,۹۶۷</td><td align="center" style="width:5%;">۸,۰۴۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">سيستمهاي ضد سرقت</td><td align="center" style="width:3%;">ست</td><td align="center" style="width:3.5%;">۲۲۶,۶۶۲</td><td align="center" style="width:3.5%;">۲۲۷,۰۲۲</td><td align="center" style="width:6.75%;">۲۶۷,۵۲۰</td><td align="center" style="width:5%;">۶۰,۷۳۳</td><td align="center" style="width:3.5%;">۱۵۱,۰۴۸</td><td align="center" style="width:3.5%;">۱۵۰,۶۸۸</td><td align="center" style="width:5%;">۵۲,۰۶۹</td><td align="center" style="width:3.5%;">۳۷۷,۷۱۰</td><td align="center" style="width:3.5%;">۳۷۷,۷۱۰</td><td align="center" style="width:6.75%;">۲۹۸,۶۴۷</td><td align="center" style="width:5%;">۱۱۲,۸۰۲</td><td align="center" style="width:3.5%;">۲۹,۲۳۶</td><td align="center" style="width:3.5%;">۲۹,۲۳۶</td><td align="center" style="width:6.75%;">۳۰۰,۱۰۹</td><td align="center" style="width:5%;">۸,۷۷۴</td><td align="center" style="width:3.5%;">۴۰۶,۹۴۶</td><td align="center" style="width:3.5%;">۴۰۶,۹۴۶</td><td align="center" style="width:6.75%;">۲۹۸,۷۵۲</td><td align="center" style="width:5%;">۱۲۱,۵۷۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">ريل سوخت خودرو</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۶۶,۲۶۷</td><td align="center" style="width:3.5%;">۶۶,۲۶۷</td><td align="center" style="width:6.75%;">۵۲۱,۹۰۴</td><td align="center" style="width:5%;">۳۴,۵۸۵</td><td align="center" style="width:3.5%;">(۱۶,۰۳۰)</td><td align="center" style="width:3.5%;">(۱۶,۰۳۰)</td><td align="center" style="width:5%;">۳۰,۵۰۸</td><td align="center" style="width:3.5%;">۵۰,۲۳۷</td><td align="center" style="width:3.5%;">۵۰,۲۳۷</td><td align="center" style="width:6.75%;">۱,۲۹۵,۷۱۸</td><td align="center" style="width:5%;">۶۵,۰۹۳</td><td align="center" style="width:3.5%;">۳</td><td align="center" style="width:3.5%;">۳</td><td align="center" style="width:6.75%;">۵,۶۶۶,۶۶۷</td><td align="center" style="width:5%;">۱۷</td><td align="center" style="width:3.5%;">۵۰,۲۴۰</td><td align="center" style="width:3.5%;">۵۰,۲۴۰</td><td align="center" style="width:6.75%;">۱,۲۹۵,۹۷۹</td><td align="center" style="width:5%;">۶۵,۱۱۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">شير سرمخزن CNG</td><td align="center" style="width:3%;">مجموعه</td><td align="center" style="width:3.5%;">۸,۱۶۴</td><td align="center" style="width:3.5%;">۸,۱۶۴</td><td align="center" style="width:6.75%;">۲,۵۵۶,۱۰۰</td><td align="center" style="width:5%;">۲۰,۸۶۸</td><td align="center" style="width:3.5%;">۱۵,۸۵۰</td><td align="center" style="width:3.5%;">۱۵,۸۵۰</td><td align="center" style="width:5%;">۱۳,۴۷۲</td><td align="center" style="width:3.5%;">۲۴,۰۱۴</td><td align="center" style="width:3.5%;">۲۴,۰۱۴</td><td align="center" style="width:6.75%;">۱,۴۲۹,۹۹۹</td><td align="center" style="width:5%;">۳۴,۳۴۰</td><td align="center" style="width:3.5%;">۳,۰۸۷</td><td align="center" style="width:3.5%;">۳,۰۸۷</td><td align="center" style="width:6.75%;">۲,۸۱۱,۴۶۷</td><td align="center" style="width:5%;">۸,۶۷۹</td><td align="center" style="width:3.5%;">۲۷,۱۰۱</td><td align="center" style="width:3.5%;">۲۷,۱۰۱</td><td align="center" style="width:6.75%;">۱,۵۸۷,۳۵۸</td><td align="center" style="width:5%;">۴۳,۰۱۹</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">رگلاتور گاز CNG</td><td align="center" style="width:3%;">مجموعه</td><td align="center" style="width:3.5%;">۱۷,۰۶۰</td><td align="center" style="width:3.5%;">۱۷,۰۶۰</td><td align="center" style="width:6.75%;">۲,۱۵۱,۶۴۱</td><td align="center" style="width:5%;">۳۶,۷۰۷</td><td align="center" style="width:3.5%;">(۷,۵۲۰)</td><td align="center" style="width:3.5%;">(۷,۵۲۰)</td><td align="center" style="width:5%;">۲,۵۷۶</td><td align="center" style="width:3.5%;">۹,۵۴۰</td><td align="center" style="width:3.5%;">۹,۵۴۰</td><td align="center" style="width:6.75%;">۴,۱۱۷,۷۱۵</td><td align="center" style="width:5%;">۳۹,۲۸۳</td><td align="center" style="width:3.5%;">۱,۸۹۴</td><td align="center" style="width:3.5%;">۱,۸۹۴</td><td align="center" style="width:6.75%;">۱۳,۷۶۵,۵۷۶</td><td align="center" style="width:5%;">۲۶,۰۷۲</td><td align="center" style="width:3.5%;">۱۱,۴۳۴</td><td align="center" style="width:3.5%;">۱۱,۴۳۴</td><td align="center" style="width:6.75%;">۵,۷۱۵,۸۴۷</td><td align="center" style="width:5%;">۶۵,۳۵۵</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">جعبه کنترل شيشه بالابر</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۱۱,۹۴۲</td><td align="center" style="width:3.5%;">۱۱,۹۴۲</td><td align="center" style="width:6.75%;">۱۴۳,۶۹۵</td><td align="center" style="width:5%;">۱,۷۱۶</td><td align="center" style="width:3.5%;">۱۱,۶۴۲</td><td align="center" style="width:3.5%;">۱۱,۶۴۲</td><td align="center" style="width:5%;">۲,۳۳۲</td><td align="center" style="width:3.5%;">۲۳,۵۸۴</td><td align="center" style="width:3.5%;">۲۳,۵۸۴</td><td align="center" style="width:6.75%;">۱۷۱,۶۴۲</td><td align="center" style="width:5%;">۴,۰۴۸</td><td align="center" style="width:3.5%;">۱۰۰</td><td align="center" style="width:3.5%;">۱۰۰</td><td align="center" style="width:6.75%;">۲۸۰,۰۰۰</td><td align="center" style="width:5%;">۲۸</td><td align="center" style="width:3.5%;">۲۳,۶۸۴</td><td align="center" style="width:3.5%;">۲۳,۶۸۴</td><td align="center" style="width:6.75%;">۱۷۲,۰۹۹</td><td align="center" style="width:5%;">۴,۰۷۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">هماهنگ کننده کنترل قفل مرکزي</td><td align="center" style="width:3%;">دستگاه</td><td align="center" style="width:3.5%;">۱۱,۷۳۴</td><td align="center" style="width:3.5%;">۱۱,۷۳۴</td><td align="center" style="width:6.75%;">۵۹۹,۱۱۴</td><td align="center" style="width:5%;">۷,۰۳۰</td><td align="center" style="width:3.5%;">۱,۷۴۴</td><td align="center" style="width:3.5%;">۱,۷۴۴</td><td align="center" style="width:5%;">(۴,۵۶۵)</td><td align="center" style="width:3.5%;">۱۳,۴۷۸</td><td align="center" style="width:3.5%;">۱۳,۴۷۸</td><td align="center" style="width:6.75%;">۱۸۲,۸۹۱</td><td align="center" style="width:5%;">۲,۴۶۵</td><td align="center" style="width:3.5%;">۳,۷۳۲</td><td align="center" style="width:3.5%;">۳,۷۳۲</td><td align="center" style="width:6.75%;">۱۹۳,۱۹۴</td><td align="center" style="width:5%;">۷۲۱</td><td align="center" style="width:3.5%;">۱۷,۲۱۰</td><td align="center" style="width:3.5%;">۱۷,۲۱۰</td><td align="center" style="width:6.75%;">۱۸۵,۱۲۵</td><td align="center" style="width:5%;">۳,۱۸۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">جعبه الکترونيکي کنترل موتور ECU</td><td align="center" style="width:3%;">دستگاه</td><td align="center" style="width:3.5%;">۱۳۷,۰۳۷</td><td align="center" style="width:3.5%;">۱۳۷,۰۳۷</td><td align="center" style="width:6.75%;">۲,۸۶۰,۴۸۳</td><td align="center" style="width:5%;">۳۹۱,۹۹۲</td><td align="center" style="width:3.5%;">(۱۰,۵۹۷)</td><td align="center" style="width:3.5%;">(۱۰,۵۹۷)</td><td align="center" style="width:5%;">۲۳۹,۶۲۳</td><td align="center" style="width:3.5%;">۱۲۶,۴۴۰</td><td align="center" style="width:3.5%;">۱۲۶,۴۴۰</td><td align="center" style="width:6.75%;">۴,۹۹۵,۳۷۳</td><td align="center" style="width:5%;">۶۳۱,۶۱۵</td><td align="center" style="width:3.5%;">۲۴,۵۶۵</td><td align="center" style="width:3.5%;">۲۴,۵۶۵</td><td align="center" style="width:6.75%;">۲,۴۷۸,۵۶۷</td><td align="center" style="width:5%;">۶۰,۸۸۶</td><td align="center" style="width:3.5%;">۱۵۱,۰۰۵</td><td align="center" style="width:3.5%;">۱۵۱,۰۰۵</td><td align="center" style="width:6.75%;">۴,۵۸۵,۹۴۷</td><td align="center" style="width:5%;">۶۹۲,۵۰۱</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">انژکتور</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۸۲۱,۴۹۲</td><td align="center" style="width:3.5%;">۸۲۱,۴۹۲</td><td align="center" style="width:6.75%;">۲۳۷,۱۶۰</td><td align="center" style="width:5%;">۱۹۴,۸۲۵</td><td align="center" style="width:3.5%;">۲۸۹,۹۳۱</td><td align="center" style="width:3.5%;">۲۸۹,۹۳۱</td><td align="center" style="width:5%;">۱۳۷,۶۳۷</td><td align="center" style="width:3.5%;">۱,۱۱۱,۴۲۳</td><td align="center" style="width:3.5%;">۱,۱۱۱,۴۲۳</td><td align="center" style="width:6.75%;">۲۹۹,۱۳۲</td><td align="center" style="width:5%;">۳۳۲,۴۶۲</td><td align="center" style="width:3.5%;">۱۳۱,۴۶۳</td><td align="center" style="width:3.5%;">۱۳۱,۴۶۳</td><td align="center" style="width:6.75%;">۱۳۸,۵۹۴</td><td align="center" style="width:5%;">۱۸,۲۲۰</td><td align="center" style="width:3.5%;">۱,۲۴۲,۸۸۶</td><td align="center" style="width:3.5%;">۱,۲۴۲,۸۸۶</td><td align="center" style="width:6.75%;">۲۸۲,۱۵۱</td><td align="center" style="width:5%;">۳۵۰,۶۸۲</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">سنسورهاي موتور</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۱,۵۴۹,۴۵۷</td><td align="center" style="width:3.5%;">۱,۵۴۹,۴۵۷</td><td align="center" style="width:6.75%;">۵۸۷,۹۰۷</td><td align="center" style="width:5%;">۹۱۰,۹۳۷</td><td align="center" style="width:3.5%;">۳۱۸,۵۰۵</td><td align="center" style="width:3.5%;">۳۱۸,۵۰۵</td><td align="center" style="width:5%;">۴۰۸,۷۴۷</td><td align="center" style="width:3.5%;">۱,۸۶۷,۹۶۲</td><td align="center" style="width:3.5%;">۱,۸۶۷,۹۶۲</td><td align="center" style="width:6.75%;">۷۰۶,۴۸۳</td><td align="center" style="width:5%;">۱,۳۱۹,۶۸۴</td><td align="center" style="width:3.5%;">۱۳۲,۷۷۲</td><td align="center" style="width:3.5%;">۱۳۲,۷۷۲</td><td align="center" style="width:6.75%;">۹۷۴,۶۱۱</td><td align="center" style="width:5%;">۱۲۹,۴۰۱</td><td align="center" style="width:3.5%;">۲,۰۰۰,۷۳۴</td><td align="center" style="width:3.5%;">۲,۰۰۰,۷۳۴</td><td align="center" style="width:6.75%;">۷۲۴,۲۷۷</td><td align="center" style="width:5%;">۱,۴۴۹,۰۸۵</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">کويل احتراق</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۲۴۵,۵۹۳</td><td align="center" style="width:3.5%;">۲۴۵,۵۹۳</td><td align="center" style="width:6.75%;">۴۳۲,۷۶۹</td><td align="center" style="width:5%;">۱۰۶,۲۸۵</td><td align="center" style="width:3.5%;">۱,۰۸۰</td><td align="center" style="width:3.5%;">۱,۰۸۰</td><td align="center" style="width:5%;">۱۳۰,۰۱۸</td><td align="center" style="width:3.5%;">۲۴۶,۶۷۳</td><td align="center" style="width:3.5%;">۲۴۶,۶۷۳</td><td align="center" style="width:6.75%;">۹۵۷,۹۶۱</td><td align="center" style="width:5%;">۲۳۶,۳۰۳</td><td align="center" style="width:3.5%;">۲۴,۰۲۹</td><td align="center" style="width:3.5%;">۲۴,۰۲۹</td><td align="center" style="width:6.75%;">۱,۰۸۷,۷۶۹</td><td align="center" style="width:5%;">۲۶,۱۳۸</td><td align="center" style="width:3.5%;">۲۷۰,۷۰۲</td><td align="center" style="width:3.5%;">۲۷۰,۷۰۲</td><td align="center" style="width:6.75%;">۹۶۹,۴۸۳</td><td align="center" style="width:5%;">۲۶۲,۴۴۱</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">پدال گاز</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۸۷,۹۶۶</td><td align="center" style="width:3.5%;">۲۷۵,۰۶۶</td><td align="center" style="width:6.75%;">۱۲۲,۸۹۴</td><td align="center" style="width:5%;">۳۳,۸۰۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">(۱۸۷,۱۰۰)</td><td align="center" style="width:5%;">۲۶,۳۷۲</td><td align="center" style="width:3.5%;">۸۷,۹۶۶</td><td align="center" style="width:3.5%;">۸۷,۹۶۶</td><td align="center" style="width:6.75%;">۶۸۴,۰۸۲</td><td align="center" style="width:5%;">۶۰,۱۷۶</td><td align="center" style="width:3.5%;">۷,۷۴۸</td><td align="center" style="width:3.5%;">۷,۷۴۸</td><td align="center" style="width:6.75%;">۹۷۲,۷۶۷</td><td align="center" style="width:5%;">۷,۵۳۷</td><td align="center" style="width:3.5%;">۹۵,۷۱۴</td><td align="center" style="width:3.5%;">۹۵,۷۱۴</td><td align="center" style="width:6.75%;">۷۰۷,۴۵۱</td><td align="center" style="width:5%;">۶۷,۷۱۳</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه قفل مرکزي</td><td align="center" style="width:3%;">مجموعه</td><td align="center" style="width:3.5%;">۵۲,۹۰۴</td><td align="center" style="width:3.5%;">۲۵,۹۰۴</td><td align="center" style="width:6.75%;">۱,۰۸۹,۱۷۵</td><td align="center" style="width:5%;">۲۸,۲۱۴</td><td align="center" style="width:3.5%;">(۲۳,۶۳۶)</td><td align="center" style="width:3.5%;">۳,۳۶۴</td><td align="center" style="width:5%;">۱۸,۸۵۴</td><td align="center" style="width:3.5%;">۲۹,۲۶۸</td><td align="center" style="width:3.5%;">۲۹,۲۶۸</td><td align="center" style="width:6.75%;">۱,۶۰۸,۱۷۳</td><td align="center" style="width:5%;">۴۷,۰۶۸</td><td align="center" style="width:3.5%;">۳,۴۹۵</td><td align="center" style="width:3.5%;">۳,۴۹۵</td><td align="center" style="width:6.75%;">۲,۴۷۴,۱۰۶</td><td align="center" style="width:5%;">۸,۶۴۷</td><td align="center" style="width:3.5%;">۳۲,۷۶۳</td><td align="center" style="width:3.5%;">۳۲,۷۶۳</td><td align="center" style="width:6.75%;">۱,۷۰۰,۵۴۶</td><td align="center" style="width:5%;">۵۵,۷۱۵</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه مالتي پلکس سمند</td><td align="center" style="width:3%;">ست</td><td align="center" style="width:3.5%;">۷۵,۶۴۷</td><td align="center" style="width:3.5%;">۷۵,۶۴۷</td><td align="center" style="width:6.75%;">۱,۶۴۰,۹۲۴</td><td align="center" style="width:5%;">۱۲۴,۱۳۱</td><td align="center" style="width:3.5%;">(۷۵,۶۴۷)</td><td align="center" style="width:3.5%;">(۷۵,۶۴۷)</td><td align="center" style="width:5%;">(۱۲۴,۱۳۱)</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه دسته راهنما</td><td align="center" style="width:3%;">مجموعه</td><td align="center" style="width:3.5%;">۸۵۵</td><td align="center" style="width:3.5%;">۸۵۵</td><td align="center" style="width:6.75%;">۵۷۶,۶۰۸</td><td align="center" style="width:5%;">۴۹۳</td><td align="center" style="width:3.5%;">(۷)</td><td align="center" style="width:3.5%;">(۷)</td><td align="center" style="width:5%;">(۷)</td><td align="center" style="width:3.5%;">۸۴۸</td><td align="center" style="width:3.5%;">۸۴۸</td><td align="center" style="width:6.75%;">۵۷۳,۱۱۳</td><td align="center" style="width:5%;">۴۸۶</td><td align="center" style="width:3.5%;">۴۴</td><td align="center" style="width:3.5%;">۴۴</td><td align="center" style="width:6.75%;">۱,۰۰۰,۰۰۰</td><td align="center" style="width:5%;">۴۴</td><td align="center" style="width:3.5%;">۸۹۲</td><td align="center" style="width:3.5%;">۸۹۲</td><td align="center" style="width:6.75%;">۵۹۴,۱۷۰</td><td align="center" style="width:5%;">۵۳۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">دريچه گاز برقي</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۱۹۶,۹۹۷</td><td align="center" style="width:3.5%;">۱۹۶,۹۹۷</td><td align="center" style="width:6.75%;">۶۴۹,۶۲۹</td><td align="center" style="width:5%;">۱۲۷,۹۷۵</td><td align="center" style="width:3.5%;">(۱۲۵,۵۷۱)</td><td align="center" style="width:3.5%;">(۱۲۵,۵۷۱)</td><td align="center" style="width:5%;">۵۵,۹۰۱</td><td align="center" style="width:3.5%;">۷۱,۴۲۶</td><td align="center" style="width:3.5%;">۷۱,۴۲۶</td><td align="center" style="width:6.75%;">۲,۵۷۴,۳۵۷</td><td align="center" style="width:5%;">۱۸۳,۸۷۶</td><td align="center" style="width:3.5%;">۹,۴۰۴</td><td align="center" style="width:3.5%;">۹,۴۰۴</td><td align="center" style="width:6.75%;">۲,۱۵۸,۱۲۴</td><td align="center" style="width:5%;">۲۰,۲۹۵</td><td align="center" style="width:3.5%;">۸۰,۸۳۰</td><td align="center" style="width:3.5%;">۸۰,۸۳۰</td><td align="center" style="width:6.75%;">۲,۵۲۵,۹۳۱</td><td align="center" style="width:5%;">۲۰۴,۱۷۱</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">انواع کليد هاي فرمان</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۲۹۱,۵۳۷</td><td align="center" style="width:3.5%;">۲۹۱,۵۳۷</td><td align="center" style="width:6.75%;">۲۵۳,۳۳۷</td><td align="center" style="width:5%;">۷۳,۸۵۷</td><td align="center" style="width:3.5%;">(۲۷۸,۴۲۲)</td><td align="center" style="width:3.5%;">(۲۷۸,۴۲۲)</td><td align="center" style="width:5%;">(۶۳,۹۲۱)</td><td align="center" style="width:3.5%;">۱۳,۱۱۵</td><td align="center" style="width:3.5%;">۱۳,۱۱۵</td><td align="center" style="width:6.75%;">۷۵۷,۶۰۶</td><td align="center" style="width:5%;">۹,۹۳۶</td><td align="center" style="width:3.5%;">۱,۲۲۱</td><td align="center" style="width:3.5%;">۱,۲۲۱</td><td align="center" style="width:6.75%;">۳۵۷,۹۰۳</td><td align="center" style="width:5%;">۴۳۷</td><td align="center" style="width:3.5%;">۱۴,۳۳۶</td><td align="center" style="width:3.5%;">۱۴,۳۳۶</td><td align="center" style="width:6.75%;">۷۲۳,۵۶۳</td><td align="center" style="width:5%;">۱۰,۳۷۳</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه داشبورد</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۱,۶۹۳</td><td align="center" style="width:3.5%;">۱,۶۹۳</td><td align="center" style="width:6.75%;">۹,۱۰۲,۱۸۵</td><td align="center" style="width:5%;">۱۵,۴۱۰</td><td align="center" style="width:3.5%;">(۱,۶۹۳)</td><td align="center" style="width:3.5%;">(۱,۶۹۳)</td><td align="center" style="width:5%;">(۱۵,۴۱۰)</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه نود ها</td><td align="center" style="width:3%;">ست</td><td align="center" style="width:3.5%;">۸۸,۵۸۶</td><td align="center" style="width:3.5%;">۸۸,۵۸۶</td><td align="center" style="width:6.75%;">۱,۱۲۷,۳۵۶</td><td align="center" style="width:5%;">۹۹,۸۶۸</td><td align="center" style="width:3.5%;">۲۷۴,۷۹۶</td><td align="center" style="width:3.5%;">۲۷۴,۷۹۶</td><td align="center" style="width:5%;">۵۳۱,۶۱۴</td><td align="center" style="width:3.5%;">۳۶۳,۳۸۲</td><td align="center" style="width:3.5%;">۳۶۳,۳۸۲</td><td align="center" style="width:6.75%;">۱,۷۳۷,۷۹۱</td><td align="center" style="width:5%;">۶۳۱,۴۸۲</td><td align="center" style="width:3.5%;">۳۴,۶۳۶</td><td align="center" style="width:3.5%;">۳۴,۶۳۶</td><td align="center" style="width:6.75%;">۲,۳۹۰,۵۷۶</td><td align="center" style="width:5%;">۸۲,۸۰۰</td><td align="center" style="width:3.5%;">۳۹۸,۰۱۸</td><td align="center" style="width:3.5%;">۳۹۸,۰۱۸</td><td align="center" style="width:6.75%;">۱,۷۹۴,۵۹۷</td><td align="center" style="width:5%;">۷۱۴,۲۸۲</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">نمايشگر هشداردهنده ديجيتالي و گرافيکي خودرو</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۱۷,۰۹۷</td><td align="center" style="width:3.5%;">۱۷,۰۹۷</td><td align="center" style="width:6.75%;">۱,۴۲۸,۵۵۵</td><td align="center" style="width:5%;">۲۴,۴۲۴</td><td align="center" style="width:3.5%;">۱۵۰,۰۵۵</td><td align="center" style="width:3.5%;">۱۵۰,۰۵۵</td><td align="center" style="width:5%;">۲۱۹,۳۷۷</td><td align="center" style="width:3.5%;">۱۶۷,۱۵۲</td><td align="center" style="width:3.5%;">۱۶۷,۱۵۲</td><td align="center" style="width:6.75%;">۱,۴۵۸,۵۵۹</td><td align="center" style="width:5%;">۲۴۳,۸۰۱</td><td align="center" style="width:3.5%;">۱۴,۶۱۷</td><td align="center" style="width:3.5%;">۱۴,۶۱۷</td><td align="center" style="width:6.75%;">۲,۵۲۴,۶۶۳</td><td align="center" style="width:5%;">۳۶,۹۰۳</td><td align="center" style="width:3.5%;">۱۸۱,۷۶۹</td><td align="center" style="width:3.5%;">۱۸۱,۷۶۹</td><td align="center" style="width:6.75%;">۱,۵۴۴,۲۹۰</td><td align="center" style="width:5%;">۲۸۰,۷۰۴</td>
+					</tr><tr class="lightBlueBg">
+						<td align="center" style="width:10%;">جمع</td><td align="center" style="width:3%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۲,۷۱۷,۹۳۰</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:5%;">۱,۴۶۱,۵۳۵</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۴,۱۷۹,۴۶۵</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۴۷۳,۶۰۷</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۴,۶۵۳,۰۷۲</td>
+					</tr>
+				</tbody></table>
+			</div>
+                        </div>
+                    </td>
+		</tr>
+	</tbody></table>
+	
+            <input name="ctl00$cphBody$ucProduct2$hdfIsFirstPeriod" type="hidden" id="ctl00_cphBody_ucProduct2_hdfIsFirstPeriod" value="false">
+        </div>
+    
+</div>
+
+            
+        <div class="clear" style="height: 20px;"></div>
+        
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblCorrectionComment" style="color:graytext;font-size:Small;">کادر توضیحات در مورد اصلاحات</span></legend>
+            <br>
+            <span id="txtCorrectionComment">
+لازم به ذکر است علاوه بر مبلغ ستون اصلاحات مبلغ 34.500 ميليون ريال بابت ناشي از تغييرات در برنامه ريزي توليد مشتري عمده مي باشد.
+مبالغ مندرج در ستون اصلاحات بابت تعديل در نظر گرفته در نرخ محصولات مي باشد که در حسابها اعمال گرديد. همچنين علت مغايرت نرخ هاي فروش 11 ماهه اول سال و نرخ فروش اسفند ماه بابت اخذ مجوز  در تاريخ 1398/02/25 مي باشد که در حسابها اعمال شده است
+
+</span>
+        </fieldset>
+        
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1397/12/29</span></legend>
+            <br>
+            <span id="txbDescMonth">
+
+اختلاف ناشي از نرخ فروش 11 ماهه اصلاح شده برخي از محصولات از جمله ECU و يا ريل سوخت با 12 ماهه بابت نرخ فروش يک ماهه و ميانگين 11 ماهه مي باشد که در ماهه 12 نرخ فروش بابت محصولات اصلي مي باشد .</span>
+        </fieldset>
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1397/12/29</span></legend>
+            <br>
+            <span id="txbDescYear">
+
+
+مبالغ مندرج در ستون اصلاحات بابت تعديل در نظر گرفته در نرخ محصولات مي باشد.</span>
+        </fieldset>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+
+</body></html>

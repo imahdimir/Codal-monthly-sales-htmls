@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src="../imgs/header_icon.png" alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000000">آمار تولید و فروش
+
+</option></select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=DkZmm2H8MT32kHkU5I98Mw%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">داروسازي اکسير</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">450,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">دلر</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">242321</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px;">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1395/12/30</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1395/12/30</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+        
+        <span id="ctl00_ucSignature1_lblSigners"></span>
+    </div>
+    <div class="noteholder">
+        <img alt="information" src="../imgs/inforation.png">
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div style="width: 90%; margin: 0 auto;">
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                <div id="ctl00_cphBody_ucProduct1_pnlProduction">
+	
+
+        <script language="javascript" type="text/javascript" src="../../js/PKI.js"></script>
+
+        <script language="javascript" type="text/javascript" src="../../js/Common.js"></script>
+
+        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right">
+            <table id="ctl00_cphBody_ucProduct1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
+		<tbody><tr>
+			<td>
+                        <span id="ctl00_cphBody_ucProduct1_lblProductionMsg" class="notify error" style="display:none;"></span>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <table width="100%" align="center" class="gv">
+                            <tbody><tr>
+                                <th colspan="6" align="center" style="width: 49%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblMonthEndToDateCaption">دوره یک ماهه منتهی به <bdo dir="ltr">1395/12/30</bdo></span>
+                                </th>
+                                <th colspan="4" align="center" style="width: 51%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1395/12/30</bdo></span>
+                                </th>
+                                
+                            </tr>
+                            <tr>
+                                <th align="center" style="width: 13.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblProductNameCaption">نام محصول</span>
+                                </th>
+                                <th align="center" style="width: 5.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblProductUnitCaption">واحد</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalProdctionMonthCaption">تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalSalesMonthCaption">تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesRateMonthCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesAmountMonthCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalProductionYearCaption">تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalSalesYearCaption">تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 9.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 11.8%">
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                
+                            </tr>
+                        </tbody></table>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <div>
+                            <div>
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
+					<tbody><tr>
+						<td align="center" style="width:13.8%;">آمپول</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">2,594,027</td><td align="center" style="width:9.8%;">5,863,630</td><td align="center" style="width:9.8%;">10,939</td><td align="center" style="width:9.8%;">64,141</td><td align="center" style="width:9.8%;">69,494,313</td><td align="center" style="width:9.8%;">68,090,794</td><td align="center" style="width:9.8%;">10,877</td><td align="center" style="width:11.8%;">740,649</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">شربت</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">1,213,383</td><td align="center" style="width:9.8%;">891,939</td><td align="center" style="width:9.8%;">19,860</td><td align="center" style="width:9.8%;">17,714</td><td align="center" style="width:9.8%;">14,301,999</td><td align="center" style="width:9.8%;">13,646,063</td><td align="center" style="width:9.8%;">19,996</td><td align="center" style="width:11.8%;">272,865</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">قرص(جامدات)</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">60,134,115</td><td align="center" style="width:9.8%;">60,142,900</td><td align="center" style="width:9.8%;">593</td><td align="center" style="width:9.8%;">35,679</td><td align="center" style="width:9.8%;">694,019,485</td><td align="center" style="width:9.8%;">683,361,415</td><td align="center" style="width:9.8%;">624</td><td align="center" style="width:11.8%;">426,663</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">کپسول(جامدات)</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">1,275,838</td><td align="center" style="width:9.8%;">7,258,062</td><td align="center" style="width:9.8%;">589</td><td align="center" style="width:9.8%;">4,278</td><td align="center" style="width:9.8%;">95,805,190</td><td align="center" style="width:9.8%;">103,407,519</td><td align="center" style="width:9.8%;">1,089</td><td align="center" style="width:11.8%;">112,584</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">کپسول و قرص(سفالسپورين)</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">2,242,070</td><td align="center" style="width:9.8%;">2,437,550</td><td align="center" style="width:9.8%;">4,512</td><td align="center" style="width:9.8%;">10,998</td><td align="center" style="width:9.8%;">22,608,618</td><td align="center" style="width:9.8%;">23,106,368</td><td align="center" style="width:9.8%;">3,837</td><td align="center" style="width:11.8%;">88,669</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">ويال(سفالسپورين)</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">2,146,185</td><td align="center" style="width:9.8%;">2,521,680</td><td align="center" style="width:9.8%;">16,105</td><td align="center" style="width:9.8%;">40,611</td><td align="center" style="width:9.8%;">24,479,888</td><td align="center" style="width:9.8%;">22,492,221</td><td align="center" style="width:9.8%;">19,523</td><td align="center" style="width:11.8%;">439,105</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">هورمون رشد(ويال لئوفليزه)</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">420,203</td><td align="center" style="width:9.8%;">51,790</td><td align="center" style="width:9.8%;">373,257</td><td align="center" style="width:9.8%;">19,331</td><td align="center" style="width:9.8%;">623,172</td><td align="center" style="width:9.8%;">162,941</td><td align="center" style="width:9.8%;">330,040</td><td align="center" style="width:11.8%;">53,777</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">انسولين</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">135,143</td><td align="center" style="width:9.8%;">516,708</td><td align="center" style="width:9.8%;">104,978</td><td align="center" style="width:9.8%;">54,243</td><td align="center" style="width:9.8%;">4,365,925</td><td align="center" style="width:9.8%;">4,461,019</td><td align="center" style="width:9.8%;">107,359</td><td align="center" style="width:11.8%;">478,932</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">محصولات وارداتي</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">1,080,820</td><td align="center" style="width:9.8%;">766,480</td><td align="center" style="width:9.8%;">2,719</td><td align="center" style="width:9.8%;">2,084</td><td align="center" style="width:9.8%;">7,107,240</td><td align="center" style="width:9.8%;">9,971,020</td><td align="center" style="width:9.8%;">2,255</td><td align="center" style="width:11.8%;">22,489</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">سوسپانسيون(سفالسپورين)</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">301,110</td><td align="center" style="width:9.8%;">301,494</td><td align="center" style="width:9.8%;">32,004</td><td align="center" style="width:9.8%;">9,649</td><td align="center" style="width:9.8%;">2,586,813</td><td align="center" style="width:9.8%;">2,547,899</td><td align="center" style="width:9.8%;">26,284</td><td align="center" style="width:11.8%;">66,968</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">مکمل هاي داروئي</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">4,174,840</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">3,653</td><td align="center" style="width:9.8%;">17,630,660</td><td align="center" style="width:9.8%;">162,627,580</td><td align="center" style="width:9.8%;">166</td><td align="center" style="width:11.8%;">26,984</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">ويال غير سفالسپورين حاوي پودر</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">935,232</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">7,843</td><td align="center" style="width:9.8%;">13,702,866</td><td align="center" style="width:9.8%;">13,612,696</td><td align="center" style="width:9.8%;">20,219</td><td align="center" style="width:11.8%;">275,233</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">ويال استريل و قلم</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">25,317</td><td align="center" style="width:9.8%;">2,204,685</td><td align="center" style="width:9.8%;">55,816</td><td align="center" style="width:9.8%;">189,451</td><td align="center" style="width:9.8%;">178,711</td><td align="center" style="width:9.8%;">1,952,907</td><td align="center" style="width:11.8%;">349,006</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">سوسپانسيون جامدات</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">170,350</td><td align="center" style="width:9.8%;">33,941</td><td align="center" style="width:9.8%;">17,413</td><td align="center" style="width:9.8%;">591</td><td align="center" style="width:9.8%;">2,496,832</td><td align="center" style="width:9.8%;">2,144,492</td><td align="center" style="width:9.8%;">24,037</td><td align="center" style="width:11.8%;">51,547</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">کارتريج</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">948,600</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">10,373,705</td><td align="center" style="width:9.8%;">9,820,505</td><td align="center" style="width:9.8%;">7,919</td><td align="center" style="width:11.8%;">77,765</td>
+					</tr><tr>
+						<td align="center" style="width:13.8%;">محصولات کارمزدي</td><td align="center" style="width:5.8%;">عدد</td><td align="center" style="width:9.8%;">1,300,900</td><td align="center" style="width:9.8%;">1,300,900</td><td align="center" style="width:9.8%;">140</td><td align="center" style="width:9.8%;">182</td><td align="center" style="width:9.8%;">7,327,320</td><td align="center" style="width:9.8%;">7,327,320</td><td align="center" style="width:9.8%;">384</td><td align="center" style="width:11.8%;">2,815</td>
+					</tr><tr class="lightBlueBg">
+						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">326,813</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">3,486,051</td>
+					</tr>
+				</tbody></table>
+			</div>
+                        </div>
+                    </td>
+		</tr>
+	</tbody></table>
+	
+        </div>
+    
+</div>
+
+            
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1395/12/30</span></legend>
+            <br>
+            <span id="txbDescMonth">فروش اسفند ماه  معادل  323،229 ميليون ريال مي باشد که با توجه به عدم قبول ثبت عدد منفي در رديف فروش کارتريج مبلغ تفاوت به ميزان 3،584 ميليون ريال در فروش  تا پايان اسفند درج گرديد.
+ ضمنا با توجه به عدم ثبت عدد منفي در خصوص مقدار فروش رديف هاي مکمل و ويال غير سفالسپورين از قرار دادن اعداد خودداري و در تعداد فروش تا پايان اسفند ماه منظور گرديده است .
+ در اطلاعات فوق مقدار فروش ناخالص و مبلغ فروش به صورت خالص افشاء گرديده است.</span>
+        </fieldset>
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1395/12/30</span></legend>
+            <br>
+            <span id="txbDescYear">در اطلاعات فوق مقدار فروش ناخالص و مبلغ فروش به صورت خالص افشاء گرديده است.</span>
+        </fieldset>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+
+</body></html>

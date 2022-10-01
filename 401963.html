@@ -1,0 +1,1439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src="../imgs/header_icon.png" alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000006">گزارش فعالیت ماهانه
+
+</option></select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=Vb7yQQQaQQQWZ2Y5z%2bSwwm3Qd1Ug%3d%3d&amp;rt=6&amp;let=58&amp;ct=0&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">بيمه پارسيان</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">3,000,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">پارسيان</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">660304</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px;">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1396/09/30</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1396/12/29</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+        
+        <span id="ctl00_ucSignature1_lblSigners"></span>
+    </div>
+    <div class="noteholder">
+        <img alt="information" src="../imgs/inforation.png">
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   <div id="ctl00_divPriceNote" class="note_price">
+        <p id="ctl00_pPriceNote">کلیه مبالغ درج شده به میلیون ریال می باشد</p>
+    </div>
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:block;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div style="width: 90%; margin: 0 auto;">
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                <div id="ctl00_cphBody_ucInsurance1_divInsurance" align="right">
+     <table id="ctl00_cphBody_ucInsurance1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
+	<tbody><tr>
+		<td style="width:100%">
+
+            </td>
+	</tr>
+	<tr>
+		<td>
+                <span id="ctl00_cphBody_ucInsurance1_lblInsuranceMsg" class="notify error" style="display:none;"></span>
+            </td>
+	</tr>
+	<tr>
+		<td>
+                    <div>
+			<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucInsurance1_dgInsurance" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+				<tbody><tr class="GridHeader">
+					<th scope="col">
+                                    </th></tr><tr>
+                                        <th rowspan="3" align="center" style="width:15%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblInsuranceTypeCaption">رشته بیمه ای</span>
+                                        </th>
+                                        <th colspan="6" align="center" style="width:40%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblMonthEndToDateCaption">دوره یک ماهه منتهی به ۱۳۹۶/۰۹/۳۰</span>
+                                        </th>
+                                        <th colspan="6" align="center" style="width:40%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ ۱۳۹۶/۰۹/۳۰</span>
+                                        </th>
+                                                   <th align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_Label1"></span>
+                                        </th>
+                                   
+                                    </tr>
+                                    <tr>
+
+                                        <th colspan="3" align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblInsuranceACaption">حق بیمه صادره (شامل قبولی اتکائی) </span>
+                                        </th>
+                                        <th colspan="3" align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblInsuranceBCaption">خسارت پرداختی</span>
+                                        </th>
+                                        <th colspan="3" align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblInsuranceCCaption">حق بیمه صادره (شامل قبولی اتکائی) </span>
+                                        </th>
+                                        <th colspan="3" align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblInsuranceDCaption">خسارت پرداختی</span>
+                                        </th>
+                                        <th align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_Label3"></span>
+                                        </th>
+                                       
+                                    </tr>
+                                    <tr>
+                                      
+                                        <th align="center">
+                                             <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblNumberACaption">تعداد</span> 
+
+                                        </th>
+                                        <th align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblPriceACaption"> مبلغ (میلیون ریال)</span>
+                                        </th>
+                                        <th align="center">
+                                                 <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblPercentACaption">سهم (درصد) </span>
+                                        </th>
+
+                                        <th align="center">
+                                             <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblNumberBCaption">تعداد</span> 
+
+                                        </th>
+                                        <th align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblPriceBCaption"> مبلغ (میلیون ریال)</span>
+                                        </th>
+                                        <th align="center">
+                                                 <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblPercentBCaption">سهم (درصد) </span>
+                                        </th>
+
+                                        <th align="center">
+                                             <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblNumberCCaption">تعداد</span> 
+
+                                        </th>
+                                        <th align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblPriceCCaption"> مبلغ (میلیون ریال)</span>
+                                        </th>
+                                        <th align="center">
+                                                 <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblPercentCCaption">سهم (درصد) </span>
+                                        </th>
+
+                                        <th align="center">
+                                             <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblNumberDCaption">تعداد</span> 
+
+                                        </th>
+                                        <th align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblPriceDCaption"> مبلغ (میلیون ریال)</span>
+                                        </th>
+                                        <th align="center">
+                                                 <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_lblPercentDCaption">سهم (درصد) </span>
+                                        </th>
+
+                                        <th align="center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl01_Label5"></span>
+                                        </th>
+                                    </tr>
+                                
+				<tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblInsuranceName">درمان</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblAANumber">۲,۹۹۴</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblAAPrice">۱۸۴,۱۶۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblAAPercent">۱۲</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblBBNumber">۱۵۹,۱۴۹</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblBBPrice">۴۰۳,۲۱۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblBBPercent">۴۱</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblCCNumber">۵۰,۴۵۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblCCPrice">۳,۱۰۳,۰۷۳</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblCCPercent">۲۲</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblDDNumber">۱,۴۷۳,۸۴۶</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblDDPrice">۳,۷۳۴,۰۸۷</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl02_lblDDPercent">۴۵</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblInsuranceName">ثالث - اجباری</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblAANumber">۳۲۹,۴۲۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblAAPrice">۷۳۴,۱۱۶</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblAAPercent">۴۶</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblBBNumber">۵,۲۷۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblBBPrice">۳۷۳,۸۴۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblBBPercent">۳۸</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblCCNumber">۲,۳۶۲,۰۰۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblCCPrice">۵,۲۶۳,۷۳۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblCCPercent">۳۸</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblDDNumber">۳۷,۶۱۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblDDPrice">۲,۶۶۸,۱۳۶</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl03_lblDDPercent">۳۲</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblInsuranceName">ثالث - مازاد و دیه</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblAANumber">۱۷۴,۸۵۴</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblAAPrice">۶,۳۱۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblAAPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblBBNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblBBPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblBBPercent">۰</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblCCNumber">۱,۱۹۳,۸۴۵</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblCCPrice">۴۳,۱۴۶</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblCCPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblDDNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblDDPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl04_lblDDPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblInsuranceName">حوادث سرنشين</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblAANumber">۲۶۰,۱۴۶</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblAAPrice">۱۰۰,۴۰۷</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblAAPercent">۶</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblBBNumber">۶,۲۸۶</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblBBPrice">۲۹,۹۵۴</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblBBPercent">۳</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblCCNumber">۱,۷۶۲,۳۳۸</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblCCPrice">۶۸۰,۲۰۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblCCPercent">۵</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblDDNumber">۴۵,۲۱۷</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblDDPrice">۲۱۵,۴۶۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl05_lblDDPercent">۳</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblInsuranceName">بدنه خودرو</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblAANumber">۲۹,۰۷۹</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblAAPrice">۱۲۵,۴۰۱</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblAAPercent">۸</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblBBNumber">۲,۴۴۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblBBPrice">۵۰,۴۷۲</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblBBPercent">۵</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblCCNumber">۱۶۹,۱۵۴</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblCCPrice">۷۲۹,۴۵۴</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblCCPercent">۵</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblDDNumber">۲۱,۵۰۸</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblDDPrice">۴۴۴,۶۷۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl06_lblDDPercent">۵</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblInsuranceName">آتش سوزی</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblAANumber">۱۷۷</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblAAPrice">۳۵,۴۵۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblAAPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblBBNumber">۱۳۹</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblBBPrice">۸,۷۷۸</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblBBPercent">۱</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblCCNumber">۳,۴۱۷</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblCCPrice">۶۸۶,۰۴۷</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblCCPercent">۵</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblDDNumber">۳,۰۷۸</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblDDPrice">۱۹۴,۳۲۸</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl07_lblDDPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblInsuranceName">باربری</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblAANumber">۶,۰۲۸</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblAAPrice">۳۹,۴۱۴</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblAAPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblBBNumber">۹۷</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblBBPrice">۱۴,۰۹۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblBBPercent">۱</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblCCNumber">۲۷,۷۶۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblCCPrice">۱۸۱,۵۱۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblCCPercent">۱</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblDDNumber">۱۷۳</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblDDPrice">۲۵,۱۶۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl08_lblDDPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblInsuranceName">مسئوليت</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblAANumber">۵,۱۴۵</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblAAPrice">۶۲,۲۷۲</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblAAPercent">۴</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblBBNumber">۸۷۲</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblBBPrice">۴۰,۸۵۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblBBPercent">۴</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblCCNumber">۶۱,۸۶۴</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblCCPrice">۷۴۸,۷۶۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblCCPercent">۵</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblDDNumber">۹,۳۹۳</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblDDPrice">۴۴۰,۰۵۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl09_lblDDPercent">۵</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblInsuranceName">مهندسی</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblAANumber">۱,۰۱۴</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblAAPrice">۳۹,۷۴۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblAAPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblBBNumber">۱۰۷</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblBBPrice">۱۱,۹۴۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblBBPercent">۱</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblCCNumber">۵,۹۱۹</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblCCPrice">۲۳۱,۹۸۸</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblCCPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblDDNumber">۱,۴۰۲</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblDDPrice">۱۵۶,۳۲۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl10_lblDDPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblInsuranceName">کشتی</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblAANumber">۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblAAPrice">۵۳۷</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblAAPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblBBNumber">۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblBBPrice">۱,۰۲۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblBBPercent">۰</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblCCNumber">۶</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblCCPrice">۲,۵۸۶</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblCCPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblDDNumber">۳</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblDDPrice">۲,۹۷۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl11_lblDDPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblInsuranceName">هواپیما</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblAANumber">۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblAAPrice">۴۱,۲۰۳</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblAAPercent">۳</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblBBNumber">۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblBBPrice">۱۰۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblBBPercent">۰</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblCCNumber">۳۹۶</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblCCPrice">۱۲۳,۵۴۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblCCPercent">۱</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblDDNumber">۱۶</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblDDPrice">۱۳۰,۸۵۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl12_lblDDPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblInsuranceName">نفت و انرژی</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblAANumber">۳۳</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblAAPrice">۲۸,۰۰۸</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblAAPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblBBNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblBBPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblBBPercent">۰</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblCCNumber">۴۰۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblCCPrice">۳۳۸,۴۰۱</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblCCPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblDDNumber">۱,۶۶۹</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblDDPrice">۱,۱۷۷</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl13_lblDDPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblInsuranceName">حوادث</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblAANumber">۱,۰۲۴</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblAAPrice">۵,۲۳۴</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblAAPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblBBNumber">۱۹</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblBBPrice">۷۷۲</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblBBPercent">۰</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblCCNumber">۱۰,۴۶۸</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblCCPrice">۵۳,۴۹۸</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblCCPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblDDNumber">۲۱۴</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblDDPrice">۸,۵۱۸</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl14_lblDDPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblInsuranceName">اعتباری</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblAANumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblAAPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblAAPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblBBNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblBBPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblBBPercent">۰</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblCCNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblCCPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblCCPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblDDNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblDDPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl15_lblDDPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblInsuranceName">زندگی - اندوخته دار</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblAANumber">۳,۸۸۸</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblAAPrice">۱۸۳,۰۰۴</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblAAPercent">۱۱</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblBBNumber">۵۳۸</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblBBPrice">۳۸,۲۸۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblBBPercent">۴</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblCCNumber">۳۱,۲۵۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblCCPrice">۱,۴۷۰,۹۹۹</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblCCPercent">۱۱</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblDDNumber">۳,۲۵۷</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblDDPrice">۲۳۱,۷۰۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl16_lblDDPercent">۳</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblInsuranceName">زندگی - غیر اندوخته دار</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblAANumber">۲۲</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblAAPrice">۱۱,۲۳۵</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblAAPercent">۱</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblBBNumber">۳۴</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblBBPrice">۱۱,۲۶۲</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblBBPercent">۱</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblCCNumber">۳۴۹</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblCCPrice">۱۷۵,۱۳۷</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblCCPercent">۱</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblDDNumber">۳۹۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblDDPrice">۱۲۸,۳۳۲</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl17_lblDDPercent">۲</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblInsuranceName">پول</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblAANumber">۱</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblAAPrice">۲,۳۴۱</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblAAPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblBBNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblBBPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblBBPercent">۰</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblCCNumber">۱,۰۶۲</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblCCPrice">۴۳,۴۴۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblCCPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblDDNumber">۶</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblDDPrice">۳,۰۵۶</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl18_lblDDPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    <div style="text-align:center;vertical-align:central">
+                                
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblInsuranceName">سایر</span>
+
+                                        </div></td><td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblAANumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblAAPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblAAPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblBBNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblBBPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblBBPercent">۰</span>
+                                        </td>
+
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblCCNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblCCPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblCCPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblDDNumber">۰</span>
+                                        </td>
+                                        <td style="text-align:center;width:9%">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblDDPrice">۰</span>
+                                        </td>
+                                        <td style="text-align:center">
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl19_lblDDPercent">۰</span>
+                                        </td>
+
+                                        <td style="text-align:center">
+
+                                        </td>
+                                    
+                                   
+                                
+				</tr><tr>
+					<td>
+                                    </td></tr><tr class="lightBlueBg" style="text-align:center">
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_lblSumCaption">جمع</span>
+                                        </td>
+
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumAANumber">۸۱۳,۸۲۷</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumAAPrice">۱,۵۹۸,۸۵۹</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumAAPercent">۱۰۰</span>
+                                        </td>
+
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumBBNumber">۱۷۴,۹۵۴</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumBBPrice">۹۸۴,۶۱۱</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumBBPercent">۱۰۰</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumCCNumber">۵,۶۸۰,۶۸۰</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumCCPrice">۱۳,۸۷۵,۵۲۷</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumCCPercent">۱۰۰</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumDDNumber">۱,۵۹۷,۷۸۴</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumDDPrice">۸,۳۸۴,۸۴۳</span>
+                                        </td>
+                                        <td>
+                                            <span id="ctl00_cphBody_ucInsurance1_dgInsurance_ctl20_sumDDPercent">۱۰۰</span>
+                                        </td>
+                                        <td>
+                                            <span></span>
+                                        </td>
+                                    </tr>
+
+                                
+				
+			</tbody></table>
+		</div>
+            </td>
+	</tr>
+</tbody></table>
+
+ </div>
+            
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1396/09/30</span></legend>
+            <br>
+            <span id="txbDescMonth"></span>
+        </fieldset>
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1396/09/30</span></legend>
+            <br>
+            <span id="txbDescYear"></span>
+        </fieldset>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+
+</body></html>

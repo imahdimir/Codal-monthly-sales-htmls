@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src="../imgs/header_icon.png" alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000003">گزارش فعالیت ماهانه
+
+</option></select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=at7khKHcXsR2Wa1NGNSNXg%3d%3d&amp;rt=3&amp;let=58&amp;ct=0&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">بانک ملت</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">50,000,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">وبملت</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">651906</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px;">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1397/05/31</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1397/12/29</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src="../imgs/inforation.png">
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   <div id="ctl00_divPriceNote" class="note_price">
+        <p id="ctl00_pPriceNote">کلیه مبالغ درج شده به میلیون ریال می باشد</p>
+    </div>
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div style="width: 90%; margin: 0 auto;">
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                <div id="ctl00_cphBody_ucBank2_pnlBankV2">
+	
+        <style>
+            table tr th {
+                padding: 3px !important;
+            }
+
+            .tbl-footer td {
+                text-align: center;
+            }
+        </style>
+        <script type="text/javascript">
+            var isFirstPeriod = '#ctl00_cphBody_ucBank2_hdfIsFirstPeriod';
+
+            $(document).ready(function () {
+                if ($(isFirstPeriod).val() == 'true')
+                    $('.non-first-period').hide();
+                else
+                    $('.non-first-period').show();
+            });
+
+            function pageLoad() {
+                if ($(isFirstPeriod).val() == 'true')
+                    $('.non-first-period').hide();
+                else
+                    $('.non-first-period').show();
+            }
+        </script>
+
+        <table id="ctl00_cphBody_ucBank2_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
+		<tbody><tr>
+			<td>
+                    <span id="ctl00_cphBody_ucBank2_lblProductionMsg" class="notify error" style="display:none;"></span>
+                </td>
+		</tr>
+		<tr>
+			<td>
+                    <table style="width: 100%; text-align: center;" class="gv">
+                        <tbody><tr>
+                            <th style="width: 12%; height: 95px;">
+                                <span id="ctl00_cphBody_ucBank2_lblFacilityDescription">شرح</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblEarlyRemainFacility">مانده اول ماه تسهیلات</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblEarlyRemainFacility_Modifications">اصلاحات</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblEarlyRemainFacility_Modified">مائده اول ماه تسهیلات -اصلاح شده</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblDuringGrantedFacility">تسهیلات اعطایی طی دوره </span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblDuringProceedFacility">تسهیلات وصولی طی دوره</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lbl_FacilityEndPeriodBalance">مانده تسهیلات اعطایی پایان دوره</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblTotal_PrevMonth">درآمد تسهیلات-از ابتدای سال مالی تا پایان مورخ 1397/04/31</span>
+                            </th>
+                            <th style="width: 8%" class="non-first-period">
+                                <span id="ctl00_cphBody_ucBank2_lblTotal_PrevMonth_Modifications">اصلاحات</span>
+                            </th>
+                            <th style="width: 8%" class="non-first-period">
+                                <span id="ctl00_cphBody_ucBank2_lblTotal_PrevMonth_Modified">درآمد تسهیلات از ابتدای سال مالی تا پایان مورخ 1397/04/31 -اصلاح شده</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblFacilitiesRevenueDuringMonth">درآمد تسهیلات اعطایی طی دوره یک ماهه منتهی به 1397/05/31</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblTotalFacilitiesRevenue">جمع درآمد تسهیلات اعطایی از ابتدای سال مالی تا پایان مورخ 1397/05/31</span>
+                            </th>
+                        </tr>
+                    </tbody></table>
+                </td>
+		</tr>
+		<tr>
+			<td>
+                    <div>
+                        <div>
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucBank2_dgFacility" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+					<tbody><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl02$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl02_hdnType" value="1">
+                                        <span>فروش اقساطي</span>
+                                    </td><td align="center" style="width:8%;">148,439,488</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">148,439,488</td><td align="center" style="width:8%;">21,860,426</td><td align="center" style="width:8%;">22,463,678</td><td align="center" style="width:8%;">147,836,236</td><td align="center" style="width:8%;">7,852,340</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">7,852,340</td><td align="center" style="width:8%;">2,149,809</td><td align="center" style="width:8%;">10,002,149</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl03$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl03_hdnType" value="2">
+                                        <span>جعاله</span>
+                                    </td><td align="center" style="width:8%;">27,590,053</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">27,590,053</td><td align="center" style="width:8%;">882,221</td><td align="center" style="width:8%;">817,600</td><td align="center" style="width:8%;">27,654,674</td><td align="center" style="width:8%;">1,060,331</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">1,060,331</td><td align="center" style="width:8%;">278,690</td><td align="center" style="width:8%;">1,339,021</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl04$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl04_hdnType" value="3">
+                                        <span>اجاره به شرط تمليک</span>
+                                    </td><td align="center" style="width:8%;">2,385,908</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">2,385,908</td><td align="center" style="width:8%;">160,528</td><td align="center" style="width:8%;">215,120</td><td align="center" style="width:8%;">2,331,316</td><td align="center" style="width:8%;">160,784</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">160,784</td><td align="center" style="width:8%;">43,568</td><td align="center" style="width:8%;">204,352</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl05$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl05_hdnType" value="4">
+                                        <span>سلف</span>
+                                    </td><td align="center" style="width:8%;">32,633,516</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">32,633,516</td><td align="center" style="width:8%;">7,613,705</td><td align="center" style="width:8%;">5,171,686</td><td align="center" style="width:8%;">35,075,535</td><td align="center" style="width:8%;">2,242,672</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">2,242,672</td><td align="center" style="width:8%;">684,045</td><td align="center" style="width:8%;">2,926,717</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl06$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl06_hdnType" value="5">
+                                        <span>مضاربه</span>
+                                    </td><td align="center" style="width:8%;">24,499,529</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">24,499,529</td><td align="center" style="width:8%;">4,433,542</td><td align="center" style="width:8%;">4,148,030</td><td align="center" style="width:8%;">24,785,041</td><td align="center" style="width:8%;">744,566</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">744,566</td><td align="center" style="width:8%;">226,637</td><td align="center" style="width:8%;">971,203</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl07$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl07_hdnType" value="6">
+                                        <span>مشارکت مدني</span>
+                                    </td><td align="center" style="width:8%;">337,745,244</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">337,745,244</td><td align="center" style="width:8%;">142,595,036</td><td align="center" style="width:8%;">138,619,137</td><td align="center" style="width:8%;">341,721,143</td><td align="center" style="width:8%;">15,662,064</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">15,662,064</td><td align="center" style="width:8%;">4,014,056</td><td align="center" style="width:8%;">19,676,120</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl08$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl08_hdnType" value="7">
+                                        <span>خريد دين</span>
+                                    </td><td align="center" style="width:8%;">26,757,407</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">26,757,407</td><td align="center" style="width:8%;">10,912,988</td><td align="center" style="width:8%;">10,607,023</td><td align="center" style="width:8%;">27,063,372</td><td align="center" style="width:8%;">2,158,907</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">2,158,907</td><td align="center" style="width:8%;">545,118</td><td align="center" style="width:8%;">2,704,025</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl09$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl09_hdnType" value="8">
+                                        <span>بدهکاران بابت اعتبارات اسناد پرداخت شده</span>
+                                    </td><td align="center" style="width:8%;">35,847,419</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">35,847,419</td><td align="center" style="width:8%;">2,099,142</td><td align="center" style="width:8%;">3,841,269</td><td align="center" style="width:8%;">34,105,292</td><td align="center" style="width:8%;">343,731</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">343,731</td><td align="center" style="width:8%;">49,191</td><td align="center" style="width:8%;">392,922</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl10$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl10_hdnType" value="9">
+                                        <span>بدهکاران بابت ضمانت نامه هاي پرداخت شده</span>
+                                    </td><td align="center" style="width:8%;">6,090,803</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">6,090,803</td><td align="center" style="width:8%;">625,843</td><td align="center" style="width:8%;">539,572</td><td align="center" style="width:8%;">6,177,074</td><td align="center" style="width:8%;">1,887,226</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">1,887,226</td><td align="center" style="width:8%;">258,455</td><td align="center" style="width:8%;">2,145,681</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl11$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl11_hdnType" value="10">
+                                        <span>تسهيلات ارزي</span>
+                                    </td><td align="center" style="width:8%;">734,813,807</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">734,813,807</td><td align="center" style="width:8%;">7,339,795</td><td align="center" style="width:8%;">43,610,980</td><td align="center" style="width:8%;">698,542,622</td><td align="center" style="width:8%;">7,360,094</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">7,360,094</td><td align="center" style="width:8%;">1,915,178</td><td align="center" style="width:8%;">9,275,272</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl12$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl12_hdnType" value="11">
+                                        <span>تسهيلات قرض الحسنه</span>
+                                    </td><td align="center" style="width:8%;">60,902,268</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">60,902,268</td><td align="center" style="width:8%;">4,550,662</td><td align="center" style="width:8%;">2,803,343</td><td align="center" style="width:8%;">62,649,587</td><td align="center" style="width:8%;">1,513,298</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">1,513,298</td><td align="center" style="width:8%;">179,097</td><td align="center" style="width:8%;">1,692,395</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgFacility$ctl13$hdnType" id="ctl00_cphBody_ucBank2_dgFacility_ctl13_hdnType" value="12">
+                                        <span>ساير تسهيلات</span>
+                                    </td><td align="center" style="width:8%;">147,676,439</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">147,676,439</td><td align="center" style="width:8%;">20,196,519</td><td align="center" style="width:8%;">21,840,168</td><td align="center" style="width:8%;">146,032,790</td><td align="center" style="width:8%;">9,411,771</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">9,411,771</td><td align="center" style="width:8%;">2,402,806</td><td align="center" style="width:8%;">11,814,577</td>
+					</tr><tr class="lightBlueBg">
+						<td style="width:12%;">جمع</td><td align="center" style="width:8%;">1,585,381,881</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">1,585,381,881</td><td align="center" style="width:8%;">223,270,407</td><td align="center" style="width:8%;">254,677,606</td><td align="center" style="width:8%;">1,553,974,682</td><td align="center" style="width:8%;">50,397,784</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">50,397,784</td><td align="center" style="width:8%;">12,746,650</td><td align="center" style="width:8%;">63,144,434</td>
+					</tr>
+				</tbody></table>
+			</div>
+                    </div>
+                </td>
+		</tr>
+		<tr>
+			<td style="height: 20px"></td>
+		</tr>
+		<tr>
+			<td>
+                    <table style="width: 100%; text-align: center;" class="gv">
+                        <tbody><tr>
+                            <th style="width: 12%; height: 95px;">
+                                <span id="ctl00_cphBody_ucBank2_lblDepositDescription">شرح</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblEarlyRemainDeposit">مانده اول ماه سپرده های سرمایه گذاری</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblEarlyRemainDeposit_Modifications">اصلاحات</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblEarlyRemainDeposit_Modified">مانده اول ماه سپرده های سرمایه گذاری-اصلاح شده</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblDuringGrantedDeposit">سپرده های دریافتی طی دوره </span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblDuringSettledDeposit">سپرده های تسویه شده طی دوره </span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblInvestmentDepositsEndPeriodBalance">مانده سپرده های سرمایه گذاری پایان دوره</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblTotal_PrevMonth_Deposit">سود سپرده های سرمایه گذاری-از ابتدای سال مالی تا پایان مورخ 1397/04/31</span>
+                            </th>
+                            <th style="width: 8%" class="non-first-period">
+                                <span id="ctl00_cphBody_ucBank2_lblTotal_PrevMonth_Modifications_Deposit">اصلاحات</span>
+                            </th>
+                            <th style="width: 8%" class="non-first-period">
+                                <span id="ctl00_cphBody_ucBank2_lblTotal_PrevMonth_Modified_Deposit">سود سپرده های سرمایه گذاری تا پایان مورخ 1397/04/31 -اصلاح شده</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblDuringDepositRevenue">سود سپرده های سرمایه گذاری طی دوره یک ماهه منتهی به 1397/05/31</span>
+                            </th>
+                            <th style="width: 8%">
+                                <span id="ctl00_cphBody_ucBank2_lblTotalDuringDepositRevenue">جمع سود سپرده های سرمایه گذاری از ابتدای سال تا پایان  مورخ 1397/05/31</span>
+                            </th>
+                        </tr>
+                    </tbody></table>
+                </td>
+		</tr>
+		<tr>
+			<td>
+                    <div>
+                        <div>
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucBank2_dgDeposit" style="border-style:Solid;width:100%;border-collapse:collapse;cursor: pointer">
+					<tbody><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl02$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl02_hdnType" value="13">
+                                        <span>سپرده هاي قرض الحسنه جاري ريالي</span>
+                                    </td><td align="center" style="width:8%;">252,023,538</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">252,023,538</td><td align="center" style="width:8%;">2,355,301,698</td><td align="center" style="width:8%;">2,313,201,113</td><td align="center" style="width:8%;">294,124,123</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl03$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl03_hdnType" value="14">
+                                        <span>سپرده هاي قرض الحسنه جاري ارزي</span>
+                                    </td><td align="center" style="width:8%;">61,471,349</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">61,471,349</td><td align="center" style="width:8%;">35,091,010</td><td align="center" style="width:8%;">50,031,038</td><td align="center" style="width:8%;">46,531,321</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl04$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl04_hdnType" value="15">
+                                        <span>سپرده هاي قرض الحسنه پس انداز ريالي</span>
+                                    </td><td align="center" style="width:8%;">73,073,690</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">73,073,690</td><td align="center" style="width:8%;">366,582,385</td><td align="center" style="width:8%;">359,830,603</td><td align="center" style="width:8%;">79,825,472</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl05$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl05_hdnType" value="16">
+                                        <span>سپرده هاي قرض الحسنه پس انداز ارزي</span>
+                                    </td><td align="center" style="width:8%;">84,843,985</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">84,843,985</td><td align="center" style="width:8%;">29,596,247</td><td align="center" style="width:8%;">31,550,325</td><td align="center" style="width:8%;">82,889,907</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl06$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl06_hdnType" value="17">
+                                        <span>سپرده هاي کوتاه مدت</span>
+                                    </td><td align="center" style="width:8%;">487,201,900</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">487,201,900</td><td align="center" style="width:8%;">1,562,197,379</td><td align="center" style="width:8%;">1,544,691,177</td><td align="center" style="width:8%;">504,708,102</td><td align="center" style="width:8%;">14,620,382</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">14,620,382</td><td align="center" style="width:8%;">4,041,047</td><td align="center" style="width:8%;">18,661,429</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl07$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl07_hdnType" value="18">
+                                        <span>سپرده هاي کوتاه مدت ويژه</span>
+                                    </td><td align="center" style="width:8%;">74</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">74</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">74</td><td align="center" style="width:8%;">1,342</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">1,342</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">1,342</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl08$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl08_hdnType" value="19">
+                                        <span>سپرده هاي بلند مدت يک ساله</span>
+                                    </td><td align="center" style="width:8%;">369,201,132</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">369,201,132</td><td align="center" style="width:8%;">31,691,658</td><td align="center" style="width:8%;">41,579,698</td><td align="center" style="width:8%;">359,313,092</td><td align="center" style="width:8%;">22,021,514</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">22,021,514</td><td align="center" style="width:8%;">4,780,204</td><td align="center" style="width:8%;">26,801,718</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl09$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl09_hdnType" value="20">
+                                        <span>سپرده هاي بلند مدت دو ساله</span>
+                                    </td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl10$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl10_hdnType" value="21">
+                                        <span>سپرده هاي بلند مدت سه ساله</span>
+                                    </td><td align="center" style="width:8%;">506,604</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">506,604</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">123,510</td><td align="center" style="width:8%;">383,094</td><td align="center" style="width:8%;">87,141</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">87,141</td><td align="center" style="width:8%;">6,134</td><td align="center" style="width:8%;">93,275</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl11$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl11_hdnType" value="22">
+                                        <span>سپرده هاي بلند مدت چهار ساله</span>
+                                    </td><td align="center" style="width:8%;">537,622</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">537,622</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">43,533</td><td align="center" style="width:8%;">494,089</td><td align="center" style="width:8%;">39,443</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">39,443</td><td align="center" style="width:8%;">8,087</td><td align="center" style="width:8%;">47,530</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl12$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl12_hdnType" value="23">
+                                        <span>سپرده هاي بلند مدت پنج ساله</span>
+                                    </td><td align="center" style="width:8%;">41,504,996</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">41,504,996</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">1,394,126</td><td align="center" style="width:8%;">40,110,870</td><td align="center" style="width:8%;">2,645,972</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">2,645,972</td><td align="center" style="width:8%;">580,115</td><td align="center" style="width:8%;">3,226,087</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl13$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl13_hdnType" value="24">
+                                        <span>گواهي سپرده ويژه سرمايه گذاري عام</span>
+                                    </td><td align="center" style="width:8%;">193,973,658</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">193,973,658</td><td align="center" style="width:8%;">24,555,675</td><td align="center" style="width:8%;">22,720,133</td><td align="center" style="width:8%;">195,809,200</td><td align="center" style="width:8%;">11,109,322</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">11,109,322</td><td align="center" style="width:8%;">2,913,526</td><td align="center" style="width:8%;">14,022,848</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl14$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl14_hdnType" value="25">
+                                        <span>سپرده هاي کوتاه مدت ارزي</span>
+                                    </td><td align="center" style="width:8%;">4,977,083</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">4,977,083</td><td align="center" style="width:8%;">342,375</td><td align="center" style="width:8%;">611,424</td><td align="center" style="width:8%;">4,708,034</td><td align="center" style="width:8%;">56,891</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">56,891</td><td align="center" style="width:8%;">17,892</td><td align="center" style="width:8%;">74,783</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl15$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl15_hdnType" value="26">
+                                        <span>سپرده هاي بلندمدت ارزي</span>
+                                    </td><td align="center" style="width:8%;">76,527,903</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">76,527,903</td><td align="center" style="width:8%;">21,661,203</td><td align="center" style="width:8%;">32,027,322</td><td align="center" style="width:8%;">66,161,784</td><td align="center" style="width:8%;">701,605</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">701,605</td><td align="center" style="width:8%;">170,284</td><td align="center" style="width:8%;">871,889</td>
+					</tr><tr>
+						<td style="width:12%;">
+                                        <input type="hidden" name="ctl00$cphBody$ucBank2$dgDeposit$ctl16$hdnType" id="ctl00_cphBody_ucBank2_dgDeposit_ctl16_hdnType" value="27">
+                                        <span>ساير</span>
+                                    </td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">0</td>
+					</tr><tr class="lightBlueBg">
+						<td style="width:12%;">جمع</td><td align="center" style="width:8%;">1,645,843,534</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">1,645,843,534</td><td align="center" style="width:8%;">4,427,019,630</td><td align="center" style="width:8%;">4,397,804,002</td><td align="center" style="width:8%;">1,675,059,162</td><td align="center" style="width:8%;">51,283,612</td><td align="center" style="width:8%;">0</td><td align="center" style="width:8%;">51,283,612</td><td align="center" style="width:8%;">12,517,289</td><td align="center" style="width:8%;">63,800,901</td>
+					</tr>
+				</tbody></table>
+			</div>
+                    </div>
+                </td>
+		</tr>
+	</tbody></table>
+	        
+        <input name="ctl00$cphBody$ucBank2$hdfIsFirstPeriod" type="hidden" id="ctl00_cphBody_ucBank2_hdfIsFirstPeriod" value="false">
+    
+</div>
+
+            
+        <div class="clear" style="height: 20px;"></div>
+        
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblCorrectionComment" style="color:graytext;font-size:Small;">کادر توضیحات در مورد اصلاحات</span></legend>
+            <br>
+            <span id="txtCorrectionComment"></span>
+        </fieldset>
+        
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1397/05/31</span></legend>
+            <br>
+            <span id="txbDescMonth">اطلاعات جدول تسهيلات شامل مانده کل مصارف تسهيلاتي ريال و ارز (جاري و مطالباتي) و قبل از کسر ذخيره مطالبات مشکوک الوصول مي باشد.
+
+اطلاعات جدول سپرده ها شامل مانده و گردش سپرده ها در دوره زماني مورد گزارش مي باشد.</span>
+        </fieldset>
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط اطلاعات تجمعی از ابتدای سال تا پایان مورخ 1397/05/31</span></legend>
+            <br>
+            <span id="txbDescYear"></span>
+        </fieldset>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+
+</body></html>

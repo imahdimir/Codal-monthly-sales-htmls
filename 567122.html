@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src="../imgs/header_icon.png" alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000000">گزارش فعالیت ماهانه
+
+</option></select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=NpKTaLMKwvvVyokA0OpJHw%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">پتروشيمي شازند (پتروشيمي اراک)</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">8,064,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">شاراک</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">441126</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px;">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1398/05/31</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1398/12/29</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src="../imgs/inforation.png">
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br>
+
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                <div id="ctl00_cphBody_ucProduct2_pnlProduction">
+	
+
+        <script type="text/javascript" src="../../js/PKI.js"></script>
+        <script type="text/javascript" src="../../js/Common.js"></script>
+
+        <script type="text/javascript">
+            var isFirstPeriod = '#ctl00_cphBody_ucProduct2_hdfIsFirstPeriod';
+
+    $(document).ready(function(){
+        if ($(isFirstPeriod).val() == 'true')
+            $('.non-first-period').hide();
+        else
+            $('.non-first-period').show();
+    });
+
+    function pageLoad() {
+        if ($(isFirstPeriod).val() == 'true')
+            $('.non-first-period').hide();
+        else
+            $('.non-first-period').show();
+    }
+        </script>
+
+        <div id="ctl00_cphBody_ucProduct2_divProduction" align="right" includeinexcel="true" style="overflow-x:auto;">
+            <table id="ctl00_cphBody_ucProduct2_Table1" cellpadding="0" cellspacing="0" width="200%" align="right" dir="rtl">
+		<tbody><tr>
+			<td>
+                        <span id="ctl00_cphBody_ucProduct2_lblProductionMsg" class="notify error" style="display:none;"></span>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <table class="gv" style="text-align: center; width: 100%;">
+                            <tbody><tr>
+                                <th colspan="2" style="width: 14%; height: 30px; text-align: center;">شرح</th>
+                                <th colspan="4" style="width: 18%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevMonthEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1398/04/31</bdo></span>
+                                </th>
+                                <th colspan="3" style="width: 14%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblReformCaption">اصلاحات</span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1398/04/31</bdo> - اصلاح شده</span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;">
+                                    <span id="ctl00_cphBody_ucProduct2_lblMonthEndToDateCaption">دوره یک ماهه منتهی به <bdo dir="ltr">1398/05/31</bdo></span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;">
+                                    <span id="ctl00_cphBody_ucProduct2_lblYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1398/05/31</bdo></span>
+                                </th>
+
+                            </tr>
+                            <tr>
+                                <th align="center" style="width: 10%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblProductNameCaption">نام محصول</span>
+                                </th>
+                                <th align="center" style="width: 3%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblProductUnitCaption">واحد</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 6.75%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProductionModifiedCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesModifiedCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountModifiedCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 6.75%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProdctionMonthCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesMonthCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 6.75%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesRateMonthCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountMonthCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 6.75%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+
+                            </tr>
+                        </tbody></table>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <div>
+                            <div>
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct2_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
+					<tbody><tr>
+						<td align="center" style="width:10%;">پروپيلن</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۳۸,۸۹۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۳۸,۸۹۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۳۸,۸۹۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">هيدروکربور خام</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۷۱,۱۵۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۷۱,۱۵۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۳۰۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۷۱,۴۶۱</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">هيدروژن</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۱,۲۷۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۱,۲۷۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۱</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۱,۲۷۵</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">پلي اتيلن سنگين</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۳۲,۰۰۱</td><td align="center" style="width:3.5%;">۳۳,۱۸۵</td><td align="center" style="width:6.75%;">۱۱۵,۸۷۵,۹۶۸</td><td align="center" style="width:5%;">۳,۸۴۵,۳۴۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۳۲,۰۰۱</td><td align="center" style="width:3.5%;">۳۳,۱۸۵</td><td align="center" style="width:6.75%;">۱۱۵,۸۷۵,۹۶۸</td><td align="center" style="width:5%;">۳,۸۴۵,۳۴۴</td><td align="center" style="width:3.5%;">۶۴</td><td align="center" style="width:3.5%;">۳,۱۴۷</td><td align="center" style="width:6.75%;">۱۲۰,۱۵۵,۳۸۶</td><td align="center" style="width:5%;">۳۷۸,۱۲۹</td><td align="center" style="width:3.5%;">۳۲,۰۶۵</td><td align="center" style="width:3.5%;">۳۶,۳۳۲</td><td align="center" style="width:6.75%;">۱۱۶,۲۴۶,۶۴۲</td><td align="center" style="width:5%;">۴,۲۲۳,۴۷۳</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">پلي اتيلن سبک خطي</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۱۹,۵۱۳</td><td align="center" style="width:3.5%;">۲۰,۵۹۱</td><td align="center" style="width:6.75%;">۱۰۰,۴۷۷,۳۴۴</td><td align="center" style="width:5%;">۲,۰۶۸,۹۲۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۱۹,۵۱۳</td><td align="center" style="width:3.5%;">۲۰,۵۹۱</td><td align="center" style="width:6.75%;">۱۰۰,۴۷۷,۳۴۴</td><td align="center" style="width:5%;">۲,۰۶۸,۹۲۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۹۰۱</td><td align="center" style="width:6.75%;">۹۸,۹۹۴,۴۵۱</td><td align="center" style="width:5%;">۸۹,۱۹۴</td><td align="center" style="width:3.5%;">۱۹,۵۱۳</td><td align="center" style="width:3.5%;">۲۱,۴۹۲</td><td align="center" style="width:6.75%;">۱۰۰,۴۱۵,۱۷۸</td><td align="center" style="width:5%;">۲,۱۵۸,۱۲۳</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">بوتاداين</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۹,۱۱۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۹,۱۱۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۲۷۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۹,۳۹۶</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">اسيد استيک</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۶,۴۴۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۶,۴۴۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۶,۴۴۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">وينيل استات</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۸,۷۲۱</td><td align="center" style="width:3.5%;">۸,۱۷۸</td><td align="center" style="width:6.75%;">۹۴,۸۸۰,۲۸۹</td><td align="center" style="width:5%;">۷۷۵,۹۳۱</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۸,۷۲۱</td><td align="center" style="width:3.5%;">۸,۱۷۸</td><td align="center" style="width:6.75%;">۹۴,۸۸۰,۲۸۹</td><td align="center" style="width:5%;">۷۷۵,۹۳۱</td><td align="center" style="width:3.5%;">۳</td><td align="center" style="width:3.5%;">۱,۴۰۵</td><td align="center" style="width:6.75%;">۹۹,۱۲۸,۱۱۴</td><td align="center" style="width:5%;">۱۳۹,۲۷۵</td><td align="center" style="width:3.5%;">۸,۷۲۴</td><td align="center" style="width:3.5%;">۹,۵۸۳</td><td align="center" style="width:6.75%;">۹۵,۵۰۳,۰۷۸</td><td align="center" style="width:5%;">۹۱۵,۲۰۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">اتيلن اکسايد</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۳۷,۴۳۰</td><td align="center" style="width:3.5%;">۱,۴۵۷</td><td align="center" style="width:6.75%;">۱۱۴,۳۷۳,۳۷۰</td><td align="center" style="width:5%;">۱۶۶,۶۴۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۳۷,۴۳۰</td><td align="center" style="width:3.5%;">۱,۴۵۷</td><td align="center" style="width:6.75%;">۱۱۴,۳۷۳,۳۷۰</td><td align="center" style="width:5%;">۱۶۶,۶۴۲</td><td align="center" style="width:3.5%;">۷۳</td><td align="center" style="width:3.5%;">۱۸</td><td align="center" style="width:6.75%;">۱۱۷,۷۷۷,۷۷۸</td><td align="center" style="width:5%;">۲,۱۲۰</td><td align="center" style="width:3.5%;">۳۷,۵۰۳</td><td align="center" style="width:3.5%;">۱,۴۷۵</td><td align="center" style="width:6.75%;">۱۱۴,۴۱۴,۹۱۵</td><td align="center" style="width:5%;">۱۶۸,۷۶۲</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">اتيلن گلايکول</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۳۱,۰۷۲</td><td align="center" style="width:3.5%;">۳۳,۳۳۳</td><td align="center" style="width:6.75%;">۵۰,۶۱۰,۸۹۶</td><td align="center" style="width:5%;">۱,۶۸۷,۰۱۳</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۳۱,۰۷۲</td><td align="center" style="width:3.5%;">۳۳,۳۳۳</td><td align="center" style="width:6.75%;">۵۰,۶۱۰,۸۹۶</td><td align="center" style="width:5%;">۱,۶۸۷,۰۱۳</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۶,۹۱۹</td><td align="center" style="width:6.75%;">۵۳,۰۴۱,۴۸۰</td><td align="center" style="width:5%;">۳۶۶,۹۹۴</td><td align="center" style="width:3.5%;">۳۱,۰۷۲</td><td align="center" style="width:3.5%;">۴۰,۲۵۲</td><td align="center" style="width:6.75%;">۵۱,۰۲۸,۶۹۴</td><td align="center" style="width:5%;">۲,۰۵۴,۰۰۷</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">دو اتيل هگزانول</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۲۲,۱۷۹</td><td align="center" style="width:3.5%;">۲۲,۶۰۸</td><td align="center" style="width:6.75%;">۱۸۳,۹۰۵,۶۵۳</td><td align="center" style="width:5%;">۴,۱۵۷,۷۳۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۲۲,۱۷۹</td><td align="center" style="width:3.5%;">۲۲,۶۰۸</td><td align="center" style="width:6.75%;">۱۸۳,۹۰۵,۶۵۳</td><td align="center" style="width:5%;">۴,۱۵۷,۷۳۹</td><td align="center" style="width:3.5%;">۲,۳۴۰</td><td align="center" style="width:3.5%;">۳,۱۸۴</td><td align="center" style="width:6.75%;">۱۵۹,۱۷۴,۹۳۷</td><td align="center" style="width:5%;">۵۰۶,۸۱۳</td><td align="center" style="width:3.5%;">۲۴,۵۱۹</td><td align="center" style="width:3.5%;">۲۵,۷۹۲</td><td align="center" style="width:6.75%;">۱۸۰,۸۵۲,۶۶۷</td><td align="center" style="width:5%;">۴,۶۶۴,۵۵۲</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">اتواکسيلاتها</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۱۴,۴۶۱</td><td align="center" style="width:3.5%;">۱۴,۴۰۰</td><td align="center" style="width:6.75%;">۵۸,۴۸۶,۸۷۵</td><td align="center" style="width:5%;">۸۴۲,۲۱۱</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۱۴,۴۶۱</td><td align="center" style="width:3.5%;">۱۴,۴۰۰</td><td align="center" style="width:6.75%;">۵۸,۴۸۶,۸۷۵</td><td align="center" style="width:5%;">۸۴۲,۲۱۱</td><td align="center" style="width:3.5%;">۳۷۰</td><td align="center" style="width:3.5%;">۵۹۸</td><td align="center" style="width:6.75%;">۶۰,۵۱۶,۷۲۲</td><td align="center" style="width:5%;">۳۶,۱۸۹</td><td align="center" style="width:3.5%;">۱۴,۸۳۱</td><td align="center" style="width:3.5%;">۱۴,۹۹۸</td><td align="center" style="width:6.75%;">۵۸,۵۶۷,۸۰۹</td><td align="center" style="width:5%;">۸۷۸,۴۰۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">بوتن يک</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۲,۰۴۷</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۲,۰۴۷</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۲,۰۴۷</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">پلي پروپيلن</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۳۲,۶۸۶</td><td align="center" style="width:3.5%;">۲۹,۴۹۳</td><td align="center" style="width:6.75%;">۱۲۵,۷۲۴,۰۰۲</td><td align="center" style="width:5%;">۳,۷۰۷,۹۷۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۳۲,۶۸۶</td><td align="center" style="width:3.5%;">۲۹,۴۹۳</td><td align="center" style="width:6.75%;">۱۲۵,۷۲۴,۰۰۲</td><td align="center" style="width:5%;">۳,۷۰۷,۹۷۸</td><td align="center" style="width:3.5%;">۳,۶۹۲</td><td align="center" style="width:3.5%;">۵,۶۹۱</td><td align="center" style="width:6.75%;">۱۲۶,۸۷۶,۲۹۶</td><td align="center" style="width:5%;">۷۲۲,۰۵۳</td><td align="center" style="width:3.5%;">۳۶,۳۷۸</td><td align="center" style="width:3.5%;">۳۵,۱۸۴</td><td align="center" style="width:6.75%;">۱۲۵,۹۱۰,۳۸۵</td><td align="center" style="width:5%;">۴,۴۳۰,۰۳۱</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">پلي بوتاداين</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۹,۰۰۲</td><td align="center" style="width:3.5%;">۶,۹۲۵</td><td align="center" style="width:6.75%;">۱۲۵,۲۷۹,۷۱۱</td><td align="center" style="width:5%;">۸۶۷,۵۶۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۹,۰۰۲</td><td align="center" style="width:3.5%;">۶,۹۲۵</td><td align="center" style="width:6.75%;">۱۲۵,۲۷۹,۷۱۱</td><td align="center" style="width:5%;">۸۶۷,۵۶۲</td><td align="center" style="width:3.5%;">۳۳۶</td><td align="center" style="width:3.5%;">۱,۵۸۰</td><td align="center" style="width:6.75%;">۱۳۱,۹۸۲,۹۱۱</td><td align="center" style="width:5%;">۲۰۸,۵۳۳</td><td align="center" style="width:3.5%;">۹,۳۳۸</td><td align="center" style="width:3.5%;">۸,۵۰۵</td><td align="center" style="width:6.75%;">۱۲۶,۵۲۴,۹۸۵</td><td align="center" style="width:5%;">۱,۰۷۶,۰۹۵</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">رافينت</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۹,۸۴۹</td><td align="center" style="width:3.5%;">۸,۷۸۵</td><td align="center" style="width:6.75%;">۵۷,۰۶۱,۸۱۰</td><td align="center" style="width:5%;">۵۰۱,۲۸۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۹,۸۴۹</td><td align="center" style="width:3.5%;">۸,۷۸۵</td><td align="center" style="width:6.75%;">۵۷,۰۶۱,۸۱۰</td><td align="center" style="width:5%;">۵۰۱,۲۸۸</td><td align="center" style="width:3.5%;">۲۸۳</td><td align="center" style="width:3.5%;">۳۹۷</td><td align="center" style="width:6.75%;">۶۲,۹۷۷,۳۳۰</td><td align="center" style="width:5%;">۲۵,۰۰۲</td><td align="center" style="width:3.5%;">۱۰,۱۳۲</td><td align="center" style="width:3.5%;">۹,۱۸۲</td><td align="center" style="width:6.75%;">۵۷,۳۱۷,۵۷۸</td><td align="center" style="width:5%;">۵۲۶,۲۹۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">هيدروکربور 4 کربنه</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۲۲,۹۲۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۲۲,۹۲۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۲۲,۹۲۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">سي . اف . او</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۹,۹۹۵</td><td align="center" style="width:3.5%;">۹,۵۳۰</td><td align="center" style="width:6.75%;">۳۴,۶۳۰,۰۱۰</td><td align="center" style="width:5%;">۳۳۰,۰۲۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۹,۹۹۵</td><td align="center" style="width:3.5%;">۹,۵۳۰</td><td align="center" style="width:6.75%;">۳۴,۶۳۰,۰۱۰</td><td align="center" style="width:5%;">۳۳۰,۰۲۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۴۲۹</td><td align="center" style="width:6.75%;">۳۹,۰۶۹,۹۳۰</td><td align="center" style="width:5%;">۱۶,۷۶۱</td><td align="center" style="width:3.5%;">۹,۹۹۵</td><td align="center" style="width:3.5%;">۹,۹۵۹</td><td align="center" style="width:6.75%;">۳۴,۸۲۱,۲۶۷</td><td align="center" style="width:5%;">۳۴۶,۷۸۵</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">هيدروکربورهاي هيدروژينه شده</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۶۲,۲۴۹</td><td align="center" style="width:3.5%;">۲۳,۲۴۲</td><td align="center" style="width:6.75%;">۵۳,۰۲۱,۲۱۲</td><td align="center" style="width:5%;">۱,۲۳۲,۳۱۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۶۲,۲۴۹</td><td align="center" style="width:3.5%;">۲۳,۲۴۲</td><td align="center" style="width:6.75%;">۵۳,۰۲۱,۲۱۲</td><td align="center" style="width:5%;">۱,۲۳۲,۳۱۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۲,۸۶۳</td><td align="center" style="width:6.75%;">۵۵,۹۵۶,۳۴۰</td><td align="center" style="width:5%;">۱۶۰,۲۰۳</td><td align="center" style="width:3.5%;">۶۲,۲۴۹</td><td align="center" style="width:3.5%;">۲۶,۱۰۵</td><td align="center" style="width:6.75%;">۵۳,۳۴۳,۱۱۴</td><td align="center" style="width:5%;">۱,۳۹۲,۵۲۲</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">ترکيبات آلي نيتروژن دار</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۸,۵۷۷</td><td align="center" style="width:3.5%;">۸,۶۹۳</td><td align="center" style="width:6.75%;">۹۲,۶۲۲,۶۸۵</td><td align="center" style="width:5%;">۸۰۵,۱۶۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۸,۵۷۷</td><td align="center" style="width:3.5%;">۸,۶۹۳</td><td align="center" style="width:6.75%;">۹۲,۶۲۲,۶۸۵</td><td align="center" style="width:5%;">۸۰۵,۱۶۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۱,۸۳۷</td><td align="center" style="width:6.75%;">۱۰۳,۴۶۱,۶۲۲</td><td align="center" style="width:5%;">۱۹۰,۰۵۹</td><td align="center" style="width:3.5%;">۸,۵۷۷</td><td align="center" style="width:3.5%;">۱۰,۵۳۰</td><td align="center" style="width:6.75%;">۹۴,۵۱۳,۵۸۰</td><td align="center" style="width:5%;">۹۹۵,۲۲۸</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">هيدروکربورهاي آ 80 و آ 92</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۶۷,۳۴۶</td><td align="center" style="width:3.5%;">۶۷,۰۴۵</td><td align="center" style="width:6.75%;">۵۰,۰۲۷,۴۴۴</td><td align="center" style="width:5%;">۳,۳۵۴,۰۹۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۶۷,۳۴۶</td><td align="center" style="width:3.5%;">۶۷,۰۴۵</td><td align="center" style="width:6.75%;">۵۰,۰۲۷,۴۴۴</td><td align="center" style="width:5%;">۳,۳۵۴,۰۹۰</td><td align="center" style="width:3.5%;">۹,۳۳۸</td><td align="center" style="width:3.5%;">۹,۳۴۰</td><td align="center" style="width:6.75%;">۵۹,۴۸۱,۵۸۵</td><td align="center" style="width:5%;">۵۵۵,۵۵۸</td><td align="center" style="width:3.5%;">۷۶,۶۸۴</td><td align="center" style="width:3.5%;">۷۶,۳۸۵</td><td align="center" style="width:6.75%;">۵۱,۱۸۳,۴۵۲</td><td align="center" style="width:5%;">۳,۹۰۹,۶۴۸</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">اتيلن</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۹۰,۰۷۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۹۰,۰۷۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۹۰,۰۷۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">ساير محصولات جانبي</td><td align="center" style="width:3%;">تن</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۱,۰۹۹</td><td align="center" style="width:6.75%;">۳۸,۰۴۹,۱۳۶</td><td align="center" style="width:5%;">۴۱,۸۱۶</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۱,۰۹۹</td><td align="center" style="width:6.75%;">۳۸,۰۴۹,۱۳۶</td><td align="center" style="width:5%;">۴۱,۸۱۶</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۴۰</td><td align="center" style="width:6.75%;">۹,۶۰۰,۰۰۰</td><td align="center" style="width:5%;">۳۸۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۱,۱۳۹</td><td align="center" style="width:6.75%;">۳۷,۰۵۰,۰۴۴</td><td align="center" style="width:5%;">۴۲,۲۰۰</td>
+					</tr><tr class="lightBlueBg">
+						<td align="center" style="width:10%;">جمع</td><td align="center" style="width:3%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۲۴,۳۸۴,۰۵۵</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۲۴,۳۸۴,۰۵۵</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۳,۳۹۷,۲۶۷</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۲۷,۷۸۱,۳۲۲</td>
+					</tr>
+				</tbody></table>
+			</div>
+                        </div>
+                    </td>
+		</tr>
+	</tbody></table>
+	
+            <input name="ctl00$cphBody$ucProduct2$hdfIsFirstPeriod" type="hidden" id="ctl00_cphBody_ucProduct2_hdfIsFirstPeriod" value="false">
+        </div>
+    
+</div>
+
+            
+        <div class="clear" style="height: 20px;"></div>
+        
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblCorrectionComment" style="color:graytext;font-size:Small;">کادر توضیحات در مورد اصلاحات</span></legend>
+            <br>
+            <span id="txtCorrectionComment"></span>
+        </fieldset>
+        
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1398/05/31</span></legend>
+            <br>
+            <span id="txbDescMonth">
+
+کاهش مقادير توليد و فروش در دوره يک ماهه مرداد سال 1398 نسبت به ماه قبل به دليل انجام تعميرات اساسي واحدهاي توليدي بوده است، تعميرات اساسي مذکور به مدت يکماه از ابتداي مرداد شروع و در پايان مرداد به اتمام رسيده است.</span>
+        </fieldset>
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1398/05/31</span></legend>
+            <br>
+            <span id="txbDescYear"></span>
+        </fieldset>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+
+</body></html>

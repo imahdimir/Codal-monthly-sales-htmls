@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+   
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    
+<meta http-equiv="Cache - Control" content="no - cache, no - store, must - revalidate">
+<meta http-equiv="Pragma" content="no - cache">
+<meta http-equiv="Expires" content="0"></head>
+<body>
+    <form name="aspnetForm" method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	
+	
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src="../imgs/header_icon.png" alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000000">گزارش فعالیت ماهانه
+
+</option></select>
+            
+            
+        <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=ZYpUfXND1t20L30wXuFr0g%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">سايپا آذين</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">1,322,846</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">خاذين</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">349902</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px;">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1397/12/29</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1397/12/29</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src="../imgs/inforation.png">
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    
+
+    <div style="width: 90%; margin: 0 auto;">
+        <div>
+            <div id="ctl00_cphBody_ucNavigateToNextPrevLetter_trPrevVersion" style="text-align:center">
+    <a id="ctl00_cphBody_ucNavigateToNextPrevLetter_hlPrevVersion" href="Decision.aspx?LetterSerial=iJFaKz%2bikQQQaQQQj0XU0OwNo2AA%3d%3d&amp;rt=0&amp;let=58&amp;ct=0" style="color:#558080;font-weight:bold;">این اطلاعیه اصلاحیه اطلاعیه شماره ( 520650 ) می باشد. نسخه قبلی اطلاعیه را می توانید در <span style="text-decoration:underline;">اینجا</span> مشاهده نمایید</a>
+</div>
+
+<br>
+<div id="ctl00_cphBody_ucNavigateToNextPrevLetter_trCorrection" style="color: #558080; font-weight: bold" align="center">
+
+    <span id="ctl00_cphBody_ucNavigateToNextPrevLetter_lblCorrectionDesc" style="color: #486C6C"> دلایل اصلاح:دلايل اصلاح:موارد اصلاح بابت مقادير فروش و مبالغ (نهايي شدن مبالغ فروش يکماهه منتهي به 29اسفند 1397) و قطعي شدن نرخ هاي فروش عملکرد سال 97 مي باشد که هم زمان با تهيه صورت هاي مالي نهايي شده است.</span>
+</div>
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                <div id="ctl00_cphBody_ucProduct2_pnlProduction">
+	
+
+        <script type="text/javascript" src="../../js/PKI.js"></script>
+        <script type="text/javascript" src="../../js/Common.js"></script>
+
+        <script type="text/javascript">
+            var isFirstPeriod = '#ctl00_cphBody_ucProduct2_hdfIsFirstPeriod';
+
+    $(document).ready(function(){
+        if ($(isFirstPeriod).val() == 'true')
+            $('.non-first-period').hide();
+        else
+            $('.non-first-period').show();
+    });
+
+    function pageLoad() {
+        if ($(isFirstPeriod).val() == 'true')
+            $('.non-first-period').hide();
+        else
+            $('.non-first-period').show();
+    }
+        </script>
+
+        <div id="ctl00_cphBody_ucProduct2_divProduction" align="right" includeinexcel="true" style="overflow-x:auto;">
+            <table id="ctl00_cphBody_ucProduct2_Table1" cellpadding="0" cellspacing="0" width="200%" align="right" dir="rtl">
+		<tbody><tr>
+			<td>
+                        <span id="ctl00_cphBody_ucProduct2_lblProductionMsg" class="notify error" style="display:none;"></span>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <table class="gv" style="text-align: center; width: 100%;">
+                            <tbody><tr>
+                                <th colspan="2" style="width: 14%; height: 30px; text-align: center;">شرح</th>
+                                <th colspan="4" style="width: 18%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevMonthEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1397/11/30</bdo></span>
+                                </th>
+                                <th colspan="3" style="width: 14%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblReformCaption">اصلاحات</span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1397/11/30</bdo> - اصلاح شده</span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;">
+                                    <span id="ctl00_cphBody_ucProduct2_lblMonthEndToDateCaption">دوره یک ماهه منتهی به <bdo dir="ltr">1397/12/29</bdo></span>
+                                </th>
+                                <th colspan="4" style="width: 18%; text-align: center;">
+                                    <span id="ctl00_cphBody_ucProduct2_lblYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1397/12/29</bdo></span>
+                                </th>
+
+                            </tr>
+                            <tr>
+                                <th align="center" style="width: 10%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblProductNameCaption">نام محصول</span>
+                                </th>
+                                <th align="center" style="width: 3%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblProductUnitCaption">واحد</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 6.75%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProductionModifiedCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesModifiedCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountModifiedCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th style="width: 3.5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th style="width: 6.75%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th style="width: 5%" class="non-first-period">
+                                    <span id="ctl00_cphBody_ucProduct2_lblPrevModifiedSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProdctionMonthCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesMonthCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 6.75%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesRateMonthCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountMonthCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+                                <!---------------------------------------------------------------------------------------------->
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalProductionYearCaption">مقدار/تعداد تولید</span>
+                                </th>
+                                <th align="center" style="width: 3.5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblTotalSalesYearCaption">مقدار/تعداد فروش</span>
+                                </th>
+                                <th align="center" style="width: 6.75%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                </th>
+                                <th align="center" style="width: 5%">
+                                    <span id="ctl00_cphBody_ucProduct2_lblSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                </th>
+
+                            </tr>
+                        </tbody></table>
+                    </td>
+		</tr>
+		<tr>
+			<td>
+                        <div>
+                            <div>
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct2_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
+					<tbody><tr>
+						<td align="center" style="width:10%;">مجموع صندلي نيسان(بهينه)</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۱۸,۷۹۰</td><td align="center" style="width:3.5%;">۱۸,۹۳۷</td><td align="center" style="width:6.75%;">۲,۶۶۹,۱۶۶</td><td align="center" style="width:5%;">۵۰,۵۴۶</td><td align="center" style="width:3.5%;">۴</td><td align="center" style="width:3.5%;">۱۱</td><td align="center" style="width:5%;">۲۵,۶۵۵</td><td align="center" style="width:3.5%;">۱۸,۷۹۴</td><td align="center" style="width:3.5%;">۱۸,۹۴۸</td><td align="center" style="width:6.75%;">۴,۰۲۱,۵۸۵</td><td align="center" style="width:5%;">۷۶,۲۰۱</td><td align="center" style="width:3.5%;">۲,۰۶۰</td><td align="center" style="width:3.5%;">۲,۰۹۰</td><td align="center" style="width:6.75%;">۲,۶۶۲,۶۷۹</td><td align="center" style="width:5%;">۵,۵۶۵</td><td align="center" style="width:3.5%;">۲۰,۸۵۴</td><td align="center" style="width:3.5%;">۲۱,۰۳۸</td><td align="center" style="width:6.75%;">۳,۸۸۶,۵۸۶</td><td align="center" style="width:5%;">۸۱,۷۶۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي 132(درقالب X100)</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي سايپا 111(درقالب X100)</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۲۶,۱۱۴</td><td align="center" style="width:3.5%;">۲۶,۱۵۹</td><td align="center" style="width:6.75%;">۶,۱۲۸,۴۴۵</td><td align="center" style="width:5%;">۱۶۰,۳۱۴</td><td align="center" style="width:3.5%;">۲۵</td><td align="center" style="width:3.5%;">۱۹</td><td align="center" style="width:5%;">۹۰,۸۰۴</td><td align="center" style="width:3.5%;">۲۶,۱۳۹</td><td align="center" style="width:3.5%;">۲۶,۱۷۸</td><td align="center" style="width:6.75%;">۹,۵۹۲,۷۱۱</td><td align="center" style="width:5%;">۲۵۱,۱۱۸</td><td align="center" style="width:3.5%;">۲,۹۸۴</td><td align="center" style="width:3.5%;">۲,۹۸۰</td><td align="center" style="width:6.75%;">۶,۰۸۵,۲۳۵</td><td align="center" style="width:5%;">۱۸,۱۳۴</td><td align="center" style="width:3.5%;">۲۹,۱۲۳</td><td align="center" style="width:3.5%;">۲۹,۱۵۸</td><td align="center" style="width:6.75%;">۹,۲۳۴,۲۴۱</td><td align="center" style="width:5%;">۲۶۹,۲۵۲</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي x131</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۹۷,۱۰۰</td><td align="center" style="width:3.5%;">۹۷,۱۶۴</td><td align="center" style="width:6.75%;">۵,۷۸۶,۹۲۷</td><td align="center" style="width:5%;">۵۶۲,۲۸۱</td><td align="center" style="width:3.5%;">۲۶</td><td align="center" style="width:3.5%;">۶۰</td><td align="center" style="width:5%;">۳۶۰,۵۹۹</td><td align="center" style="width:3.5%;">۹۷,۱۲۶</td><td align="center" style="width:3.5%;">۹۷,۲۲۴</td><td align="center" style="width:6.75%;">۹,۴۹۲,۳۰۶</td><td align="center" style="width:5%;">۹۲۲,۸۸۰</td><td align="center" style="width:3.5%;">۱۱,۶۴۹</td><td align="center" style="width:3.5%;">۱۱,۵۹۷</td><td align="center" style="width:6.75%;">۵,۸۰۹,۷۷۸</td><td align="center" style="width:5%;">۶۷,۳۷۶</td><td align="center" style="width:3.5%;">۱۰۸,۷۷۵</td><td align="center" style="width:3.5%;">۱۰۸,۸۲۱</td><td align="center" style="width:6.75%;">۹,۰۹۹,۸۶۱</td><td align="center" style="width:5%;">۹۹۰,۲۵۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي نيوسراتو</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۴۸</td><td align="center" style="width:3.5%;">۴۸</td><td align="center" style="width:6.75%;">۱۵,۹۵۸,۳۳۳</td><td align="center" style="width:5%;">۷۶۶</td><td align="center" style="width:3.5%;">۶</td><td align="center" style="width:3.5%;">۶</td><td align="center" style="width:5%;">۴۰۵</td><td align="center" style="width:3.5%;">۵۴</td><td align="center" style="width:3.5%;">۵۴</td><td align="center" style="width:6.75%;">۲۱,۶۸۵,۱۸۵</td><td align="center" style="width:5%;">۱,۱۷۱</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۵۴</td><td align="center" style="width:3.5%;">۵۴</td><td align="center" style="width:6.75%;">۲۱,۶۸۵,۱۸۵</td><td align="center" style="width:5%;">۱,۱۷۱</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه رودري صندوق عقبx111</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۲۷,۱۹۲</td><td align="center" style="width:3.5%;">۲۶,۷۵۶</td><td align="center" style="width:6.75%;">۷۴,۷۵۰</td><td align="center" style="width:5%;">۲,۰۰۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۴۶۶</td><td align="center" style="width:5%;">۳۷۹</td><td align="center" style="width:3.5%;">۲۷,۱۹۲</td><td align="center" style="width:3.5%;">۲۷,۲۲۲</td><td align="center" style="width:6.75%;">۸۷,۳۹۳</td><td align="center" style="width:5%;">۲,۳۷۹</td><td align="center" style="width:3.5%;">۴,۲۵۵</td><td align="center" style="width:3.5%;">۴,۲۵۵</td><td align="center" style="width:6.75%;">۷۴,۵۰۱</td><td align="center" style="width:5%;">۳۱۷</td><td align="center" style="width:3.5%;">۳۱,۴۴۷</td><td align="center" style="width:3.5%;">۳۱,۴۷۷</td><td align="center" style="width:6.75%;">۸۵,۶۵۰</td><td align="center" style="width:5%;">۲,۶۹۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي x151(وانت کارا)</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۸,۶۷۰</td><td align="center" style="width:3.5%;">۸,۶۹۲</td><td align="center" style="width:6.75%;">۲,۵۰۴,۲۵۷</td><td align="center" style="width:5%;">۲۱,۷۶۷</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">(۳)</td><td align="center" style="width:5%;">۲۱,۳۰۲</td><td align="center" style="width:3.5%;">۸,۶۷۰</td><td align="center" style="width:3.5%;">۸,۶۸۹</td><td align="center" style="width:6.75%;">۴,۹۵۶,۷۲۷</td><td align="center" style="width:5%;">۴۳,۰۶۹</td><td align="center" style="width:3.5%;">۱,۰۰۰</td><td align="center" style="width:3.5%;">۱,۰۲۰</td><td align="center" style="width:6.75%;">۲,۵۰۰,۰۰۰</td><td align="center" style="width:5%;">۲,۵۵۰</td><td align="center" style="width:3.5%;">۹,۶۷۰</td><td align="center" style="width:3.5%;">۹,۷۰۹</td><td align="center" style="width:6.75%;">۴,۶۹۸,۶۳۰</td><td align="center" style="width:5%;">۴۵,۶۱۹</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي تيبا211</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۴۸,۳۷۳</td><td align="center" style="width:3.5%;">۴۷,۵۸۷</td><td align="center" style="width:6.75%;">۷,۵۶۴,۳۳۵</td><td align="center" style="width:5%;">۳۵۹,۹۶۴</td><td align="center" style="width:3.5%;">۳۹</td><td align="center" style="width:3.5%;">۱,۰۲۱</td><td align="center" style="width:5%;">۳۵۰,۷۵۹</td><td align="center" style="width:3.5%;">۴۸,۴۱۲</td><td align="center" style="width:3.5%;">۴۸,۶۰۸</td><td align="center" style="width:6.75%;">۱۴,۶۲۱,۵۲۳</td><td align="center" style="width:5%;">۷۱۰,۷۲۳</td><td align="center" style="width:3.5%;">۵,۰۹۶</td><td align="center" style="width:3.5%;">۵,۱۰۴</td><td align="center" style="width:6.75%;">۷,۵۴۱,۳۴۰</td><td align="center" style="width:5%;">۳۸,۴۹۱</td><td align="center" style="width:3.5%;">۵۳,۵۰۸</td><td align="center" style="width:3.5%;">۵۳,۷۱۲</td><td align="center" style="width:6.75%;">۱۳,۹۴۸,۷۲۷</td><td align="center" style="width:5%;">۷۴۹,۲۱۴</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي 232(ساينا)</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۱۹,۸۸۴</td><td align="center" style="width:3.5%;">۱۹,۵۱۲</td><td align="center" style="width:6.75%;">۷,۴۷۱,۶۵۸</td><td align="center" style="width:5%;">۱۴۵,۷۸۷</td><td align="center" style="width:3.5%;">۱</td><td align="center" style="width:3.5%;">۵۱۳</td><td align="center" style="width:5%;">۷۱,۲۱۳</td><td align="center" style="width:3.5%;">۱۹,۸۸۵</td><td align="center" style="width:3.5%;">۲۰,۰۲۵</td><td align="center" style="width:6.75%;">۱۰,۸۳۶,۴۵۴</td><td align="center" style="width:5%;">۲۱۷,۰۰۰</td><td align="center" style="width:3.5%;">۲,۶۹۳</td><td align="center" style="width:3.5%;">۲,۷۲۱</td><td align="center" style="width:6.75%;">۷,۴۹۹,۸۱۶</td><td align="center" style="width:5%;">۲۰,۴۰۷</td><td align="center" style="width:3.5%;">۲۲,۵۷۸</td><td align="center" style="width:3.5%;">۲۲,۷۴۶</td><td align="center" style="width:6.75%;">۱۰,۴۳۷,۳۰۸</td><td align="center" style="width:5%;">۲۳۷,۴۰۷</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي پادرا</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۴۴۵</td><td align="center" style="width:3.5%;">۴۹۵</td><td align="center" style="width:6.75%;">۴,۸۵۶,۵۶۶</td><td align="center" style="width:5%;">۲,۴۰۴</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">(۵۰)</td><td align="center" style="width:5%;">۱۱,۱۷۱</td><td align="center" style="width:3.5%;">۴۴۵</td><td align="center" style="width:3.5%;">۴۴۵</td><td align="center" style="width:6.75%;">۳۰,۵۰۵,۶۱۸</td><td align="center" style="width:5%;">۱۳,۵۷۵</td><td align="center" style="width:3.5%;">۴۰</td><td align="center" style="width:3.5%;">۴۰</td><td align="center" style="width:6.75%;">۴,۸۵۰,۰۰۰</td><td align="center" style="width:5%;">۱۹۴</td><td align="center" style="width:3.5%;">۴۸۵</td><td align="center" style="width:3.5%;">۴۸۵</td><td align="center" style="width:6.75%;">۲۸,۳۸۹,۶۹۱</td><td align="center" style="width:5%;">۱۳,۷۶۹</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي 212</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۲,۵۹۹</td><td align="center" style="width:3.5%;">۲,۶۱۵</td><td align="center" style="width:6.75%;">۸,۲۴۲,۴۴۷</td><td align="center" style="width:5%;">۲۱,۵۵۴</td><td align="center" style="width:3.5%;">۲</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۴,۰۸۴</td><td align="center" style="width:3.5%;">۲,۶۰۱</td><td align="center" style="width:3.5%;">۲,۶۱۵</td><td align="center" style="width:6.75%;">۹,۸۰۴,۲۰۷</td><td align="center" style="width:5%;">۲۵,۶۳۸</td><td align="center" style="width:3.5%;">۱,۳۴۸</td><td align="center" style="width:3.5%;">۱,۳۶۴</td><td align="center" style="width:6.75%;">۸,۲۳۰,۲۰۵</td><td align="center" style="width:5%;">۱۱,۲۲۶</td><td align="center" style="width:3.5%;">۳,۹۴۹</td><td align="center" style="width:3.5%;">۳,۹۷۹</td><td align="center" style="width:6.75%;">۹,۲۶۴,۶۳۹</td><td align="center" style="width:5%;">۳۶,۸۶۴</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي تيبا 231</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۶۹۲</td><td align="center" style="width:3.5%;">۶۹۲</td><td align="center" style="width:6.75%;">۵,۸۵۱,۱۵۶</td><td align="center" style="width:5%;">۴,۰۴۹</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۱,۱۱۹</td><td align="center" style="width:3.5%;">۶۹۲</td><td align="center" style="width:3.5%;">۶۹۲</td><td align="center" style="width:6.75%;">۷,۴۶۸,۲۰۸</td><td align="center" style="width:5%;">۵,۱۶۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۶۹۲</td><td align="center" style="width:3.5%;">۶۹۲</td><td align="center" style="width:6.75%;">۷,۴۶۸,۲۰۸</td><td align="center" style="width:5%;">۵,۱۶۸</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي برليانس H320</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۵,۰۷۲</td><td align="center" style="width:3.5%;">۵,۱۳۹</td><td align="center" style="width:6.75%;">۹,۷۵۴,۲۳۲</td><td align="center" style="width:5%;">۵۰,۱۲۷</td><td align="center" style="width:3.5%;">۲۴</td><td align="center" style="width:3.5%;">(۳)</td><td align="center" style="width:5%;">۱۰,۶۵۴</td><td align="center" style="width:3.5%;">۵,۰۹۶</td><td align="center" style="width:3.5%;">۵,۱۳۶</td><td align="center" style="width:6.75%;">۱۱,۸۳۴,۳۰۷</td><td align="center" style="width:5%;">۶۰,۷۸۱</td><td align="center" style="width:3.5%;">۱۸</td><td align="center" style="width:3.5%;">۱۸</td><td align="center" style="width:6.75%;">۹,۷۷۷,۷۷۸</td><td align="center" style="width:5%;">۱۷۶</td><td align="center" style="width:3.5%;">۵,۱۱۴</td><td align="center" style="width:3.5%;">۵,۱۵۴</td><td align="center" style="width:6.75%;">۱۱,۸۲۷,۱۲۵</td><td align="center" style="width:5%;">۶۰,۹۵۷</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي برليانس H330</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۱۱,۳۶۲</td><td align="center" style="width:3.5%;">۱۱,۴۰۸</td><td align="center" style="width:6.75%;">۹,۵۰۰,۰۰۰</td><td align="center" style="width:5%;">۱۰۸,۳۷۶</td><td align="center" style="width:3.5%;">۲۰</td><td align="center" style="width:3.5%;">۴۷</td><td align="center" style="width:5%;">۲۳,۳۲۷</td><td align="center" style="width:3.5%;">۱۱,۳۸۲</td><td align="center" style="width:3.5%;">۱۱,۴۵۵</td><td align="center" style="width:6.75%;">۱۱,۴۹۷,۴۲۵</td><td align="center" style="width:5%;">۱۳۱,۷۰۳</td><td align="center" style="width:3.5%;">۳۲</td><td align="center" style="width:3.5%;">۳۲</td><td align="center" style="width:6.75%;">۹,۵۰۰,۰۰۰</td><td align="center" style="width:5%;">۳۰۴</td><td align="center" style="width:3.5%;">۱۱,۴۱۴</td><td align="center" style="width:3.5%;">۱۱,۴۸۷</td><td align="center" style="width:6.75%;">۱۱,۴۹۱,۸۶۰</td><td align="center" style="width:5%;">۱۳۲,۰۰۷</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي برليانس H220</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۳,۲۰۸</td><td align="center" style="width:3.5%;">۳,۲۰۳</td><td align="center" style="width:6.75%;">۹,۵۲۴,۱۹۶</td><td align="center" style="width:5%;">۳۰,۵۰۶</td><td align="center" style="width:3.5%;">۱۱</td><td align="center" style="width:3.5%;">۸</td><td align="center" style="width:5%;">۱۱,۶۰۲</td><td align="center" style="width:3.5%;">۳,۲۱۹</td><td align="center" style="width:3.5%;">۳,۲۱۱</td><td align="center" style="width:6.75%;">۱۳,۱۱۳,۶۷۲</td><td align="center" style="width:5%;">۴۲,۱۰۸</td><td align="center" style="width:3.5%;">۱۱۲</td><td align="center" style="width:3.5%;">۱۴۴</td><td align="center" style="width:6.75%;">۹,۵۲۰,۸۳۳</td><td align="center" style="width:5%;">۱,۳۷۱</td><td align="center" style="width:3.5%;">۳,۳۳۱</td><td align="center" style="width:3.5%;">۳,۳۵۵</td><td align="center" style="width:6.75%;">۱۲,۹۵۹,۴۶۳</td><td align="center" style="width:5%;">۴۳,۴۷۹</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي برليانس H230</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۷,۶۸۴</td><td align="center" style="width:3.5%;">۷,۶۷۷</td><td align="center" style="width:6.75%;">۹,۲۶۹,۸۹۷</td><td align="center" style="width:5%;">۷۱,۱۶۵</td><td align="center" style="width:3.5%;">۲۲</td><td align="center" style="width:3.5%;">۲۷</td><td align="center" style="width:5%;">۶,۷۲۹</td><td align="center" style="width:3.5%;">۷,۷۰۶</td><td align="center" style="width:3.5%;">۷,۷۰۴</td><td align="center" style="width:6.75%;">۱۰,۱۱۰,۸۵۲</td><td align="center" style="width:5%;">۷۷,۸۹۴</td><td align="center" style="width:3.5%;">۳۶</td><td align="center" style="width:3.5%;">۳۶</td><td align="center" style="width:6.75%;">۹,۲۷۷,۷۷۸</td><td align="center" style="width:5%;">۳۳۴</td><td align="center" style="width:3.5%;">۷,۷۴۲</td><td align="center" style="width:3.5%;">۷,۷۴۰</td><td align="center" style="width:6.75%;">۱۰,۱۰۶,۹۷۷</td><td align="center" style="width:5%;">۷۸,۲۲۸</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي سراتو معمولي</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۲۴</td><td align="center" style="width:3.5%;">۲۴</td><td align="center" style="width:6.75%;">۱۶,۰۴۱,۶۶۷</td><td align="center" style="width:5%;">۳۸۵</td><td align="center" style="width:3.5%;">(۶)</td><td align="center" style="width:3.5%;">(۶)</td><td align="center" style="width:5%;">(۹)</td><td align="center" style="width:3.5%;">۱۸</td><td align="center" style="width:3.5%;">۱۸</td><td align="center" style="width:6.75%;">۲۰,۸۸۸,۸۸۹</td><td align="center" style="width:5%;">۳۷۶</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۱۸</td><td align="center" style="width:3.5%;">۱۸</td><td align="center" style="width:6.75%;">۲۰,۸۸۸,۸۸۹</td><td align="center" style="width:5%;">۳۷۶</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي سراتو اتوماتيک چرم</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۱۳,۱۹۷</td><td align="center" style="width:3.5%;">۱۳,۲۵۳</td><td align="center" style="width:6.75%;">۲۱,۱۳۸,۷۶۱</td><td align="center" style="width:5%;">۲۸۰,۱۵۲</td><td align="center" style="width:3.5%;">(۲۴)</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۵۴,۱۴۴</td><td align="center" style="width:3.5%;">۱۳,۱۷۳</td><td align="center" style="width:3.5%;">۱۳,۲۵۳</td><td align="center" style="width:6.75%;">۲۵,۲۲۴,۱۷۶</td><td align="center" style="width:5%;">۳۳۴,۲۹۶</td><td align="center" style="width:3.5%;">۱,۱۷۶</td><td align="center" style="width:3.5%;">۱,۱۹۲</td><td align="center" style="width:6.75%;">۲۱,۱۳۸,۴۲۳</td><td align="center" style="width:5%;">۲۵,۱۹۷</td><td align="center" style="width:3.5%;">۱۴,۳۴۹</td><td align="center" style="width:3.5%;">۱۴,۴۴۵</td><td align="center" style="width:6.75%;">۲۴,۸۸۷,۰۲۰</td><td align="center" style="width:5%;">۳۵۹,۴۹۳</td>
+					</tr><tr>
+						<td align="center" style="width:10%;"> SP100</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۱۰</td><td align="center" style="width:3.5%;">۲۲</td><td align="center" style="width:6.75%;">۱۱,۴۰۹,۰۹۱</td><td align="center" style="width:5%;">۲۵۱</td><td align="center" style="width:3.5%;">(۴)</td><td align="center" style="width:3.5%;">(۹)</td><td align="center" style="width:5%;">(۸۳)</td><td align="center" style="width:3.5%;">۶</td><td align="center" style="width:3.5%;">۱۳</td><td align="center" style="width:6.75%;">۱۲,۹۲۳,۰۷۷</td><td align="center" style="width:5%;">۱۶۸</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۶</td><td align="center" style="width:3.5%;">۱۳</td><td align="center" style="width:6.75%;">۱۲,۹۲۳,۰۷۷</td><td align="center" style="width:5%;">۱۶۸</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">چانگان</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۹,۸۸۱</td><td align="center" style="width:3.5%;">۱۰,۰۶۴</td><td align="center" style="width:6.75%;">۱۹,۴۳۴,۹۱۷</td><td align="center" style="width:5%;">۱۹۵,۵۹۳</td><td align="center" style="width:3.5%;">۸</td><td align="center" style="width:3.5%;">۱۸۳</td><td align="center" style="width:5%;">۴۳,۱۱۳</td><td align="center" style="width:3.5%;">۹,۸۸۹</td><td align="center" style="width:3.5%;">۱۰,۲۴۷</td><td align="center" style="width:6.75%;">۲۳,۲۹۵,۲۰۸</td><td align="center" style="width:5%;">۲۳۸,۷۰۶</td><td align="center" style="width:3.5%;">۵۹۴</td><td align="center" style="width:3.5%;">۵۴۶</td><td align="center" style="width:6.75%;">۱۹,۴۳۵,۸۹۷</td><td align="center" style="width:5%;">۱۰,۶۱۲</td><td align="center" style="width:3.5%;">۱۰,۴۸۳</td><td align="center" style="width:3.5%;">۱۰,۷۹۳</td><td align="center" style="width:6.75%;">۲۳,۰۹۹,۹۷۲</td><td align="center" style="width:5%;">۲۴۹,۳۱۸</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي برليانس-C3</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۲,۹۶۶</td><td align="center" style="width:3.5%;">۲,۹۶۷</td><td align="center" style="width:6.75%;">۹,۷۵۴,۲۹۷</td><td align="center" style="width:5%;">۲۸,۹۴۱</td><td align="center" style="width:3.5%;">۸</td><td align="center" style="width:3.5%;">۷</td><td align="center" style="width:5%;">۶,۵۲۹</td><td align="center" style="width:3.5%;">۲,۹۷۴</td><td align="center" style="width:3.5%;">۲,۹۷۴</td><td align="center" style="width:6.75%;">۱۱,۹۲۶,۶۹۸</td><td align="center" style="width:5%;">۳۵,۴۷۰</td><td align="center" style="width:3.5%;">۲۴</td><td align="center" style="width:3.5%;">۲۴</td><td align="center" style="width:6.75%;">۹,۷۵۰,۰۰۰</td><td align="center" style="width:5%;">۲۳۴</td><td align="center" style="width:3.5%;">۲,۹۹۸</td><td align="center" style="width:3.5%;">۲,۹۹۸</td><td align="center" style="width:6.75%;">۱۱,۹۰۹,۲۷۳</td><td align="center" style="width:5%;">۳۵,۷۰۴</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">مجموعه صندلي s300(آريو)</td><td align="center" style="width:3%;">دست</td><td align="center" style="width:3.5%;">۱,۸۱۹</td><td align="center" style="width:3.5%;">۱,۷۹۴</td><td align="center" style="width:6.75%;">۱۱,۵۹۹,۷۷۷</td><td align="center" style="width:5%;">۲۰,۸۱۰</td><td align="center" style="width:3.5%;">(۱)</td><td align="center" style="width:3.5%;">۱۷</td><td align="center" style="width:5%;">۳,۳۴۳</td><td align="center" style="width:3.5%;">۱,۸۱۸</td><td align="center" style="width:3.5%;">۱,۸۱۱</td><td align="center" style="width:6.75%;">۱۳,۳۳۶,۸۳۰</td><td align="center" style="width:5%;">۲۴,۱۵۳</td><td align="center" style="width:3.5%;">۵۱۲</td><td align="center" style="width:3.5%;">۵۰۴</td><td align="center" style="width:6.75%;">۱۱,۷۲۴,۲۰۶</td><td align="center" style="width:5%;">۵,۹۰۹</td><td align="center" style="width:3.5%;">۲,۳۳۰</td><td align="center" style="width:3.5%;">۲,۳۱۵</td><td align="center" style="width:6.75%;">۱۲,۹۸۵,۷۴۵</td><td align="center" style="width:5%;">۳۰,۰۶۲</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">تعديلات</td><td align="center" style="width:3%;">ساير</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۴۰۰,۰۰۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">(۴۰۰,۰۰۰)</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td>
+					</tr><tr>
+						<td align="center" style="width:10%;">اقلام ناست صندلي</td><td align="center" style="width:3%;">عدد</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:5%;">۹,۵۹۵</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۹,۵۹۵</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:3.5%;">۰</td><td align="center" style="width:6.75%;">۰</td><td align="center" style="width:5%;">۹,۵۹۵</td>
+					</tr><tr class="lightBlueBg">
+						<td align="center" style="width:10%;">جمع</td><td align="center" style="width:3%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۲,۵۱۷,۷۳۸</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:5%;">۷۰۶,۴۳۴</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۳,۲۲۴,۱۷۲</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۲۰۸,۳۹۷</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:3.5%;">&nbsp;</td><td align="center" style="width:6.75%;">&nbsp;</td><td align="center" style="width:5%;">۳,۴۳۲,۵۶۹</td>
+					</tr>
+				</tbody></table>
+			</div>
+                        </div>
+                    </td>
+		</tr>
+	</tbody></table>
+	
+            <input name="ctl00$cphBody$ucProduct2$hdfIsFirstPeriod" type="hidden" id="ctl00_cphBody_ucProduct2_hdfIsFirstPeriod" value="false">
+        </div>
+    
+</div>
+
+            
+        <div class="clear" style="height: 20px;"></div>
+        
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblCorrectionComment" style="color:graytext;font-size:Small;">کادر توضیحات در مورد اصلاحات</span></legend>
+            <br>
+            <span id="txtCorrectionComment">دلايل اصلاح:موارد اصلاحي بابت قطعي شدن ست  فروش و عملکرد سال 97 مي باشد که هم زمان با تهيه صورت هاي مالي نهايي شده است.</span>
+        </fieldset>
+        
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1397/12/29</span></legend>
+            <br>
+            <span id="txbDescMonth">
+
+دلايل اصلاح:موارد اصلاحي بابت قطعي شدن نرخ هاي فروش عملکرد سال 97 مي باشد که هم زمان با تهيه صورت هاي مالي نهايي شده است.
+
+</span>
+        </fieldset>
+        <div class="clear" style="height: 20px;"></div>
+        <fieldset>
+            <legend>
+                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1397/12/29</span></legend>
+            <br>
+            <span id="txbDescYear">
+
+دلايل اصلاح:موارد اصلاحي بابت قطعي شدن نرخ هاي فروش عملکرد سال 97 مي باشد که هم زمان با تهيه صورت هاي مالي نهايي شده است.
+</span>
+        </fieldset>
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+
+</body></html>
