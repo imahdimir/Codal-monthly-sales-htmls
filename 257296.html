@@ -1,37 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
 	
-</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css"><link rel="shortcut icon" href="../assets/favicon/favicon.ico?v=RyQ5xz7ege">
     <!--[if lt IE 7]>
 	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
 	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
 
     <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
 
     <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 
     <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
         function btnNextClick() {
             if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
                 document.getElementById("ctl00_ddlTable").selectedIndex += 1;
             else
                 document.getElementById("ctl00_ddlTable").selectedIndex = 0;
         }
-        
+
         function btnPrevClick() {
             if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
                 document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
             else
                 document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
         }
-    </script>
 
-    <script language="javascript" type="text/javascript" id="myScript">
-    
-		<!--
-        function btnCancelClick() {
-            window.close();
-        }
-        
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
         function getDocWidth() {
             var D = document;
             return Math.max(
@@ -50,7 +61,7 @@
             );
         }
 
-  		-->
+
     </script>
 
     
@@ -106,12 +117,12 @@ return true;
 	
 </div>
     <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
-        height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
         <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
             padding: 5px; background-color: White; font-size: 9px;">
             <img src="../Images/InProgress1.gif" border="0" alt="">
             &nbsp;
-            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;"></span>
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
         </div>
     </div>
     <div class="html_format_header">
@@ -123,16 +134,17 @@ return true;
         <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
         <div class="ddlReportWrapper">
             <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
-	<option selected="selected" value="0">آمار تولید و فروش
+	<option selected="selected" value="1000000">گزارش فعالیت ماهانه
 
 </option></select>
             
             
         <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
-        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=NWoM192E6uWdo%2bDoeipAQg%3d%3d&amp;rt=0&amp;let=58&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=NWoM192E6uWdo%2bDoeipAQg%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;ft=-1&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
         <div class="clear" style="height: 10px;">
         </div>
     </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
     <div class="clear" style="height: 15px;">
     </div>
     <div class="symbol_and_name">
@@ -140,7 +152,7 @@ return true;
             <div class="text_holder">
                 <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
                 <div class="varios">
-                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">محورسازان ايران خودرو</span>
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">صنعتي محور سازان ايران خودرو</span>
                     
                     <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
                     
@@ -174,29 +186,30 @@ return true;
             <div class="text_holder">
                 <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
                 <div class="varios">
-                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">343005</span>
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">343016</span>
                 </div>
             </div>
             <div class="text_holder">
-                <div style="margin: 5px 4px;">
-                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
-                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                <div style="margin: 5px 4px; display:inline-flex">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>&nbsp;
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>  
                     <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblInDate" class="label" style="display:none;">در تاریخ </span>  
                     <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1395/01/31</bdo></span>
-                    <span id="ctl00_lblIsAudited" class="label" style="display:none;"></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
                 </div>
             </div>
-        </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1395/12/30</bdo></span>
+            </div>
+        </div>      
         <div class="text_holder">
             <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
             <div class="varios">
                 <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در بورس تهران</span>
-            </div>
-        </div>
-        <div class="text_holder">
-            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
-            <div class="varios">
-                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1395/12/30</bdo></span>
             </div>
         </div>
         <div style="clear: both;">
@@ -212,8 +225,8 @@ return true;
 </style>
 <div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
     <div class="verify">
-        
-        <span id="ctl00_ucSignature1_lblSigners"></span>
+       
+    
     </div>
     <div class="noteholder">
         <img alt="information" src="../imgs/inforation.png">
@@ -226,30 +239,42 @@ return true;
 
     <div class="clear" style="height: 5px;">
     </div>
-    <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
-    
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
     <div class="clear">
     </div>
     
     
 
-    <div class="clear" style="height: 30px;">
-    </div>
-    <div style="width: 90%; margin: 0 auto;">
+    <div id="ctl00_cphBody_divMainContainer" style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br>
+
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
         
-                <span id="ctl00_cphBody_lblError"></span>
-                <div id="ctl00_cphBody_ucProductionAndSales1_pnlProduction">
+                <div id="ctl00_cphBody_ucProduct1_pnlProduction">
 	
 
         <script language="javascript" type="text/javascript" src="../../js/PKI.js"></script>
 
         <script language="javascript" type="text/javascript" src="../../js/Common.js"></script>
 
-        <div id="ctl00_cphBody_ucProductionAndSales1_divProduction" align="right">
-            <table id="ctl00_cphBody_ucProductionAndSales1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
+        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right" includeinexcel="true">
+            <table id="ctl00_cphBody_ucProduct1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
 		<tbody><tr>
 			<td>
-                        <span id="ctl00_cphBody_ucProductionAndSales1_lblProductionMsg" class="notify error" style="display:none;"></span>
+                        <span id="ctl00_cphBody_ucProduct1_lblProductionMsg" class="notify error" style="display:none;"></span>
                     </td>
 		</tr>
 		<tr>
@@ -257,43 +282,43 @@ return true;
                         <table width="100%" align="center" class="gv">
                             <tbody><tr>
                                 <th colspan="6" align="center" style="width: 49%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblMonthEndToDateCaption">دوره یک ماهه منتهی به <bdo dir="ltr">1395/01/31</bdo></span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblMonthEndToDateCaption">دوره یک ماهه منتهی به <bdo dir="ltr">1395/01/31</bdo></span>
                                 </th>
                                 <th colspan="4" align="center" style="width: 51%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1395/01/31</bdo></span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblYearEndToDateCaption">از ابتدای سال مالی تا پایان مورخ <bdo dir="ltr">1395/01/31</bdo></span>
                                 </th>
                                 
                             </tr>
                             <tr>
                                 <th align="center" style="width: 13.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblProductNameCaption">نام محصول</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblProductNameCaption">نام محصول</span>
                                 </th>
                                 <th align="center" style="width: 5.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblProductUnitCaption">واحد</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblProductUnitCaption">واحد</span>
                                 </th>
                                 <th align="center" style="width: 9.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblTotalProdctionMonthCaption">تعداد تولید</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalProdctionMonthCaption">تعداد تولید</span>
                                 </th>
                                 <th align="center" style="width: 9.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblTotalSalesMonthCaption">تعداد فروش</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalSalesMonthCaption">تعداد فروش</span>
                                 </th>
                                 <th align="center" style="width: 9.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblSalesRateMonthCaption">نرخ فروش (ریال)</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesRateMonthCaption">نرخ فروش (ریال)</span>
                                 </th>
                                 <th align="center" style="width: 9.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblSalesAmountMonthCaption">مبلغ فروش (میلیون ریال)</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesAmountMonthCaption">مبلغ فروش (میلیون ریال)</span>
                                 </th>
                                 <th align="center" style="width: 9.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblTotalProductionYearCaption">تعداد تولید</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalProductionYearCaption">تعداد تولید</span>
                                 </th>
                                 <th align="center" style="width: 9.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblTotalSalesYearCaption">تعداد فروش</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblTotalSalesYearCaption">تعداد فروش</span>
                                 </th>
                                 <th align="center" style="width: 9.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblSalesRateYearCaption">نرخ فروش (ریال)</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesRateYearCaption">نرخ فروش (ریال)</span>
                                 </th>
                                 <th align="center" style="width: 11.8%">
-                                    <span id="ctl00_cphBody_ucProductionAndSales1_lblSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
+                                    <span id="ctl00_cphBody_ucProduct1_lblSalesAmountYearCaption">مبلغ فروش (میلیون ریال)</span>
                                 </th>
                                 
                             </tr>
@@ -304,23 +329,23 @@ return true;
 			<td>
                         <div>
                             <div>
-				<table class="gv" cellspacing="0" rules="all" showheaderwhenempty="True" border="1" id="ctl00_cphBody_ucProductionAndSales1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
 					<tbody><tr>
-						<td align="center" style="width:13.8%;">اکسل عقب پژو 206</td><td align="center" style="width:5.8%;">دستگاه</td><td align="center" style="width:9.8%;">5,953</td><td align="center" style="width:9.8%;">5,228</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">5,953</td><td align="center" style="width:9.8%;">5,228</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">اکسل عقب پژو 206</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۵,۹۵۳</td><td align="center" style="width:9.8%;">۵,۲۲۸</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۵,۹۵۳</td><td align="center" style="width:9.8%;">۵,۲۲۸</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:11.8%;">۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">اکسل جلو پژو 206</td><td align="center" style="width:5.8%;">دستگاه</td><td align="center" style="width:9.8%;">6,060</td><td align="center" style="width:9.8%;">5,400</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">6,060</td><td align="center" style="width:9.8%;">5,400</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">اکسل جلو پژو 206</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۶,۰۶۰</td><td align="center" style="width:9.8%;">۵,۴۰۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۶,۰۶۰</td><td align="center" style="width:9.8%;">۵,۴۰۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:11.8%;">۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">ديسک و توپي پژو 206</td><td align="center" style="width:5.8%;">دستگاه</td><td align="center" style="width:9.8%;">6,876</td><td align="center" style="width:9.8%;">6,696</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">6,876</td><td align="center" style="width:9.8%;">6,696</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">اکسل جلو پژو 405</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۷,۷۴۰</td><td align="center" style="width:9.8%;">۷,۱۴۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۷,۷۴۰</td><td align="center" style="width:9.8%;">۷,۱۴۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:11.8%;">۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">اکسل جلو پژو 405</td><td align="center" style="width:5.8%;">دستگاه</td><td align="center" style="width:9.8%;">7,740</td><td align="center" style="width:9.8%;">7,140</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">7,740</td><td align="center" style="width:9.8%;">7,140</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">ديسک و توپي پژو 405</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۵,۴۵۲</td><td align="center" style="width:9.8%;">۴,۷۶۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۵,۴۵۲</td><td align="center" style="width:9.8%;">۴,۷۶۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:11.8%;">۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">اکسل عقب پژو 405</td><td align="center" style="width:5.8%;">دستگاه</td><td align="center" style="width:9.8%;">6,515</td><td align="center" style="width:9.8%;">5,780</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">6,515</td><td align="center" style="width:9.8%;">5,780</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">اکسل عقب وانتي ABS</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۶۳۷</td><td align="center" style="width:9.8%;">۱,۶۱۶</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۱,۶۳۷</td><td align="center" style="width:9.8%;">۱,۶۱۶</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:11.8%;">۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">ديسک و توپي پژو 405</td><td align="center" style="width:5.8%;">دستگاه</td><td align="center" style="width:9.8%;">5,452</td><td align="center" style="width:9.8%;">4,760</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">5,452</td><td align="center" style="width:9.8%;">4,760</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">ديسک و توپي پژو 206</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۶,۸۷۶</td><td align="center" style="width:9.8%;">۶,۶۹۶</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۶,۸۷۶</td><td align="center" style="width:9.8%;">۶,۶۹۶</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:11.8%;">۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">اکسل عقب وانتي ABS</td><td align="center" style="width:5.8%;">دستگاه</td><td align="center" style="width:9.8%;">1,637</td><td align="center" style="width:9.8%;">1,616</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">1,637</td><td align="center" style="width:9.8%;">1,616</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">اکسل عقب پژو 405</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۶,۵۱۵</td><td align="center" style="width:9.8%;">۵,۷۸۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۶,۵۱۵</td><td align="center" style="width:9.8%;">۵,۷۸۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:11.8%;">۰</td>
 					</tr><tr class="lightBlueBg">
-						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">۰</td>
 					</tr>
 				</tbody></table>
 			</div>
@@ -333,23 +358,25 @@ return true;
     
 </div>
 
-                <div class="clear" style="height: 40px;">
-                </div>
-                <fieldset>
-                    <legend>
-                        <span id="ctl00_cphBody_lblDescriptionMonthCaption" style="font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1395/01/31</span></legend>
-                    <br>
-                    <span id="txbDescMonth"></span>
-                </fieldset>
-                <div class="clear" style="height: 40px;">
-                </div>
-                <fieldset>
-                    <legend>
-                        <span id="ctl00_cphBody_lblDescriptionYearCaption" style="font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1395/01/31</span></legend>
-                    <br>
-                    <span id="txbDescYear"></span>
-                </fieldset>
             
+        <div class="clear" style="height: 20px;"></div>
+        <div id="ctl00_cphBody_divLetterDescriptionContainer">
+            
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1395/01/31</span></legend>
+                <br>
+                <span id="txbDescMonth"></span>
+            </fieldset>
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1395/01/31</span></legend>
+                <br>
+                <span id="txbDescYear"></span>
+            </fieldset>
+        </div>
         <div class="clear" style="height: 20px;">
         </div>
         <div style="width: 90%; margin-left: auto; margin-right: auto;">
@@ -374,8 +401,28 @@ ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
 </script>
 
 
+<script type="text/javascript">
+//<![CDATA[
 
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
 </form>
-
 
 </body></html>

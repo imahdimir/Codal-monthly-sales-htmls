@@ -135,13 +135,13 @@ return true;
         <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
         <div class="ddlReportWrapper">
             <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
-	<option selected="selected" value="1000000">آمار تولید و فروش
+	<option selected="selected" value="1000000">گزارش فعالیت ماهانه
 
 </option></select>
             
             
         <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
-        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=ExedGEcyXoWTVJRF47bvXQ%3d%3d&amp;rt=0&amp;let=58&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=ExedGEcyXoWTVJRF47bvXQ%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;ft=-1&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
         <div class="clear" style="height: 10px;">
         </div>
     </div>
@@ -153,7 +153,7 @@ return true;
             <div class="text_holder">
                 <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
                 <div class="varios">
-                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">پتروشيمي مبين</span>
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">مبين انرژي خليج فارس</span>
                     
                     <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
                     
@@ -191,10 +191,11 @@ return true;
                 </div>
             </div>
             <div class="text_holder">
-                <div style="margin: 5px 4px;">
-                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
-                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                <div style="margin: 5px 4px; display:inline-flex">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>&nbsp;
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>  
                     <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblInDate" class="label" style="display:none;">در تاریخ</span>  
                     <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1395/03/31</bdo></span>
                     <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
                 </div>
@@ -225,8 +226,8 @@ return true;
 </style>
 <div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
     <div class="verify">
-        
-        <span id="ctl00_ucSignature1_lblSigners"></span>
+       
+    
     </div>
     <div class="noteholder">
         <img alt="information" src="../imgs/inforation.png">
@@ -252,7 +253,14 @@ return true;
     
     
 
-    <div style="width: 90%; margin: 0 auto;">
+    <div id="ctl00_cphBody_divMainContainer" style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br>
+
+
+        </div>
         <span id="ctl00_cphBody_lblError"></span>
 
         
@@ -263,7 +271,7 @@ return true;
 
         <script language="javascript" type="text/javascript" src="../../js/Common.js"></script>
 
-        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right">
+        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right" includeinexcel="true">
             <table id="ctl00_cphBody_ucProduct1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
 		<tbody><tr>
 			<td>
@@ -322,37 +330,37 @@ return true;
 			<td>
                         <div>
                             <div>
-				<table class="gv" cellspacing="0" rules="all" showheaderwhenempty="True" border="1" id="ctl00_cphBody_ucProduct1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
 					<tbody><tr>
-						<td align="center" style="width:13.8%;">برق</td><td align="center" style="width:5.8%;">مگاوات ساعت</td><td align="center" style="width:9.8%;">407,498</td><td align="center" style="width:9.8%;">260,684</td><td align="center" style="width:9.8%;">2,066,978</td><td align="center" style="width:9.8%;">538,828</td><td align="center" style="width:9.8%;">1,310,277</td><td align="center" style="width:9.8%;">810,752</td><td align="center" style="width:9.8%;">1,787,165</td><td align="center" style="width:11.8%;">1,448,948</td>
+						<td align="center" style="width:13.8%;">برق</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۴۰۷,۴۹۸</td><td align="center" style="width:9.8%;">۲۶۰,۶۸۴</td><td align="center" style="width:9.8%;">۲,۰۶۶,۹۷۸</td><td align="center" style="width:9.8%;">۵۳۸,۸۲۸</td><td align="center" style="width:9.8%;">۱,۳۱۰,۲۷۷</td><td align="center" style="width:9.8%;">۸۱۰,۷۵۲</td><td align="center" style="width:9.8%;">۱,۷۸۷,۱۶۵</td><td align="center" style="width:11.8%;">۱,۴۴۸,۹۴۸</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">بخار</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">1,021,092</td><td align="center" style="width:9.8%;">999,514</td><td align="center" style="width:9.8%;">463,384</td><td align="center" style="width:9.8%;">463,159</td><td align="center" style="width:9.8%;">2,851,218</td><td align="center" style="width:9.8%;">2,394,870</td><td align="center" style="width:9.8%;">458,824</td><td align="center" style="width:11.8%;">1,098,825</td>
+						<td align="center" style="width:13.8%;">بخار</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۰۲۱,۰۹۲</td><td align="center" style="width:9.8%;">۹۹۹,۵۱۴</td><td align="center" style="width:9.8%;">۴۶۳,۳۸۴</td><td align="center" style="width:9.8%;">۴۶۳,۱۵۹</td><td align="center" style="width:9.8%;">۲,۸۵۱,۲۱۸</td><td align="center" style="width:9.8%;">۲,۳۹۴,۸۷۰</td><td align="center" style="width:9.8%;">۴۵۸,۸۲۴</td><td align="center" style="width:11.8%;">۱,۰۹۸,۸۲۵</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">آب شيرين شده</td><td align="center" style="width:5.8%;">مترمکعب</td><td align="center" style="width:9.8%;">1,333,455</td><td align="center" style="width:9.8%;">185,242</td><td align="center" style="width:9.8%;">89,391</td><td align="center" style="width:9.8%;">16,559</td><td align="center" style="width:9.8%;">3,843,333</td><td align="center" style="width:9.8%;">362,719</td><td align="center" style="width:9.8%;">80,368</td><td align="center" style="width:11.8%;">29,151</td>
+						<td align="center" style="width:13.8%;">آب شيرين شده</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۳۳۳,۴۵۵</td><td align="center" style="width:9.8%;">۱۸۵,۲۴۲</td><td align="center" style="width:9.8%;">۸۹,۳۹۱</td><td align="center" style="width:9.8%;">۱۶,۵۵۹</td><td align="center" style="width:9.8%;">۳,۸۴۳,۳۳۳</td><td align="center" style="width:9.8%;">۳۶۲,۷۱۹</td><td align="center" style="width:9.8%;">۸۰,۳۶۸</td><td align="center" style="width:11.8%;">۲۹,۱۵۱</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">آب بدون املاح</td><td align="center" style="width:5.8%;">مترمکعب</td><td align="center" style="width:9.8%;">1,747,799</td><td align="center" style="width:9.8%;">640,423</td><td align="center" style="width:9.8%;">103,775</td><td align="center" style="width:9.8%;">66,460</td><td align="center" style="width:9.8%;">5,193,121</td><td align="center" style="width:9.8%;">1,765,790</td><td align="center" style="width:9.8%;">94,007</td><td align="center" style="width:11.8%;">165,996</td>
+						<td align="center" style="width:13.8%;">آب بدون املاح</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۷۴۷,۷۹۹</td><td align="center" style="width:9.8%;">۶۴۰,۴۲۳</td><td align="center" style="width:9.8%;">۱۰۳,۷۷۵</td><td align="center" style="width:9.8%;">۶۶,۴۶۰</td><td align="center" style="width:9.8%;">۵,۱۹۳,۱۲۱</td><td align="center" style="width:9.8%;">۱,۷۶۵,۷۹۰</td><td align="center" style="width:9.8%;">۹۴,۰۰۷</td><td align="center" style="width:11.8%;">۱۶۵,۹۹۶</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">هواي سرويس</td><td align="center" style="width:5.8%;">نرمال متر مکعب</td><td align="center" style="width:9.8%;">3,421,153</td><td align="center" style="width:9.8%;">6,441,499</td><td align="center" style="width:9.8%;">1,663</td><td align="center" style="width:9.8%;">10,710</td><td align="center" style="width:9.8%;">10,335,823</td><td align="center" style="width:9.8%;">10,335,823</td><td align="center" style="width:9.8%;">1,634</td><td align="center" style="width:11.8%;">16,889</td>
+						<td align="center" style="width:13.8%;">هواي سرويس</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۳,۴۲۱,۱۵۳</td><td align="center" style="width:9.8%;">۶,۴۴۱,۴۹۹</td><td align="center" style="width:9.8%;">۱,۶۶۳</td><td align="center" style="width:9.8%;">۱۰,۷۱۰</td><td align="center" style="width:9.8%;">۱۰,۳۳۵,۸۲۳</td><td align="center" style="width:9.8%;">۱۰,۳۳۵,۸۲۳</td><td align="center" style="width:9.8%;">۱,۶۳۴</td><td align="center" style="width:11.8%;">۱۶,۸۸۹</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">هواي ابزاردقيق</td><td align="center" style="width:5.8%;">نرمال متر مکعب</td><td align="center" style="width:9.8%;">11,756,321</td><td align="center" style="width:9.8%;">11,756,321</td><td align="center" style="width:9.8%;">2,982</td><td align="center" style="width:9.8%;">35,062</td><td align="center" style="width:9.8%;">27,589,048</td><td align="center" style="width:9.8%;">27,589,048</td><td align="center" style="width:9.8%;">2,689</td><td align="center" style="width:11.8%;">74,199</td>
+						<td align="center" style="width:13.8%;">هواي ابزاردقيق</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱۱,۷۵۶,۳۲۱</td><td align="center" style="width:9.8%;">۱۱,۷۵۶,۳۲۱</td><td align="center" style="width:9.8%;">۲,۹۸۲</td><td align="center" style="width:9.8%;">۳۵,۰۶۲</td><td align="center" style="width:9.8%;">۲۷,۵۸۹,۰۴۸</td><td align="center" style="width:9.8%;">۲۷,۵۸۹,۰۴۸</td><td align="center" style="width:9.8%;">۲,۶۸۹</td><td align="center" style="width:11.8%;">۷۴,۱۹۹</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">نيتروژن</td><td align="center" style="width:5.8%;">نرمال متر مکعب</td><td align="center" style="width:9.8%;">27,701,903</td><td align="center" style="width:9.8%;">27,701,903</td><td align="center" style="width:9.8%;">5,038</td><td align="center" style="width:9.8%;">139,568</td><td align="center" style="width:9.8%;">60,778,373</td><td align="center" style="width:9.8%;">60,778,373</td><td align="center" style="width:9.8%;">4,315</td><td align="center" style="width:11.8%;">262,263</td>
+						<td align="center" style="width:13.8%;">نيتروژن</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۷,۷۰۱,۹۰۳</td><td align="center" style="width:9.8%;">۲۷,۷۰۱,۹۰۳</td><td align="center" style="width:9.8%;">۵,۰۳۸</td><td align="center" style="width:9.8%;">۱۳۹,۵۶۸</td><td align="center" style="width:9.8%;">۶۰,۷۷۸,۳۷۳</td><td align="center" style="width:9.8%;">۶۰,۷۷۸,۳۷۳</td><td align="center" style="width:9.8%;">۴,۳۱۵</td><td align="center" style="width:11.8%;">۲۶۲,۲۶۳</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">اکسيژن</td><td align="center" style="width:5.8%;">نرمال متر مکعب</td><td align="center" style="width:9.8%;">141,922,718</td><td align="center" style="width:9.8%;">141,922,718</td><td align="center" style="width:9.8%;">4,031</td><td align="center" style="width:9.8%;">572,055</td><td align="center" style="width:9.8%;">449,647,969</td><td align="center" style="width:9.8%;">449,647,969</td><td align="center" style="width:9.8%;">3,473</td><td align="center" style="width:11.8%;">1,561,461</td>
+						<td align="center" style="width:13.8%;">اکسيژن</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱۴۱,۹۲۲,۷۱۸</td><td align="center" style="width:9.8%;">۱۴۱,۹۲۲,۷۱۸</td><td align="center" style="width:9.8%;">۴,۰۳۱</td><td align="center" style="width:9.8%;">۵۷۲,۰۵۵</td><td align="center" style="width:9.8%;">۴۴۹,۶۴۷,۹۶۹</td><td align="center" style="width:9.8%;">۴۴۹,۶۴۷,۹۶۹</td><td align="center" style="width:9.8%;">۳,۴۷۳</td><td align="center" style="width:11.8%;">۱,۵۶۱,۴۶۱</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">آب تغذيه ديگ بخار</td><td align="center" style="width:5.8%;">متر مکعب</td><td align="center" style="width:9.8%;">1,150,355</td><td align="center" style="width:9.8%;">118,194</td><td align="center" style="width:9.8%;">178,985</td><td align="center" style="width:9.8%;">21,155</td><td align="center" style="width:9.8%;">3,463,259</td><td align="center" style="width:9.8%;">353,680</td><td align="center" style="width:9.8%;">163,077</td><td align="center" style="width:11.8%;">57,677</td>
+						<td align="center" style="width:13.8%;">آب تغذيه ديگ بخار</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۱۵۰,۳۵۵</td><td align="center" style="width:9.8%;">۱۱۸,۱۹۴</td><td align="center" style="width:9.8%;">۱۷۸,۹۸۵</td><td align="center" style="width:9.8%;">۲۱,۱۵۵</td><td align="center" style="width:9.8%;">۳,۴۶۳,۲۵۹</td><td align="center" style="width:9.8%;">۳۵۳,۶۸۰</td><td align="center" style="width:9.8%;">۱۶۳,۰۷۷</td><td align="center" style="width:11.8%;">۵۷,۶۷۷</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">آب خنک کننده مدار باز</td><td align="center" style="width:5.8%;">متر مکعب</td><td align="center" style="width:9.8%;">229,917,117</td><td align="center" style="width:9.8%;">180,814,632</td><td align="center" style="width:9.8%;">1,127</td><td align="center" style="width:9.8%;">203,759</td><td align="center" style="width:9.8%;">694,138,105</td><td align="center" style="width:9.8%;">489,079,816</td><td align="center" style="width:9.8%;">1,116</td><td align="center" style="width:11.8%;">545,985</td>
+						<td align="center" style="width:13.8%;">آب خنک کننده مدار باز</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۲۹,۹۱۷,۱۱۷</td><td align="center" style="width:9.8%;">۱۸۰,۸۱۴,۶۳۲</td><td align="center" style="width:9.8%;">۱,۱۲۷</td><td align="center" style="width:9.8%;">۲۰۳,۷۵۹</td><td align="center" style="width:9.8%;">۶۹۴,۱۳۸,۱۰۵</td><td align="center" style="width:9.8%;">۴۸۹,۰۷۹,۸۱۶</td><td align="center" style="width:9.8%;">۱,۱۱۶</td><td align="center" style="width:11.8%;">۵۴۵,۹۸۵</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">آب خنک کننده مدار بسته</td><td align="center" style="width:5.8%;">متر مکعب</td><td align="center" style="width:9.8%;">59,798,980</td><td align="center" style="width:9.8%;">47,136,980</td><td align="center" style="width:9.8%;">2,390</td><td align="center" style="width:9.8%;">112,670</td><td align="center" style="width:9.8%;">182,812,150</td><td align="center" style="width:9.8%;">144,754,550</td><td align="center" style="width:9.8%;">2,380</td><td align="center" style="width:11.8%;">344,514</td>
+						<td align="center" style="width:13.8%;">آب خنک کننده مدار بسته</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۵۹,۷۹۸,۹۸۰</td><td align="center" style="width:9.8%;">۴۷,۱۳۶,۹۸۰</td><td align="center" style="width:9.8%;">۲,۳۹۰</td><td align="center" style="width:9.8%;">۱۱۲,۶۷۰</td><td align="center" style="width:9.8%;">۱۸۲,۸۱۲,۱۵۰</td><td align="center" style="width:9.8%;">۱۴۴,۷۵۴,۵۵۰</td><td align="center" style="width:9.8%;">۲,۳۸۰</td><td align="center" style="width:11.8%;">۳۴۴,۵۱۴</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">گاز</td><td align="center" style="width:5.8%;">استاندارد متر مکعب</td><td align="center" style="width:9.8%;">741,823,851</td><td align="center" style="width:9.8%;">545,427,320</td><td align="center" style="width:9.8%;">755</td><td align="center" style="width:9.8%;">411,757</td><td align="center" style="width:9.8%;">2,097,423,439</td><td align="center" style="width:9.8%;">1,522,756,375</td><td align="center" style="width:9.8%;">2,371</td><td align="center" style="width:11.8%;">3,611,052</td>
+						<td align="center" style="width:13.8%;">گاز</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۷۴۱,۸۲۳,۸۵۱</td><td align="center" style="width:9.8%;">۵۴۵,۴۲۷,۳۲۰</td><td align="center" style="width:9.8%;">۷۵۵</td><td align="center" style="width:9.8%;">۴۱۱,۷۵۷</td><td align="center" style="width:9.8%;">۲,۰۹۷,۴۲۳,۴۳۹</td><td align="center" style="width:9.8%;">۱,۵۲۲,۷۵۶,۳۷۵</td><td align="center" style="width:9.8%;">۲,۳۷۱</td><td align="center" style="width:11.8%;">۳,۶۱۱,۰۵۲</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">درآمد حاصل از ارائه خدمات</td><td align="center" style="width:5.8%;">خدمات به شرکتهاي پتروشيمي</td><td align="center" style="width:9.8%;">1</td><td align="center" style="width:9.8%;">1</td><td align="center" style="width:9.8%;">145,331,000,000</td><td align="center" style="width:9.8%;">145,331</td><td align="center" style="width:9.8%;">1</td><td align="center" style="width:9.8%;">1</td><td align="center" style="width:9.8%;">181,330,000,000</td><td align="center" style="width:11.8%;">181,330</td>
+						<td align="center" style="width:13.8%;">درآمد حاصل از ارائه خدمات</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱</td><td align="center" style="width:9.8%;">۱</td><td align="center" style="width:9.8%;">۱۴۵,۳۳۱,۰۰۰,۰۰۰</td><td align="center" style="width:9.8%;">۱۴۵,۳۳۱</td><td align="center" style="width:9.8%;">۱</td><td align="center" style="width:9.8%;">۱</td><td align="center" style="width:9.8%;">۱۸۱,۳۳۰,۰۰۰,۰۰۰</td><td align="center" style="width:11.8%;">۱۸۱,۳۳۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">آب سرويس</td><td align="center" style="width:5.8%;">مترمکعب</td><td align="center" style="width:9.8%;">16,989</td><td align="center" style="width:9.8%;">16,909</td><td align="center" style="width:9.8%;">43,705</td><td align="center" style="width:9.8%;">739</td><td align="center" style="width:9.8%;">44,991</td><td align="center" style="width:9.8%;">44,911</td><td align="center" style="width:9.8%;">43,553</td><td align="center" style="width:11.8%;">1,956</td>
+						<td align="center" style="width:13.8%;">آب سرويس</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱۶,۹۸۹</td><td align="center" style="width:9.8%;">۱۶,۹۰۹</td><td align="center" style="width:9.8%;">۴۳,۷۰۵</td><td align="center" style="width:9.8%;">۷۳۹</td><td align="center" style="width:9.8%;">۴۴,۹۹۱</td><td align="center" style="width:9.8%;">۴۴,۹۱۱</td><td align="center" style="width:9.8%;">۴۳,۵۵۳</td><td align="center" style="width:11.8%;">۱,۹۵۶</td>
 					</tr><tr class="lightBlueBg">
-						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">2,737,812</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">9,400,246</td>
+						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲,۷۳۷,۸۱۲</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">۹,۴۰۰,۲۴۶</td>
 					</tr>
 				</tbody></table>
 			</div>
@@ -367,19 +375,23 @@ return true;
 
             
         <div class="clear" style="height: 20px;"></div>
-        <fieldset>
-            <legend>
-                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1395/03/31</span></legend>
-            <br>
-            <span id="txbDescMonth">1-نرخهاي فروش بصورت علي الحساب و براساس نرخهاي سال 1394 اعمال گرديده است .2-صورتحساب درآمد ديماند وافزايش مصرف سه ماهه اول سال1395در خردادماه صادر گرديده است.3-نرخ خريد و فروش گاز خوراک براي سه ماهه فروردين،ارديبهشت و خردادماه بترتيب 2313و2464و2702منظور گرديده است.</span>
-        </fieldset>
-        <div class="clear" style="height: 20px;"></div>
-        <fieldset>
-            <legend>
-                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1395/03/31</span></legend>
-            <br>
-            <span id="txbDescYear"></span>
-        </fieldset>
+        <div id="ctl00_cphBody_divLetterDescriptionContainer">
+            
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1395/03/31</span></legend>
+                <br>
+                <span id="txbDescMonth">1-نرخهاي فروش بصورت علي الحساب و براساس نرخهاي سال 1394 اعمال گرديده است .2-صورتحساب درآمد ديماند وافزايش مصرف سه ماهه اول سال1395در خردادماه صادر گرديده است.3-نرخ خريد و فروش گاز خوراک براي سه ماهه فروردين،ارديبهشت و خردادماه بترتيب 2313و2464و2702منظور گرديده است.</span>
+            </fieldset>
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1395/03/31</span></legend>
+                <br>
+                <span id="txbDescYear"></span>
+            </fieldset>
+        </div>
         <div class="clear" style="height: 20px;">
         </div>
         <div style="width: 90%; margin-left: auto; margin-right: auto;">
@@ -404,7 +416,28 @@ ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
 </script>
 
 
+<script type="text/javascript">
+//<![CDATA[
 
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
 </form>
 
 </body></html>

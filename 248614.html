@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
 	
-</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
-   
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css"><link rel="shortcut icon" href="../assets/favicon/favicon.ico?v=RyQ5xz7ege">
     <!--[if lt IE 7]>
 	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
 	<![endif]-->
@@ -135,13 +134,13 @@ return true;
         <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
         <div class="ddlReportWrapper">
             <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
-	<option selected="selected" value="1000000">آمار تولید و فروش
+	<option selected="selected" value="1000000">گزارش فعالیت ماهانه
 
 </option></select>
             
             
         <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
-        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=Swy5sy9jnpc5PgJeUlT43w%3d%3d&amp;rt=0&amp;let=58&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=Swy5sy9jnpc5PgJeUlT43w%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;ft=-1&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
         <div class="clear" style="height: 10px;">
         </div>
     </div>
@@ -187,14 +186,15 @@ return true;
             <div class="text_holder">
                 <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
                 <div class="varios">
-                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">269414</span>
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">539427</span>
                 </div>
             </div>
             <div class="text_holder">
-                <div style="margin: 5px 4px;">
-                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
-                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                <div style="margin: 5px 4px; display:inline-flex">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>&nbsp;
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>  
                     <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblInDate" class="label" style="display:none;">در تاریخ </span>  
                     <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1394/10/30</bdo></span>
                     <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
                 </div>
@@ -225,8 +225,8 @@ return true;
 </style>
 <div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
     <div class="verify">
-        
-        <span id="ctl00_ucSignature1_lblSigners"></span>
+       
+    
     </div>
     <div class="noteholder">
         <img alt="information" src="../imgs/inforation.png">
@@ -252,7 +252,14 @@ return true;
     
     
 
-    <div style="width: 90%; margin: 0 auto;">
+    <div id="ctl00_cphBody_divMainContainer" style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br>
+
+
+        </div>
         <span id="ctl00_cphBody_lblError"></span>
 
         
@@ -263,7 +270,7 @@ return true;
 
         <script language="javascript" type="text/javascript" src="../../js/Common.js"></script>
 
-        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right">
+        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right" includeinexcel="true">
             <table id="ctl00_cphBody_ucProduct1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
 		<tbody><tr>
 			<td>
@@ -322,23 +329,23 @@ return true;
 			<td>
                         <div>
                             <div>
-				<table class="gv" cellspacing="0" rules="all" showheaderwhenempty="True" border="1" id="ctl00_cphBody_ucProduct1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
+				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
 					<tbody><tr>
-						<td align="center" style="width:13.8%;">سيمان فله تيپ   425-1</td><td align="center" style="width:5.8%;">تن </td><td align="center" style="width:9.8%;">534</td><td align="center" style="width:9.8%;">2,099</td><td align="center" style="width:9.8%;">634,111</td><td align="center" style="width:9.8%;">1,331</td><td align="center" style="width:9.8%;">34,834</td><td align="center" style="width:9.8%;">35,073</td><td align="center" style="width:9.8%;">764,406</td><td align="center" style="width:11.8%;">26,810</td>
+						<td align="center" style="width:13.8%;">سيمان فله تيپ   425-1</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۵۳۴</td><td align="center" style="width:9.8%;">۲,۰۹۹</td><td align="center" style="width:9.8%;">۶۳۴,۱۱۱</td><td align="center" style="width:9.8%;">۱,۳۳۱</td><td align="center" style="width:9.8%;">۳۴,۸۳۴</td><td align="center" style="width:9.8%;">۳۵,۰۷۳</td><td align="center" style="width:9.8%;">۷۶۴,۴۰۶</td><td align="center" style="width:11.8%;">۲۶,۸۱۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">سيمان فله  تيپ  2</td><td align="center" style="width:5.8%;">تن </td><td align="center" style="width:9.8%;">8,657</td><td align="center" style="width:9.8%;">12,672</td><td align="center" style="width:9.8%;">638,573</td><td align="center" style="width:9.8%;">8,092</td><td align="center" style="width:9.8%;">100,882</td><td align="center" style="width:9.8%;">104,042</td><td align="center" style="width:9.8%;">692,249</td><td align="center" style="width:11.8%;">72,023</td>
+						<td align="center" style="width:13.8%;">سيمان فله  تيپ  2</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۸,۶۵۷</td><td align="center" style="width:9.8%;">۱۲,۶۷۲</td><td align="center" style="width:9.8%;">۶۳۸,۵۷۳</td><td align="center" style="width:9.8%;">۸,۰۹۲</td><td align="center" style="width:9.8%;">۱۰۰,۸۸۲</td><td align="center" style="width:9.8%;">۱۰۴,۰۴۲</td><td align="center" style="width:9.8%;">۶۹۲,۲۴۹</td><td align="center" style="width:11.8%;">۷۲,۰۲۳</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">سيمان فله تيپ  5</td><td align="center" style="width:5.8%;">تن </td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">158</td><td align="center" style="width:9.8%;">632,911</td><td align="center" style="width:9.8%;">100</td><td align="center" style="width:9.8%;">1,747</td><td align="center" style="width:9.8%;">603</td><td align="center" style="width:9.8%;">674,959</td><td align="center" style="width:11.8%;">407</td>
+						<td align="center" style="width:13.8%;">سيمان پاکتي  تيپ  2 </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۹,۹۰۵</td><td align="center" style="width:9.8%;">۹,۹۰۵</td><td align="center" style="width:9.8%;">۶۹۸,۸۳۹</td><td align="center" style="width:9.8%;">۶,۹۲۲</td><td align="center" style="width:9.8%;">۱۵۲,۵۱۵</td><td align="center" style="width:9.8%;">۱۵۲,۵۱۵</td><td align="center" style="width:9.8%;">۸۰۳,۹۲۱</td><td align="center" style="width:11.8%;">۱۲۲,۶۱۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">سيمان پاکتي  تيپ  2 </td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">9,905</td><td align="center" style="width:9.8%;">9,905</td><td align="center" style="width:9.8%;">698,839</td><td align="center" style="width:9.8%;">6,922</td><td align="center" style="width:9.8%;">152,515</td><td align="center" style="width:9.8%;">152,515</td><td align="center" style="width:9.8%;">803,921</td><td align="center" style="width:11.8%;">122,610</td>
+						<td align="center" style="width:13.8%;">سيمان پاکتي  تيپ 5</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۹۶۸</td><td align="center" style="width:9.8%;">۹۶۸</td><td align="center" style="width:9.8%;">۷۹۳,۳۸۸</td><td align="center" style="width:9.8%;">۷۶۸</td><td align="center" style="width:9.8%;">۳۱,۳۰۸</td><td align="center" style="width:9.8%;">۳۱,۳۰۸</td><td align="center" style="width:9.8%;">۷۹۲,۳۲۱</td><td align="center" style="width:11.8%;">۲۴,۸۰۶</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">سيمان پاکتي  تيپ 5</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">968</td><td align="center" style="width:9.8%;">968</td><td align="center" style="width:9.8%;">793,388</td><td align="center" style="width:9.8%;">768</td><td align="center" style="width:9.8%;">31,308</td><td align="center" style="width:9.8%;">31,308</td><td align="center" style="width:9.8%;">792,321</td><td align="center" style="width:11.8%;">24,806</td>
+						<td align="center" style="width:13.8%;">سيمان فله تيپ  5</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۱۵۸</td><td align="center" style="width:9.8%;">۶۳۲,۹۱۱</td><td align="center" style="width:9.8%;">۱۰۰</td><td align="center" style="width:9.8%;">۱,۷۴۷</td><td align="center" style="width:9.8%;">۶۰۳</td><td align="center" style="width:9.8%;">۶۷۴,۹۵۹</td><td align="center" style="width:11.8%;">۴۰۷</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">سيمان پاکتي تيپ 2 صادارتي  </td><td align="center" style="width:5.8%;">تن </td><td align="center" style="width:9.8%;">24,834</td><td align="center" style="width:9.8%;">24,834</td><td align="center" style="width:9.8%;">670,331</td><td align="center" style="width:9.8%;">16,647</td><td align="center" style="width:9.8%;">294,512</td><td align="center" style="width:9.8%;">294,512</td><td align="center" style="width:9.8%;">684,016</td><td align="center" style="width:11.8%;">201,451</td>
+						<td align="center" style="width:13.8%;">سيمان پاکتي تيپ 2 صادارتي  </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۴,۸۳۴</td><td align="center" style="width:9.8%;">۲۴,۸۳۴</td><td align="center" style="width:9.8%;">۶۷۰,۳۳۱</td><td align="center" style="width:9.8%;">۱۶,۶۴۷</td><td align="center" style="width:9.8%;">۲۹۴,۵۱۲</td><td align="center" style="width:9.8%;">۲۹۴,۵۱۲</td><td align="center" style="width:9.8%;">۶۸۴,۰۱۶</td><td align="center" style="width:11.8%;">۲۰۱,۴۵۱</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">کلينکر مصرفي </td><td align="center" style="width:5.8%;">تن </td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">7,655</td><td align="center" style="width:9.8%;">7,655</td><td align="center" style="width:9.8%;">509,210</td><td align="center" style="width:11.8%;">3,898</td>
+						<td align="center" style="width:13.8%;">کلينکر مصرفي </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۷,۶۵۵</td><td align="center" style="width:9.8%;">۷,۶۵۵</td><td align="center" style="width:9.8%;">۵۰۹,۲۱۰</td><td align="center" style="width:11.8%;">۳,۸۹۸</td>
 					</tr><tr class="lightBlueBg">
-						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">33,860</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">452,005</td>
+						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۳۳,۸۶۰</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">۴۵۲,۰۰۵</td>
 					</tr>
 				</tbody></table>
 			</div>
@@ -353,19 +360,23 @@ return true;
 
             
         <div class="clear" style="height: 20px;"></div>
-        <fieldset>
-            <legend>
-                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1394/10/30</span></legend>
-            <br>
-            <span id="txbDescMonth"></span>
-        </fieldset>
-        <div class="clear" style="height: 20px;"></div>
-        <fieldset>
-            <legend>
-                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1394/10/30</span></legend>
-            <br>
-            <span id="txbDescYear">کلينکر مصرفي  مقدار 7655تن  کلينکر فروش رفته در سال 1394ميباشد </span>
-        </fieldset>
+        <div id="ctl00_cphBody_divLetterDescriptionContainer">
+            
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1394/10/30</span></legend>
+                <br>
+                <span id="txbDescMonth"></span>
+            </fieldset>
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1394/10/30</span></legend>
+                <br>
+                <span id="txbDescYear">کلينکر مصرفي  مقدار 7655تن  کلينکر فروش رفته در سال 1394ميباشد </span>
+            </fieldset>
+        </div>
         <div class="clear" style="height: 20px;">
         </div>
         <div style="width: 90%; margin-left: auto; margin-right: auto;">
@@ -390,7 +401,28 @@ ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
 </script>
 
 
+<script type="text/javascript">
+//<![CDATA[
 
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
 </form>
 
 </body></html>
