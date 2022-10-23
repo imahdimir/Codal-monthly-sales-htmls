@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css"><link rel="shortcut icon" href="../assets/favicon/favicon.ico?v=RyQ5xz7ege">
+    <!--[if lt IE 7]>
+	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
+	<![endif]-->
+
+    <script language="javascript" type="text/javascript" src="../js/PKI.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/Common.js"></script>
+
+    <script language="javascript" type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+
+        function btnCancelClick() {
+            window.close();
+        }
+
+        function btnNextClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex < document.getElementById("ctl00_ddlTable").length - 1)
+                document.getElementById("ctl00_ddlTable").selectedIndex += 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = 0;
+        }
+
+        function btnPrevClick() {
+            if (document.getElementById("ctl00_ddlTable").selectedIndex > 0)
+                document.getElementById("ctl00_ddlTable").selectedIndex -= 1;
+            else
+                document.getElementById("ctl00_ddlTable").selectedIndex = document.getElementById("ctl00_ddlTable").length - 1;
+        }
+
+        //function CalcPer(txbNewValue, txbOldValue, txbChangePer) {
+        //    Change = '--';
+        //    a = parseInt(DeformatCurrency(document.getElementById(txbNewValue).value));
+        //    b = parseInt(DeformatCurrency(document.getElementById(txbOldValue).value));
+        //    if (a * b > 0) {
+        //        Change = (a - b) * 100.0 / b;
+        //        Change = Math.round(Change);
+        //    }
+        //    formatPosNeg(txbChangePer, Change);
+        //}
+
+
+        function getDocWidth() {
+            var D = document;
+            return Math.max(
+                D.body.scrollWidth, D.documentElement.scrollWidth,
+                D.body.offsetWidth, D.documentElement.offsetWidth,
+                D.body.clientWidth, D.documentElement.clientWidth
+            );
+        }
+
+        function getDocHeight() {
+            var D = document;
+            return Math.max(
+                D.body.scrollHeight, D.documentElement.scrollHeight,
+                D.body.offsetHeight, D.documentElement.offsetHeight,
+                D.body.clientHeight, D.documentElement.clientHeight
+            );
+        }
+
+
+    </script>
+
+    <style></style></head>
+<body>
+    <form name="aspnetForm" method="post" action="./MonthlyActivity.aspx?LetterSerial=ZNkZgVfXCf2SIi1IDmoqnQ%3d%3d" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=N25n0PTVGUEk6ePQY2LvSQBQYc9dEc01TajxZawOwrYsTu4xObHhp-vgWBOVls0UMSXz-gMheUg-TaTFBZ7dcnmphzU1&amp;t=637729750233813844" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=VPhnXuNOaYZbBtATbj-W2re4kobcC4ZVbW8SDyYN4KMA8S2sJWEnuezB0LQYgLLR6FB_LIBwM7M0JRXBm15M2FGCOoogzGVH7q__yqmz06_Npuk2e6ClVuFnnexh5Z8lIj7RO2RzVxaPZY98SLyIo_Rpl541&amp;t=fffffffff812781c" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=qnAnFIdi5k_nCvv_oxamJIqokPfCC20ouZ64F-NMYMwwVit0Ao2o1rNq3uemnSoZi3qvjIYO5f8kVdJtmHjC7d-CdXznX5KmwIN4e6la9dy21i89FHOW28KsT3G7RHek_OZIbZ93lMNouJNFI08JZHR0a5xYS1Ycb8sptb5nbUaSRU1K0&amp;t=ffffffff8333b97c" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=91wdw4dIbjLdnLbspRtUK5zJyxqL_0D117HD0q9sxfeEk1WWtOhR_D6R93R-cLzG6hQ8HHRreYxFwtyHF45rPMMh_lLoYb4RfuQVwAhqg_EB_VxVKv0atnutGzqo7HIUu3MFogh0aSubLpcZOOfu-fh5xsTqpC5auO4FPgTNlduOJZlepE5epoHJPVgy1JYcNLxA0w2&amp;t=ffffffff8333b97c" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="800C55C3">
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+</div>
+    <div id="divLoadingBg" style="display: none; z-index: 1000000; position: fixed; width: 100%;
+        top: 0px; bottom: 0px; height: expression(getDocHeight()); background-image: url('../Images/progressbg.png');">
+        <div id="divLoading" style="position: fixed; width: 140px; top: 300px; left: 45%;
+            padding: 5px; background-color: White; font-size: 9px;">
+            <img src="../Images/InProgress1.gif" border="0" alt="">
+            &nbsp;
+            <span id="ctl00_lblLoadingMessage" style="font-size:X-Small;">لطفاً چند لحظه صبر کنید...</span>
+        </div>
+    </div>
+    <div class="html_format_header">
+        <div class="clear" style="height: 12px;">
+        </div>
+        <div class="html_format_header_icon">
+            <img src="../imgs/header_icon.png" alt="icon">
+        </div>
+        <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
+        <div class="ddlReportWrapper">
+            <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
+	<option selected="selected" value="1000005">گزارش فعالیت ماهانه</option>
+
+</select>
+            <input type="submit" name="ctl00$btnPervPage" value="" onclick="btnPrevClick();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$btnPervPage&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_btnPervPage" title="صفحه قبلی" class="prev_report">
+            <input type="submit" name="ctl00$btnNextPage" value="" onclick="btnNextClick();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$btnNextPage&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_btnNextPage" title="صفحه بعدی" class="next_report">
+        </div>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="../ChangeCulture.aspx?lng=en-US&amp;selectedValue=1000005" style="font-family:Tahoma;">EN</a>
+        <div class="clear" style="height: 10px;">
+        </div>
+    </div>
+    <input name="ctl00$hdfThumbPrint" type="hidden" id="ctl00_hdfThumbPrint">
+    <div class="clear" style="height: 15px;">
+    </div>
+    <div class="symbol_and_name">
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divCompanyCaption" class="lable">شرکت:</div>
+                <div class="varios">
+                    <span id="ctl00_txbCompanyName" class="label" style="color:#C04000;">تامين سرمايه دماوند</span>
+                    
+                    <span id="ctl00_CustomValidator1" style="color:Red;font-weight:bold;display:none;visibility:hidden;">تاریخ نامعتبر</span>
+                    
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divListedCapitalCaption" class="lable">سرمایه ثبت شده:</div>
+                <div class="varios">
+                    <span id="ctl00_lblListedCapital" class="label" style="color:#C04000;">2,000,000</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divSymbolCaption" class="lable">نماد:</div>
+                <div class="varios">
+                    <span id="ctl00_lblDisplaySymbol" class="label" style="color:#C04000;"></span>
+                    <span id="ctl00_txbSymbol" class="label" style="color:#C04000;">تماوند</span>
+                    
+                </div>
+            </div>
+            <div class="text_holder">
+                <div id="ctl00_divUnauthorizedCapital" class="lable">سرمایه ثبت نشده:</div>
+                <div class="varios">
+                    <span id="ctl00_txbUnauthorizedCapital" class="label" style="color:#C04000;">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="rows">
+            <div class="text_holder">
+                <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
+                <div class="varios">
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">671905</span>
+                </div>
+            </div>
+            <div class="text_holder">
+                <div style="margin: 5px 4px; display:inline-flex">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>&nbsp;
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>  
+                    <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblInDate" class="label" style="display:none;">در تاریخ </span>  
+                    <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1399/02/31</bdo></span>
+                    <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
+                </div>
+            </div>
+        </div>  
+         <div class="text_holder">
+            <div id="ctl00_divYearEndToDateCaption" class="lable">سال مالی منتهی به:</div>
+            <div class="varios">
+                <span id="ctl00_lblYearEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1399/06/31</bdo></span>
+            </div>
+        </div>      
+        <div class="text_holder">
+            <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
+            <div class="varios">
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">پذيرفته شده در فرابورس ايران</span>
+            </div>
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    
+<style type="text/css">
+    .label
+    {
+        font-size: 8pt;
+        font-family: tahoma;
+    }
+</style>
+<div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
+    <div class="verify">
+       
+    
+    </div>
+    <div class="noteholder">
+        <img alt="information" src="../imgs/inforation.png">
+        <span id="ctl00_ucSignature1_lblSignature" class="signature" style="color:DarkGreen;">اطلاعات نمایش داده شده با اطلاعات امضا شده مطابقت دارد</span>
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+
+    <div class="clear" style="height: 5px;">
+    </div>
+   <div class="errorHolder">
+        <span id="ctl00_lblError" class="Error" style="color:DarkRed;font-weight:bold;"></span>
+    </div>
+   <input type="hidden" name="ctl00$hdfVersion" id="ctl00_hdfVersion" value="0">
+   <div id="ctl00_divPriceNote" class="note_price">
+        <p id="ctl00_pPriceNote">کلیه مبالغ درج شده به میلیون ریال می باشد</p>
+    </div>
+   <div class="note_price_Excel">
+    <input type="image" name="ctl00$ibtnExport" id="ctl00_ibtnExport" class="Hidden" src="../Images/ExportToExcel.jpg" alt="Export To Excel" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ibtnExport&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="height:20px;border-width:0px;display:none;">
+    </div>
+    <div class="clear">
+    </div>
+    
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$cphBody$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <div id="ctl00_cphBody_divMainContainer" style="width:100%;margin:0 auto;">
+        <div>
+            <div id="ctl00_cphBody_ucNavigateToNextPrevLetter_trPrevVersion" style="text-align:center">
+    <a id="ctl00_cphBody_ucNavigateToNextPrevLetter_hlPrevVersion" href="MonthlyActivity.aspx?LetterSerial=S3o2ecOxRUCfXK70itukQQQaQQQQ%3d%3d" style="color:#558080;font-weight:bold;">این اطلاعیه اصلاحیه اطلاعیه شماره ( 715687 ) می باشد. نسخه قبلی اطلاعیه را می توانید در <span style="text-decoration:underline;">اینجا</span> مشاهده نمایید</a>
+</div>
+
+<br>
+<div id="ctl00_cphBody_ucNavigateToNextPrevLetter_trCorrection" style="color: #558080; font-weight: bold" align="center">
+
+    <span id="ctl00_cphBody_ucNavigateToNextPrevLetter_lblCorrectionDesc" style="color: #486C6C"> دلایل اصلاح: ارقام مندرج در گزارش فعاليت ماهانه قبلي به ريال بوده است ليکن ارقام مندرج در گزارش فعلي به ميليون ريال تبديل و ارائه گرديده است.  </span>
+</div>
+
+        </div>
+        <span id="ctl00_cphBody_lblError"></span>
+
+        
+                
+
+
+
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../js/codal-dfs-client-v8/styles.css">
+<style type="text/css">
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+
+    .is-negative {
+        color: red !important;
+    }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+<script type="text/javascript">
+    var map =
+        [
+            "&\#1632;", "&\#1633;", "&\#1634;", "&\#1635;", "&\#1636;",
+            "&\#1637;", "&\#1638;", "&\#1639;", "&\#1640;", "&\#1641;"
+        ];
+
+    function getArabicNumbers(str) {
+        var newStr = "";
+
+        str = String(str);
+
+        for (i = 0; i < str.length; i++) {
+            newStr += map[parseInt(str.charAt(i))];
+        }
+
+        return newStr;
+    }
+
+    var datasource = {"title_Fa":"گزارش فعالیت ماهانه خدماتی - V3","title_En":"Monthly Activity Product - V3","subject":null,"dsc":null,"type":58,"period":1,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","periodExtraDay":0,"isConsolidated":false,"tracingNo":715882,"kind":1,"isAudited":false,"auditState":-1,"registerDateTime":"1399/11/05 10:51:16","sentDateTime":"1399/11/05 14:41:42","publishDateTime":"1399/11/05 14:41:42","state":1,"isForAuditing":false,"sheets":[{"code":1000005,"title_Fa":"گزارش فعالیت ماهانه","title_En":"Monthly Activity","sequence":1,"isDynamic":true,"tables":[{"metaTableId":1704,"title_En":"Services And Sale","title_Fa":"خدمات و فروش","sequence":1,"sheetCode":1000005,"code":1704,"description":"کلیه مبالغ درج شده به میلیون ریال می باشد","aliasName":"ServicesAndSale","versionNo":"3.1","cells":[{"metaTableId":1704,"metaTableCode":1704,"address":"A3","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":1,"columnSequence":1,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"سود سپرده بانکي ","valueTypeName":"Component","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"B3","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":2,"columnSequence":2,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"Date","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"C3","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":3,"columnSequence":3,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"D3","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":4,"columnSequence":4,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"47066","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"E3","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":5,"columnSequence":5,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"F3","formula":"=D3+E3","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":6,"columnSequence":6,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"47066","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"G3","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":7,"columnSequence":7,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"13","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"H3","formula":"=F3+G3","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":8,"columnSequence":8,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"47079","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"I3","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":9,"columnSequence":9,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1398/06/31","yearEndToDate":"1398/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"J3","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":3,"colSpan":1,"columnCode":10,"columnSequence":10,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"String","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"A5","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":1,"columnSequence":1,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"","valueTypeName":"Component","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"B5","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":2,"columnSequence":2,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"Date","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"C5","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":3,"columnSequence":3,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"D5","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":4,"columnSequence":4,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"E5","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":5,"columnSequence":5,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"F5","formula":"=D5+E5","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":6,"columnSequence":6,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"G5","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":7,"columnSequence":7,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"H5","formula":"=F5+G5","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":8,"columnSequence":8,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"I5","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":9,"columnSequence":9,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1398/06/31","yearEndToDate":"1398/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"J5","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":5,"colSpan":1,"columnCode":10,"columnSequence":10,"cssClass":"","rowTypeName":"NewRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"String","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"A6","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":1,"columnSequence":1,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"جمع","valueTypeName":"FormControl","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"B6","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":2,"columnSequence":2,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"C6","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":3,"columnSequence":3,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"0","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"D6","formula":"=SUM(D3:D5)","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":4,"columnSequence":4,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"47066","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"E6","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":5,"columnSequence":5,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"F6","formula":"=SUM(F3:F5)","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":6,"columnSequence":6,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"47066","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"G6","formula":"=SUM(G3:G5)","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":7,"columnSequence":7,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"35853","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"H6","formula":"=SUM(H3:H5)","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":8,"columnSequence":8,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"82919","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"I6","formula":"=SUM(I3:I5)","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":9,"columnSequence":9,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1398/06/31","yearEndToDate":"1398/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"J6","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":5,"rowSequence":6,"colSpan":1,"columnCode":10,"columnSequence":10,"cssClass":"dynamic_comp","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"A1","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":2,"rowCode":1,"rowSequence":1,"colSpan":1,"columnCode":1,"columnSequence":1,"cssClass":"text-center","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"شرح خدمات یا فروش","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"B1","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":1,"rowSequence":1,"colSpan":2,"columnCode":2,"columnSequence":2,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"قرارد دادها","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"D1","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":1,"rowSequence":1,"colSpan":6,"columnCode":4,"columnSequence":4,"cssClass":"text-center","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"درآمد شناسایی شده","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"J1","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":2,"rowCode":1,"rowSequence":1,"colSpan":1,"columnCode":10,"columnSequence":10,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"توضیحات","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"B2","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":2,"rowSequence":2,"colSpan":1,"columnCode":2,"columnSequence":2,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"تاریخ عقد قرارداد","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"C2","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":2,"rowSequence":2,"colSpan":1,"columnCode":3,"columnSequence":3,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"مدت قرارداد (ماه)","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"D2","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":2,"rowSequence":2,"colSpan":1,"columnCode":4,"columnSequence":4,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"درآمد شناساسي شده از ابتداي سال مالي تا پايان دوره مالي منتهي به 1399/01/31","valueTypeName":"TextComponents","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"E2","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":2,"rowSequence":2,"colSpan":1,"columnCode":5,"columnSequence":5,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"اصلاحات","valueTypeName":"Blank","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"F2","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":2,"rowSequence":2,"colSpan":1,"columnCode":6,"columnSequence":6,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"درآمد شناساسی شده از ابتدای سال مالی تا پایان دوره مالی منتهی به 1399/01/31 - اصلاح شده","valueTypeName":"TextComponents","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"G2","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":2,"rowSequence":2,"colSpan":1,"columnCode":7,"columnSequence":7,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"درآمد شناساسی شده طی دوره یک ماهه منتهی به 1399/02/31","valueTypeName":"TextComponents","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"H2","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":2,"rowSequence":2,"colSpan":1,"columnCode":8,"columnSequence":8,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"درآمد شناساسی شده از اول سال مالی تا پایان دوره مالی منتهی به 1399/02/31","valueTypeName":"TextComponents","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"I2","formula":"","validations":"","financialConcept":null,"cellGroupName":"Header","rowSpan":1,"rowCode":2,"rowSequence":2,"colSpan":1,"columnCode":9,"columnSequence":9,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"درامد شناساسی شده تا پایان دوره مالی منتهی به 1398/06/31","valueTypeName":"TextComponents","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"1398/06/31","yearEndToDate":"1398/06/31","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1704,"metaTableCode":1704,"address":"A4","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":1,"columnSequence":1,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"","valueTypeName":"Component","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"B4","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":2,"columnSequence":2,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"Date","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"C4","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":3,"columnSequence":3,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"D4","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":4,"columnSequence":4,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"E4","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":5,"columnSequence":5,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"F4","formula":"=D4+E4","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":6,"columnSequence":6,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/01/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"G4","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":7,"columnSequence":7,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"35840","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"H4","formula":"=F4+G4","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":8,"columnSequence":8,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"35840","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1399/02/31","yearEndToDate":"1399/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"I4","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":9,"columnSequence":9,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"0","valueTypeName":"FormControl","dataTypeName":"Integer","decimalPlace":0,"periodEndToDate":"1398/06/31","yearEndToDate":"1398/06/31","conditionalIsUnique":false,"removableCustomRow":true},{"metaTableId":1704,"metaTableCode":1704,"address":"J4","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":3,"rowSequence":4,"colSpan":1,"columnCode":10,"columnSequence":10,"cssClass":"","rowTypeName":"CustomRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"String","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":true}]},{"metaTableId":1707,"title_En":null,"title_Fa":null,"sequence":2,"sheetCode":1000005,"code":1707,"description":null,"aliasName":"ServiceMonthlyActivityDesc1","versionNo":"3.1","cells":[{"metaTableId":1707,"metaTableCode":1707,"address":"A7","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":6,"rowSequence":7,"colSpan":7,"columnCode":1,"columnSequence":1,"cssClass":"text-center","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"کادر توضیحات در مورد اصلاحات","valueTypeName":"Fix","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1707,"metaTableCode":1707,"address":"A8","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":7,"rowSequence":8,"colSpan":7,"columnCode":1,"columnSequence":1,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"String","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1707,"metaTableCode":1707,"address":"A9","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":8,"rowSequence":9,"colSpan":7,"columnCode":1,"columnSequence":1,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1399/02/31","valueTypeName":"TextComponents","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1707,"metaTableCode":1707,"address":"A10","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":9,"rowSequence":10,"colSpan":7,"columnCode":1,"columnSequence":1,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"String","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1707,"metaTableCode":1707,"address":"A11","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":10,"rowSequence":11,"colSpan":7,"columnCode":1,"columnSequence":1,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"کادر توضیحی مربوط اطلاعات تجمعی از ابتدای سال تا پایان مورخ 1399/02/31","valueTypeName":"TextComponents","dataTypeName":null,"decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null},{"metaTableId":1707,"metaTableCode":1707,"address":"A12","formula":"","validations":"","financialConcept":null,"cellGroupName":"Body","rowSpan":1,"rowCode":11,"rowSequence":12,"colSpan":7,"columnCode":1,"columnSequence":1,"cssClass":"","rowTypeName":"FixedRow","category":0,"isVisible":true,"value":"","valueTypeName":"FormControl","dataTypeName":"String","decimalPlace":0,"periodEndToDate":"","yearEndToDate":"","conditionalIsUnique":false,"removableCustomRow":null}]}],"aliasName":"MonthlyActivity","versionNo":"3.1","sheetComponents":{"61290":[{"id":27,"typeName":"Other","formControlTypeName":"Label","dataTypeName":"StringPair","serviceUrl":null,"parameters":null,"resourceAddresses":null,"data":[{"text":"درآمد حاصل از مشاوره عرضه و پذيرش","value":"5502","params":[]},{"text":"سود سپرده بانکي ","value":"5503","params":[]},{"text":"درآمد حاصل از سرمايه گذاري در صندوق هاي سرمايه گذاري ","value":"5504","params":[]},{"text":"درآمد حاصل از ارزشيابي سهام","value":"5505","params":[]},{"text":"تعهد خريد اوراق بهادار در عرضه هاي ثانويه","value":"5507","params":[]},{"text":"درآمد حاصل از بازارگرداني صندوق سرمايه گذاري سپيد دماوند ","value":"5753","params":[]},{"text":"درآمد حاصل از بازارگرداني صندوق سپهر سودمند سينا ","value":"5754","params":[]},{"text":"درآمد حاصل از بازارگرداني اوراق صمعاد 407 ","value":"5755","params":[]},{"text":"درآمد حاصل از بازارگرداني اوراق صغدير 408","value":"5756","params":[]},{"text":"درآمد حاصل از بازارگرداني صندوق اوج دماوند ","value":"5781","params":[]},{"text":"درآمد حاصل از بازارگرداني صندوق اوج دماوند ","value":"5782","params":[]},{"text":"درآمد حاصل از بازارگرداني صندوق اوج دماوند ","value":"5783","params":[]},{"text":"درآمد بازارگرداني","value":"5581","params":[]},{"text":"درآمد مديريت صندوق هاي سرمايه گذاري ","value":"5582","params":[]},{"text":"درآمد سرمايه گذاري در اوراق ","value":"5583","params":[]},{"text":"درآمد تعهد پذيره نويسي","value":"5588","params":[]},{"text":"درآمد سبدگرداني","value":"5639","params":[]},{"text":"درآمد حاصل از بازارگرداني اوراق غدير 05","value":"5849","params":[]},{"text":"درآمد حاصل از بازارگرداني صندوق گنبد ميناي دماوند","value":"5850","params":[]},{"text":"درآمد ضمانت نقدشوندگي صندوق","value":"5869","params":[]}]}],"61311":[{"id":31,"typeName":"Date","formControlTypeName":"Label","dataTypeName":"String","serviceUrl":null,"parameters":null,"resourceAddresses":null,"data":"1399/01/31"}],"61321":[{"id":31,"typeName":"Date","formControlTypeName":"Label","dataTypeName":"String","serviceUrl":null,"parameters":null,"resourceAddresses":null,"data":"1399/01/31"}],"61326":[{"id":2,"typeName":"Date","formControlTypeName":"Label","dataTypeName":"String","serviceUrl":null,"parameters":null,"resourceAddresses":null,"data":"1399/02/31"}],"61331":[{"id":2,"typeName":"Date","formControlTypeName":"Label","dataTypeName":"String","serviceUrl":null,"parameters":null,"resourceAddresses":null,"data":"1399/02/31"}],"61336":[{"id":9,"typeName":"Date","formControlTypeName":"Label","dataTypeName":"String","serviceUrl":null,"parameters":null,"resourceAddresses":null,"data":"1398/06/31"}],"61294":[{"id":2,"typeName":"Date","formControlTypeName":"Label","dataTypeName":"String","serviceUrl":null,"parameters":null,"resourceAddresses":null,"data":"1399/02/31"}],"61296":[{"id":2,"typeName":"Date","formControlTypeName":"Label","dataTypeName":"String","serviceUrl":null,"parameters":null,"resourceAddresses":null,"data":"1399/02/31"}]}}]};
+
+
+</script>
+
+<app-root _nghost-syl-c0="" ng-version="8.2.14"><!----><hr _ngcontent-syl-c0=""><app-statement _ngcontent-syl-c0="" _nghost-syl-c2=""><div _ngcontent-syl-c2="" style="direction: rtl;"><!----><div _ngcontent-syl-c2=""><!----><div _ngcontent-syl-c2="" class="sheet-container"><app-sheet _ngcontent-syl-c2="" _nghost-syl-c3=""><!----><div _ngcontent-syl-c3="" class="table-containet"><!----><div _ngcontent-syl-c3="" class="table-containet"><!----><div _ngcontent-syl-c3="" class="table-title ng-binding ng-scope">خدمات و فروش</div><!----><div _ngcontent-syl-c3="" class="table-description ng-binding ng-scope">کلیه مبالغ درج شده به میلیون ریال می باشد</div><app-table _ngcontent-syl-c3="" _nghost-syl-c4=""><table _ngcontent-syl-c4="" class="rayanDynamicStatement" id="1704"><thead _ngcontent-syl-c4=""><!----><tr _ngcontent-syl-c4=""><!----><th _ngcontent-syl-c4="" rowspan="2" colspan="1"><span _ngcontent-syl-c4="">شرح خدمات یا فروش</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="2"><span _ngcontent-syl-c4="">قرارد دادها</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="6"><span _ngcontent-syl-c4="">درآمد شناسایی شده</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="2" colspan="1"><span _ngcontent-syl-c4="">توضیحات</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th></tr><tr _ngcontent-syl-c4=""><!----><th _ngcontent-syl-c4="" rowspan="1" colspan="1"><span _ngcontent-syl-c4="">تاریخ عقد قرارداد</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="1"><span _ngcontent-syl-c4="">مدت قرارداد (ماه)</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="1"><span _ngcontent-syl-c4="">درآمد شناساسي شده از ابتداي سال مالي تا پايان دوره مالي منتهي به ۱۳۹۹/۰۱/۳۱</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="1"><span _ngcontent-syl-c4="">اصلاحات</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="1"><span _ngcontent-syl-c4="">درآمد شناساسی شده از ابتدای سال مالی تا پایان دوره مالی منتهی به ۱۳۹۹/۰۱/۳۱ - اصلاح شده</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="1"><span _ngcontent-syl-c4="">درآمد شناساسی شده طی دوره یک ماهه منتهی به ۱۳۹۹/۰۲/۳۱</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="1"><span _ngcontent-syl-c4="">درآمد شناساسی شده از اول سال مالی تا پایان دوره مالی منتهی به ۱۳۹۹/۰۲/۳۱</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th><th _ngcontent-syl-c4="" rowspan="1" colspan="1"><span _ngcontent-syl-c4="">درامد شناساسی شده تا پایان دوره مالی منتهی به ۱۳۹۸/۰۶/۳۱</span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></th></tr></thead><tbody _ngcontent-syl-c4=""><!----><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;">سود سپرده بانکي  </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۴۷,۰۶۶ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۴۷,۰۶۶ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۱۳ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۴۷,۰۷۹ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۳۵,۸۴۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۳۵,۸۴۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class=""><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr><tr _ngcontent-syl-c4=""><!----></tr><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;">جمع </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp"><span _ngcontent-syl-c4="" style="color: #055274;">۴۷,۰۶۶ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp"><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp"><span _ngcontent-syl-c4="" style="color: #055274;">۴۷,۰۶۶ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp"><span _ngcontent-syl-c4="" style="color: #055274;">۳۵,۸۵۳ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp"><span _ngcontent-syl-c4="" style="color: #055274;">۸۲,۹۱۹ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp"><span _ngcontent-syl-c4="" style="color: #055274;">۰ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td><td _ngcontent-syl-c4="" rowspan="1" colspan="1" class="dynamic_comp right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr></tbody></table></app-table></div></div><div _ngcontent-syl-c3="" class="table-containet"><!----><div _ngcontent-syl-c3="" class="table-containet"><!----><!----><app-table _ngcontent-syl-c3="" _nghost-syl-c4=""><table _ngcontent-syl-c4="" class="rayanDynamicStatement" id="1707"><thead _ngcontent-syl-c4=""><!----></thead><tbody _ngcontent-syl-c4=""><!----><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="7" class="text-center right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;">کادر توضیحات در مورد اصلاحات </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="7" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="7" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;">کادر توضیحی مربوط به اطلاعات دوره ۱ ماهه منتهی به ۱۳۹۹/۰۲/۳۱ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="7" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="7" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;">کادر توضیحی مربوط اطلاعات تجمعی از ابتدای سال تا پایان مورخ ۱۳۹۹/۰۲/۳۱ </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr><tr _ngcontent-syl-c4=""><!----><td _ngcontent-syl-c4="" rowspan="1" colspan="7" class="right-aligne"><span _ngcontent-syl-c4="" style="color: #055274;"> </span><app-debug-info _ngcontent-syl-c4="" _nghost-syl-c5=""><div _ngcontent-syl-c5="" class="debugInfo"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></div></app-debug-info></td></tr></tbody></table></app-table></div></div></app-sheet></div></div></div></app-statement></app-root>
+
+
+
+
+<script src="../js/codal-dfs-client-v8/runtime-es2015.js" type="module"></script>
+<script src="../js/codal-dfs-client-v8/runtime-es5.js" nomodule="" defer=""></script>
+<script src="../js/codal-dfs-client-v8/polyfills-es5.js" nomodule="" defer=""></script>
+<script src="../js/codal-dfs-client-v8/polyfills-es2015.js" type="module"></script>
+<script src="../js/codal-dfs-client-v8/scripts.js" defer=""></script>
+<script src="../js/codal-dfs-client-v8/main-es2015.js" type="module"></script>
+<script src="../js/codal-dfs-client-v8/main-es5.js" nomodule="" defer=""></script>
+
+
+
+
+
+
+
+
+
+<input type="hidden" name="ctl00$cphBody$ucDynamicFinancialStatement$hdfLetterRef" id="ctl00_cphBody_ucDynamicFinancialStatement_hdfLetterRef" value="ZNkZgVfXCf2SIi1IDmoqnQ==">
+
+            
+        <div class="clear" style="height: 20px;"></div>
+        
+        <div class="clear" style="height: 20px;">
+        </div>
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_CustomValidator1"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_CustomValidator1 = document.all ? document.all["ctl00_CustomValidator1"] : document.getElementById("ctl00_CustomValidator1");
+ctl00_CustomValidator1.controltovalidate = "ctl00_txbPeriodEndToDate";
+ctl00_CustomValidator1.errormessage = "تاریخ نامعتبر";
+ctl00_CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+ctl00_CustomValidator1.clientvalidationfunction = "DateValidator";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_CustomValidator1').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_CustomValidator1'));
+}
+//]]>
+</script>
+</form>
+
+</body></html>

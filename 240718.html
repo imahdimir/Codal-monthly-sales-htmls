@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
 	
-</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css">
-   
+</title><link href="../css/Main.css" rel="stylesheet" type="text/css"><link href="../css/fepsProductV1.css" rel="stylesheet" type="text/css"><link rel="shortcut icon" href="../assets/favicon/favicon.ico?v=RyQ5xz7ege">
     <!--[if lt IE 7]>
 	<link href="../css/IE6_new_style.css" type="text/css" rel="stylesheet" />
 	<![endif]-->
@@ -135,13 +134,13 @@ return true;
         <h1 id="ctl00_h1MasterTitle">گزارش فعالیت ماهانه</h1>
         <div class="ddlReportWrapper">
             <select name="ctl00$ddlTable" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlTable\',\'\')', 0)" id="ctl00_ddlTable" class="label" style="color:Red;width:50%;">
-	<option selected="selected" value="1000000">آمار تولید و فروش
+	<option selected="selected" value="1000000">گزارش فعالیت ماهانه
 
 </option></select>
             
             
         <div title="صفحه بعدی" class="next_report" style="float: left;" onclick="btnNextClick();"></div><div title="صفحه قبلی" class="prev_report" style="float: left;" onclick="btnPrevClick();"></div></div>
-        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=bI2aGDOZfVvHsVAeQnE1vA%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
+        <a id="ctl00_hlChangeLanguage" class="eng" href="Decision.aspx?LetterSerial=bI2aGDOZfVvHsVAeQnE1vA%3d%3d&amp;rt=0&amp;let=58&amp;ct=0&amp;ft=-1&amp;lng=en-us" style="font-family:Tahoma;">EN</a>
         <div class="clear" style="height: 10px;">
         </div>
     </div>
@@ -187,14 +186,15 @@ return true;
             <div class="text_holder">
                 <div id="ctl00_divIsicCaption" class="lable">کد صنعت (ISIC):</div>
                 <div class="varios">
-                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">241151</span>
+                    <span id="ctl00_lblISIC" class="label" style="color:#C04000;">441105</span>
                 </div>
             </div>
             <div class="text_holder">
-                <div style="margin: 5px 4px;">
-                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>
-                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>
+                <div style="margin: 5px 4px; display:inline-flex">
+                    <span id="ctl00_lblReportName" class="label">گزارش فعالیت ماهانه</span>&nbsp;
+                    <span id="ctl00_lblPeriod" class="label" style="color:#C04000;">1 ماهه</span>  
                     <span id="ctl00_lblEndTo" class="label">منتهی به</span>
+                    <span id="ctl00_lblInDate" class="label" style="display:none;">در تاریخ </span>  
                     <span id="ctl00_lblPeriodEndToDate" class="label" style="color:#C04000;"><bdo dir="ltr">1394/09/30</bdo></span>
                     <span id="ctl00_lblIsAudited" class="label" style="display:none;">(حسابرسی نشده)</span>
                 </div>
@@ -209,7 +209,7 @@ return true;
         <div class="text_holder">
             <div id="ctl00_divCompanyStateCaption" class="lable">وضعیت ناشر:</div>
             <div class="varios">
-                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">ثبت شده نزد سازمان (ناشر غير بورسي و غير فرابورسي)</span>
+                <span id="ctl00_lblCompanyState" class="label" style="color:#C04000;">ثبت شده پذیرفته نشده</span>
             </div>
         </div>
         <div style="clear: both;">
@@ -225,8 +225,8 @@ return true;
 </style>
 <div id="ctl00_ucSignature1_pnlMain" class="main_note" style="background-color:#C1E2B4;">
     <div class="verify">
-        
-        <span id="ctl00_ucSignature1_lblSigners"></span>
+       
+    
     </div>
     <div class="noteholder">
         <img alt="information" src="../imgs/inforation.png">
@@ -252,7 +252,14 @@ return true;
     
     
 
-    <div style="width: 90%; margin: 0 auto;">
+    <div id="ctl00_cphBody_divMainContainer" style="width: 90%; margin: 0 auto;">
+        <div>
+            
+
+<br>
+
+
+        </div>
         <span id="ctl00_cphBody_lblError"></span>
 
         
@@ -263,7 +270,7 @@ return true;
 
         <script language="javascript" type="text/javascript" src="../../js/Common.js"></script>
 
-        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right">
+        <div id="ctl00_cphBody_ucProduct1_divProduction" align="right" includeinexcel="true">
             <table id="ctl00_cphBody_ucProduct1_Table1" cellpadding="0" cellspacing="0" width="100%" align="right" dir="rtl">
 		<tbody><tr>
 			<td>
@@ -324,33 +331,33 @@ return true;
                             <div>
 				<table class="gv" cellspacing="0" rules="all" border="1" id="ctl00_cphBody_ucProduct1_dgProduction" style="border-style:Solid;width:100%;border-collapse:collapse;">
 					<tbody><tr>
-						<td align="center" style="width:13.8%;">هيدروژن 99%</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">57</td><td align="center" style="width:9.8%;">3</td><td align="center" style="width:9.8%;">10,666,667</td><td align="center" style="width:9.8%;">32</td><td align="center" style="width:9.8%;">407</td><td align="center" style="width:9.8%;">16</td><td align="center" style="width:9.8%;">9,812,500</td><td align="center" style="width:11.8%;">157</td>
+						<td align="center" style="width:13.8%;">اتيلن</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۲,۸۱۰</td><td align="center" style="width:9.8%;">۲۶۴</td><td align="center" style="width:9.8%;">۲۱,۸۷۱,۲۱۲</td><td align="center" style="width:9.8%;">۵,۷۷۴</td><td align="center" style="width:9.8%;">۱۵۶,۷۳۷</td><td align="center" style="width:9.8%;">۱,۲۶۹</td><td align="center" style="width:9.8%;">۲۳,۵۰۱,۹۷۰</td><td align="center" style="width:11.8%;">۲۹,۸۲۴</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">هيدروژن 86%</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">1,845</td><td align="center" style="width:9.8%;">1,469</td><td align="center" style="width:9.8%;">1,689,585</td><td align="center" style="width:9.8%;">2,482</td><td align="center" style="width:9.8%;">12,285</td><td align="center" style="width:9.8%;">8,459</td><td align="center" style="width:9.8%;">1,690,034</td><td align="center" style="width:11.8%;">14,296</td>
+						<td align="center" style="width:13.8%;">پروپيلن</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۸,۹۹۳</td><td align="center" style="width:9.8%;">۹,۵۶۷</td><td align="center" style="width:9.8%;">۱۳,۱۵۹,۶۱۱</td><td align="center" style="width:9.8%;">۱۲۵,۸۹۸</td><td align="center" style="width:9.8%;">۵۸,۱۲۲</td><td align="center" style="width:9.8%;">۵۷,۵۵۷</td><td align="center" style="width:9.8%;">۱۶,۷۸۷,۲۵۴</td><td align="center" style="width:11.8%;">۹۶۶,۲۲۴</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">برش چهار کربنه</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">6,365</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">40,362</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:11.8%;">0</td>
+						<td align="center" style="width:13.8%;">برش چهار کربنه</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۶,۳۶۵</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۴۰,۳۶۲</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:11.8%;">۰</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">بنزين پيروليز</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">8,393</td><td align="center" style="width:9.8%;">8,369</td><td align="center" style="width:9.8%;">12,319,632</td><td align="center" style="width:9.8%;">103,103</td><td align="center" style="width:9.8%;">57,622</td><td align="center" style="width:9.8%;">56,152</td><td align="center" style="width:9.8%;">12,367,716</td><td align="center" style="width:11.8%;">694,472</td>
+						<td align="center" style="width:13.8%;">بنزين پيروليز</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۸,۳۹۳</td><td align="center" style="width:9.8%;">۸,۳۶۹</td><td align="center" style="width:9.8%;">۱۲,۳۱۹,۶۳۲</td><td align="center" style="width:9.8%;">۱۰۳,۱۰۳</td><td align="center" style="width:9.8%;">۵۷,۶۲۲</td><td align="center" style="width:9.8%;">۵۶,۱۵۲</td><td align="center" style="width:9.8%;">۱۲,۳۶۷,۷۱۶</td><td align="center" style="width:11.8%;">۶۹۴,۴۷۲</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">پروپيلن</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">8,993</td><td align="center" style="width:9.8%;">9,567</td><td align="center" style="width:9.8%;">13,159,611</td><td align="center" style="width:9.8%;">125,898</td><td align="center" style="width:9.8%;">58,122</td><td align="center" style="width:9.8%;">57,557</td><td align="center" style="width:9.8%;">16,787,254</td><td align="center" style="width:11.8%;">966,224</td>
+						<td align="center" style="width:13.8%;">p.f.o</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۱۷۵</td><td align="center" style="width:9.8%;">۱,۰۹۷</td><td align="center" style="width:9.8%;">۶,۷۴۲,۰۲۴</td><td align="center" style="width:9.8%;">۷,۳۹۶</td><td align="center" style="width:9.8%;">۷,۹۴۱</td><td align="center" style="width:9.8%;">۷,۸۲۴</td><td align="center" style="width:9.8%;">۸,۱۸۴,۴۳۳</td><td align="center" style="width:11.8%;">۶۴,۰۳۵</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">اتيلن</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">22,810</td><td align="center" style="width:9.8%;">264</td><td align="center" style="width:9.8%;">21,871,212</td><td align="center" style="width:9.8%;">5,774</td><td align="center" style="width:9.8%;">156,737</td><td align="center" style="width:9.8%;">1,269</td><td align="center" style="width:9.8%;">23,501,970</td><td align="center" style="width:11.8%;">29,824</td>
+						<td align="center" style="width:13.8%;">پلي اتيلن سنگين</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۸,۳۴۱</td><td align="center" style="width:9.8%;">۴,۹۴۳</td><td align="center" style="width:9.8%;">۴۱,۸۲۷,۰۲۸</td><td align="center" style="width:9.8%;">۲۰۶,۷۵۱</td><td align="center" style="width:9.8%;">۷۲,۴۵۳</td><td align="center" style="width:9.8%;">۶۳,۱۲۶</td><td align="center" style="width:9.8%;">۴۳,۵۰۷,۵۷۲</td><td align="center" style="width:11.8%;">۲,۷۴۶,۴۵۹</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">بوتادين</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">2,843</td><td align="center" style="width:9.8%;">5,909</td><td align="center" style="width:9.8%;">17,169,572</td><td align="center" style="width:9.8%;">101,455</td><td align="center" style="width:9.8%;">17,898</td><td align="center" style="width:9.8%;">18,041</td><td align="center" style="width:9.8%;">18,259,298</td><td align="center" style="width:11.8%;">329,416</td>
+						<td align="center" style="width:13.8%;">پلي اتيلن سبک خطي </td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۰,۳۴۷</td><td align="center" style="width:9.8%;">۲۰,۰۴۸</td><td align="center" style="width:9.8%;">۳۹,۲۶۴,۷۶۵</td><td align="center" style="width:9.8%;">۷۸۷,۱۸۰</td><td align="center" style="width:9.8%;">۱۳۴,۸۳۲</td><td align="center" style="width:9.8%;">۱۲۶,۹۰۱</td><td align="center" style="width:9.8%;">۴۱,۳۶۷,۹۰۱</td><td align="center" style="width:11.8%;">۵,۲۴۹,۶۲۸</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">رافنيت</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">3,638</td><td align="center" style="width:9.8%;">3,208</td><td align="center" style="width:9.8%;">11,644,015</td><td align="center" style="width:9.8%;">37,354</td><td align="center" style="width:9.8%;">22,255</td><td align="center" style="width:9.8%;">19,545</td><td align="center" style="width:9.8%;">12,402,456</td><td align="center" style="width:11.8%;">242,406</td>
+						<td align="center" style="width:13.8%;">پلي اتيلن سبک</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲۰,۸۰۰</td><td align="center" style="width:9.8%;">۲۳,۷۸۹</td><td align="center" style="width:9.8%;">۳۹,۶۹۰,۲۳۵</td><td align="center" style="width:9.8%;">۹۴۴,۱۹۱</td><td align="center" style="width:9.8%;">۱۲۰,۰۱۵</td><td align="center" style="width:9.8%;">۱۱۱,۸۴۷</td><td align="center" style="width:9.8%;">۴۰,۶۱۵,۰۹۹</td><td align="center" style="width:11.8%;">۴,۵۴۲,۶۷۷</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">بوتن وان</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">1,780</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">0</td><td align="center" style="width:9.8%;">11,488</td><td align="center" style="width:9.8%;">1,137</td><td align="center" style="width:9.8%;">29,557,608</td><td align="center" style="width:11.8%;">33,607</td>
+						<td align="center" style="width:13.8%;">بوتادين</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲,۸۴۳</td><td align="center" style="width:9.8%;">۵,۹۰۹</td><td align="center" style="width:9.8%;">۱۷,۱۶۹,۵۷۲</td><td align="center" style="width:9.8%;">۱۰۱,۴۵۵</td><td align="center" style="width:9.8%;">۱۷,۸۹۸</td><td align="center" style="width:9.8%;">۱۸,۰۴۱</td><td align="center" style="width:9.8%;">۱۸,۲۵۹,۲۹۸</td><td align="center" style="width:11.8%;">۳۲۹,۴۱۶</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">پلي اتيلن سنگين</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">8,341</td><td align="center" style="width:9.8%;">4,943</td><td align="center" style="width:9.8%;">41,827,028</td><td align="center" style="width:9.8%;">206,751</td><td align="center" style="width:9.8%;">72,453</td><td align="center" style="width:9.8%;">63,126</td><td align="center" style="width:9.8%;">43,507,572</td><td align="center" style="width:11.8%;">2,746,459</td>
+						<td align="center" style="width:13.8%;">رافنيت</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۳,۶۳۸</td><td align="center" style="width:9.8%;">۳,۲۰۸</td><td align="center" style="width:9.8%;">۱۱,۶۴۴,۰۱۵</td><td align="center" style="width:9.8%;">۳۷,۳۵۴</td><td align="center" style="width:9.8%;">۲۲,۲۵۵</td><td align="center" style="width:9.8%;">۱۹,۵۴۵</td><td align="center" style="width:9.8%;">۱۲,۴۰۲,۴۵۶</td><td align="center" style="width:11.8%;">۲۴۲,۴۰۶</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">پلي اتيلن سبک خطي </td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">20,347</td><td align="center" style="width:9.8%;">20,048</td><td align="center" style="width:9.8%;">39,264,765</td><td align="center" style="width:9.8%;">787,180</td><td align="center" style="width:9.8%;">134,832</td><td align="center" style="width:9.8%;">126,901</td><td align="center" style="width:9.8%;">41,367,901</td><td align="center" style="width:11.8%;">5,249,628</td>
+						<td align="center" style="width:13.8%;">بوتن وان</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۷۸۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۰</td><td align="center" style="width:9.8%;">۱۱,۴۸۸</td><td align="center" style="width:9.8%;">۱,۱۳۷</td><td align="center" style="width:9.8%;">۲۹,۵۵۷,۶۰۸</td><td align="center" style="width:11.8%;">۳۳,۶۰۷</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">پلي اتيلن سبک</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">20,800</td><td align="center" style="width:9.8%;">23,789</td><td align="center" style="width:9.8%;">39,690,235</td><td align="center" style="width:9.8%;">944,191</td><td align="center" style="width:9.8%;">120,015</td><td align="center" style="width:9.8%;">111,847</td><td align="center" style="width:9.8%;">40,615,099</td><td align="center" style="width:11.8%;">4,542,677</td>
+						<td align="center" style="width:13.8%;">هيدروژن 99%</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۵۷</td><td align="center" style="width:9.8%;">۳</td><td align="center" style="width:9.8%;">۱۰,۶۶۶,۶۶۷</td><td align="center" style="width:9.8%;">۳۲</td><td align="center" style="width:9.8%;">۴۰۷</td><td align="center" style="width:9.8%;">۱۶</td><td align="center" style="width:9.8%;">۹,۸۱۲,۵۰۰</td><td align="center" style="width:11.8%;">۱۵۷</td>
 					</tr><tr>
-						<td align="center" style="width:13.8%;">p.f.o</td><td align="center" style="width:5.8%;">تن</td><td align="center" style="width:9.8%;">1,175</td><td align="center" style="width:9.8%;">1,097</td><td align="center" style="width:9.8%;">6,742,024</td><td align="center" style="width:9.8%;">7,396</td><td align="center" style="width:9.8%;">7,941</td><td align="center" style="width:9.8%;">7,824</td><td align="center" style="width:9.8%;">8,184,433</td><td align="center" style="width:11.8%;">64,035</td>
+						<td align="center" style="width:13.8%;">هيدروژن 86%</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۱,۸۴۵</td><td align="center" style="width:9.8%;">۱,۴۶۹</td><td align="center" style="width:9.8%;">۱,۶۸۹,۵۸۵</td><td align="center" style="width:9.8%;">۲,۴۸۲</td><td align="center" style="width:9.8%;">۱۲,۲۸۵</td><td align="center" style="width:9.8%;">۸,۴۵۹</td><td align="center" style="width:9.8%;">۱,۶۹۰,۰۳۴</td><td align="center" style="width:11.8%;">۱۴,۲۹۶</td>
 					</tr><tr class="lightBlueBg">
-						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">2,321,616</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">14,913,201</td>
+						<td align="center" style="width:13.8%;">جمع</td><td align="center" style="width:5.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">۲,۳۲۱,۶۱۶</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:9.8%;">&nbsp;</td><td align="center" style="width:11.8%;">۱۴,۹۱۳,۲۰۱</td>
 					</tr>
 				</tbody></table>
 			</div>
@@ -365,19 +372,23 @@ return true;
 
             
         <div class="clear" style="height: 20px;"></div>
-        <fieldset>
-            <legend>
-                <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1394/09/30</span></legend>
-            <br>
-            <span id="txbDescMonth"></span>
-        </fieldset>
-        <div class="clear" style="height: 20px;"></div>
-        <fieldset>
-            <legend>
-                <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1394/09/30</span></legend>
-            <br>
-            <span id="txbDescYear"></span>
-        </fieldset>
+        <div id="ctl00_cphBody_divLetterDescriptionContainer">
+            
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescMonth" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات دوره 1 ماهه منتهی به 1394/09/30</span></legend>
+                <br>
+                <span id="txbDescMonth"></span>
+            </fieldset>
+            <div class="clear" style="height: 20px;"></div>
+            <fieldset>
+                <legend>
+                    <span id="ctl00_cphBody_lblDescYear" style="color:graytext;font-size:Small;">کادر توضیحی مربوط به اطلاعات تجمعی از ابتدای سال تا پایان تاریخ 1394/09/30</span></legend>
+                <br>
+                <span id="txbDescYear"></span>
+            </fieldset>
+        </div>
         <div class="clear" style="height: 20px;">
         </div>
         <div style="width: 90%; margin-left: auto; margin-right: auto;">
